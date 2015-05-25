@@ -22,10 +22,10 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "756AAE9F1B12A6700077DFFF"
@@ -53,6 +53,15 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "756AAE951B12A6700077DFFF"
+            BuildableName = "SwiftDailyAPI.framework"
+            BlueprintName = "SwiftDailyAPI-Mac"
+            ReferencedContainer = "container:SwiftDailyAPI.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
