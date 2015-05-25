@@ -1,0 +1,14 @@
+{
+    "id": 12345,
+    "title": "The Title of the News",
+    "images": [
+        "http://httpbin.org/image/jpeg"
+    ],
+    "theme": {
+        "id": 1,
+        "name": "The Name of the Theme"
+        "subscribed": false,
+    },
+    "type": 2,
+    "ga_prefix": "67890"
+},

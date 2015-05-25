@@ -43,6 +43,8 @@
 		75E237FE1B1351CB00F6DE3E /* news_20150525.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F81B134FA700F6DE3E /* news_20150525.json */; };
 		75E238001B13520D00F6DE3E /* LatestDailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237FF1B13520D00F6DE3E /* LatestDailyNews.swift */; };
 		75E238011B13520D00F6DE3E /* LatestDailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237FF1B13520D00F6DE3E /* LatestDailyNews.swift */; };
+		75E238031B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
+		75E238041B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,7 @@
 		75E237F51B134D1A00F6DE3E /* DailyNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNews.swift; sourceTree = "<group>"; };
 		75E237F81B134FA700F6DE3E /* news_20150525.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_20150525.json; sourceTree = "<group>"; };
 		75E237FF1B13520D00F6DE3E /* LatestDailyNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestDailyNews.swift; sourceTree = "<group>"; };
+		75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_meta_with_a_theme.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +224,7 @@
 				75D272501B131CC8006991D8 /* news.json */,
 				75E237F01B13468500F6DE3E /* news_latest.json */,
 				75E237F81B134FA700F6DE3E /* news_20150525.json */,
+				75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -424,6 +428,7 @@
 			files = (
 				75E237FE1B1351CB00F6DE3E /* news_20150525.json in Resources */,
 				7598B0331B13399600E55D79 /* news_meta.json in Resources */,
+				75E238031B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */,
 				7598B0341B13399600E55D79 /* top_news_meta.json in Resources */,
 				7598B0351B13399600E55D79 /* multipic_news_meta.json in Resources */,
 				7598B0361B13399600E55D79 /* news.json in Resources */,
@@ -444,6 +449,7 @@
 			files = (
 				75E237FD1B1351C100F6DE3E /* news_20150525.json in Resources */,
 				7598B0371B13399E00E55D79 /* news_meta.json in Resources */,
+				75E238041B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */,
 				7598B0381B13399E00E55D79 /* top_news_meta.json in Resources */,
 				7598B0391B13399E00E55D79 /* multipic_news_meta.json in Resources */,
 				7598B03A1B13399E00E55D79 /* news.json in Resources */,
