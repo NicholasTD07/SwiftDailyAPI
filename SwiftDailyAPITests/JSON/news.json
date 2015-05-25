@@ -1,0 +1,18 @@
+{
+    "id": 12345,
+    "title": "Title of the News",
+    "body": "HTML body",
+    "css": [
+            "http://news.at.zhihu.com/css/news_qa.auto.css?v=1edab"
+            ],
+    "image_source": "Image Source",
+    "image": "http://httpbin.org/jpeg",
+    "share_url": "http://daily.zhihu.com/story/4759499",
+    "ga_prefix": "67890",
+    "type": 0,
+    "js": [ ],
+    "recommenders": [
+                     {
+                     "avatar": "http://httpbin.org/jpeg"
+                     ]
+}
