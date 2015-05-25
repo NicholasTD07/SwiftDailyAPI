@@ -1,0 +1,23 @@
+{
+    "date": "20150525",
+    "stories": [
+        {
+            "id": 12345,
+            "title": "Title of the News",
+            "images": [
+                "http://httpbin.org/image/jpeg"
+            ],
+            "type": 0,
+            "ga_prefix": "67890"
+        }
+    ],
+    "top_stories": [
+        {
+            "id": 12345,
+            "title": "Title of the News",
+            "image": "http://httpbin.org/image/jpeg",
+            "type": 0,
+            "ga_prefix": "67890"
+        }
+    ]
+}
