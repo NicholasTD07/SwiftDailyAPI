@@ -42,6 +42,19 @@ class ModelTests: XCTestCase {
         }
     }
 
+    func testDecodingLatestDailyNews() {
+        let latestDailyNews: LatestDailyNews? = JSONFileReader.JSON(fromFile: "news_latest") >>- decode
+
+        XCTAssert(latestDailyNews != nil)
+        XCTAssert(latestDailyNews?.dateString == "20150525")
+        XCTAssert(latestDailyNews?.news.count == 1)
+        XCTAssert(latestDailyNews?.topNews.count == 1)
+        if let news = latestDailyNews?.news, let topNews = latestDailyNews?.topNews {
+            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
+            assertTopNewsMeta(topNews[0], hasNewsId: newsId, title: title, immageUrlString: imageUrlString)
+        }
+    }
+
     func assertNewsMeta(newsMeta: NewsMeta, hasNewsId newsId: Int, title: String, imageUrlStrings: [String]) {
         XCTAssert(newsMeta.newsId == newsId)
         XCTAssert(newsMeta.title == title)
