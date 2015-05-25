@@ -30,12 +30,15 @@
 		7598B0381B13399E00E55D79 /* top_news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272521B131DF0006991D8 /* top_news_meta.json */; };
 		7598B0391B13399E00E55D79 /* multipic_news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D2724E1B131BC6006991D8 /* multipic_news_meta.json */; };
 		7598B03A1B13399E00E55D79 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272501B131CC8006991D8 /* news.json */; };
+		7598B03C1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
+		7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
 		75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D256991B12AF87005F6645 /* Argo.framework */; };
 		75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D2569B1B12AF90005F6645 /* Runes.framework */; };
 		75D2724D1B1315D5006991D8 /* news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D2724C1B1315D5006991D8 /* news_meta.json */; };
 		75D2724F1B131BC6006991D8 /* multipic_news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D2724E1B131BC6006991D8 /* multipic_news_meta.json */; };
 		75D272511B131CC8006991D8 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272501B131CC8006991D8 /* news.json */; };
 		75D272531B131DF0006991D8 /* top_news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272521B131DF0006991D8 /* top_news_meta.json */; };
+		75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,7 @@
 		756AAEA01B12A6700077DFFF /* SwiftDailyAPI-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftDailyAPI-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7598B0161B1322C700E55D79 /* ModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7598B02D1B132D6A00E55D79 /* NewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMeta.swift; sourceTree = "<group>"; };
+		7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsMeta.swift; sourceTree = "<group>"; };
 		7598B03E1B13436E00E55D79 /* SwiftDailyAPI.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftDailyAPI.playground; sourceTree = "<group>"; };
 		75D256991B12AF87005F6645 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
 		75D2569B1B12AF90005F6645 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				7598B02D1B132D6A00E55D79 /* NewsMeta.swift */,
+				7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7598B02E1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
+				7598B03C1B1340F000E55D79 /* TopNewsMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7598B02F1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
+				7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */,
 				7598B01F1B1329F000E55D79 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
