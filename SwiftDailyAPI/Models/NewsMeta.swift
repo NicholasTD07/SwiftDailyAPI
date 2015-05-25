@@ -14,17 +14,23 @@ public struct NewsMeta {
     public let newsId: Int
     public let title: String
     public let imageUrlStrings: [String]
+    private let _gaPrefix: String
+
+     /// This can be used as the key to order news.
+    public var gaPrefix: Int { return _gaPrefix.toInt()! }
 }
 
 extension NewsMeta: Decodable {
-    static func create(newsId: Int)(title: String)(imageUrlStrings: [String]) -> NewsMeta {
-        return NewsMeta(newsId: newsId, title: title, imageUrlStrings: imageUrlStrings)
+    static func create(newsId: Int)(title: String)(imageUrlStrings: [String])(gaPrefix: String) -> NewsMeta {
+        return NewsMeta(newsId: newsId, title: title, imageUrlStrings: imageUrlStrings, _gaPrefix: gaPrefix)
     }
 
     public static func decode(j: JSON) -> Decoded<NewsMeta> {
+        println(j)
         return NewsMeta.create
             <^> j <| "id"
             <*> j <| "title"
             <*> j <|| "images"
+            <*> j <| "ga_prefix"
     }
 }

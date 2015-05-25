@@ -16,12 +16,13 @@ class ModelTests: XCTestCase {
     let newsId = 12345
     let title = "Title of the News"
     let imageUrlString = "http://httpbin.org/image/jpeg"
+    let gaPrefix = 67890
 
     func testDecodingNewsMeta() {
         let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
 
         XCTAssert(newsMeta != nil)
-        assertNewsMeta(newsMeta!, hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
+        assertNewsMeta(newsMeta!, hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
     }
 
     func testDecodingTopNewsMeta() {
@@ -38,7 +39,7 @@ class ModelTests: XCTestCase {
         XCTAssert(dailyNews?.dateString == "20150525")
         XCTAssert(dailyNews?.news.count == 1)
         if let news = dailyNews?.news {
-            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
+            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
         }
     }
 
@@ -50,15 +51,16 @@ class ModelTests: XCTestCase {
         XCTAssert(latestDailyNews?.news.count == 1)
         XCTAssert(latestDailyNews?.topNews.count == 1)
         if let news = latestDailyNews?.news, let topNews = latestDailyNews?.topNews {
-            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
+            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
             assertTopNewsMeta(topNews[0], hasNewsId: newsId, title: title, immageUrlString: imageUrlString)
         }
     }
 
-    func assertNewsMeta(newsMeta: NewsMeta, hasNewsId newsId: Int, title: String, imageUrlStrings: [String]) {
+    func assertNewsMeta(newsMeta: NewsMeta, hasNewsId newsId: Int, title: String, imageUrlStrings: [String], gaPrefix: Int) {
         XCTAssert(newsMeta.newsId == newsId)
         XCTAssert(newsMeta.title == title)
         XCTAssert(newsMeta.imageUrlStrings == imageUrlStrings)
+        XCTAssert(newsMeta.gaPrefix == gaPrefix)
     }
 
     func assertTopNewsMeta(topNewsMeta: TopNewsMeta, hasNewsId newsId: Int, title: String, immageUrlString: String) {
