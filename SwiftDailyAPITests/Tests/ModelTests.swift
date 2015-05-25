@@ -21,18 +21,36 @@ class ModelTests: XCTestCase {
         let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
 
         XCTAssert(newsMeta != nil)
-        XCTAssert(newsMeta?.newsId == newsId)
-        XCTAssert(newsMeta?.title == title)
-        XCTAssert(newsMeta?.imageUrlStrings.count == 1)
-        XCTAssert(newsMeta?.imageUrlStrings[0] == imageUrlString)
+        assertNewsMeta(newsMeta!, hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
     }
 
     func testDecodingTopNewsMeta() {
         let topNewsMeta: TopNewsMeta? = JSONFileReader.JSON(fromFile: "top_news_meta") >>- decode
 
         XCTAssert(topNewsMeta != nil)
-        XCTAssert(topNewsMeta?.newsId == newsId)
-        XCTAssert(topNewsMeta?.title == title)
-        XCTAssert(topNewsMeta?.imageUrlString == imageUrlString)
+        assertTopNewsMeta(topNewsMeta!, hasNewsId: newsId, title: title, immageUrlString: imageUrlString)
+    }
+
+    func testDecodingDailyNews() {
+        let dailyNews: DailyNews? = JSONFileReader.JSON(fromFile: "news_20150525") >>- decode
+
+        XCTAssert(dailyNews != nil)
+        XCTAssert(dailyNews?.dateString == "20150525")
+        XCTAssert(dailyNews?.news.count == 1)
+        if let news = dailyNews?.news {
+            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString])
+        }
+    }
+
+    func assertNewsMeta(newsMeta: NewsMeta, hasNewsId newsId: Int, title: String, imageUrlStrings: [String]) {
+        XCTAssert(newsMeta.newsId == newsId)
+        XCTAssert(newsMeta.title == title)
+        XCTAssert(newsMeta.imageUrlStrings == imageUrlStrings)
+    }
+
+    func assertTopNewsMeta(topNewsMeta: TopNewsMeta, hasNewsId newsId: Int, title: String, immageUrlString: String) {
+        XCTAssert(topNewsMeta.newsId == newsId)
+        XCTAssert(topNewsMeta.title == title)
+        XCTAssert(topNewsMeta.imageUrlString == imageUrlString)
     }
 }

@@ -37,6 +37,10 @@
 		75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
 		75E237F31B1346A100F6DE3E /* daily_news_latest.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* daily_news_latest.json */; };
 		75E237F41B1346A200F6DE3E /* daily_news_latest.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* daily_news_latest.json */; };
+		75E237F61B134D1A00F6DE3E /* DailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237F51B134D1A00F6DE3E /* DailyNews.swift */; };
+		75E237F71B134D1A00F6DE3E /* DailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237F51B134D1A00F6DE3E /* DailyNews.swift */; };
+		75E237FD1B1351C100F6DE3E /* news_20150525.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F81B134FA700F6DE3E /* news_20150525.json */; };
+		75E237FE1B1351CB00F6DE3E /* news_20150525.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F81B134FA700F6DE3E /* news_20150525.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,8 @@
 		75D272501B131CC8006991D8 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		75D272521B131DF0006991D8 /* top_news_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = top_news_meta.json; sourceTree = "<group>"; };
 		75E237F01B13468500F6DE3E /* daily_news_latest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = daily_news_latest.json; sourceTree = "<group>"; };
+		75E237F51B134D1A00F6DE3E /* DailyNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyNews.swift; sourceTree = "<group>"; };
+		75E237F81B134FA700F6DE3E /* news_20150525.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_20150525.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 				75D2724E1B131BC6006991D8 /* multipic_news_meta.json */,
 				75D272501B131CC8006991D8 /* news.json */,
 				75E237F01B13468500F6DE3E /* daily_news_latest.json */,
+				75E237F81B134FA700F6DE3E /* news_20150525.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -246,6 +253,7 @@
 			children = (
 				7598B02D1B132D6A00E55D79 /* NewsMeta.swift */,
 				7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */,
+				75E237F51B134D1A00F6DE3E /* DailyNews.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E237FE1B1351CB00F6DE3E /* news_20150525.json in Resources */,
 				7598B0331B13399600E55D79 /* news_meta.json in Resources */,
 				7598B0341B13399600E55D79 /* top_news_meta.json in Resources */,
 				7598B0351B13399600E55D79 /* multipic_news_meta.json in Resources */,
@@ -429,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E237FD1B1351C100F6DE3E /* news_20150525.json in Resources */,
 				7598B0371B13399E00E55D79 /* news_meta.json in Resources */,
 				7598B0381B13399E00E55D79 /* top_news_meta.json in Resources */,
 				7598B0391B13399E00E55D79 /* multipic_news_meta.json in Resources */,
@@ -445,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7598B02E1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
+				75E237F61B134D1A00F6DE3E /* DailyNews.swift in Sources */,
 				7598B03C1B1340F000E55D79 /* TopNewsMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7598B02F1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
+				75E237F71B134D1A00F6DE3E /* DailyNews.swift in Sources */,
 				7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
