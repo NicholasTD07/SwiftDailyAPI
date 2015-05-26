@@ -11,6 +11,12 @@
       location = "group:Carthage/Checkouts/Argo/Argo.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Carthage/Checkouts/Quick/Quick.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/Box/Box.xcodeproj">
    </FileRef>
    <FileRef
