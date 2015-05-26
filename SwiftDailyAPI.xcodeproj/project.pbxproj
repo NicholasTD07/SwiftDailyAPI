@@ -45,6 +45,8 @@
 		75E238011B13520D00F6DE3E /* LatestDailyNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237FF1B13520D00F6DE3E /* LatestDailyNews.swift */; };
 		75E238031B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
 		75E238041B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
+		75E238151B14260400F6DE3E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238141B14260400F6DE3E /* Alamofire.framework */; };
+		75E238171B14260F00F6DE3E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238161B14260F00F6DE3E /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		75E237F81B134FA700F6DE3E /* news_20150525.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_20150525.json; sourceTree = "<group>"; };
 		75E237FF1B13520D00F6DE3E /* LatestDailyNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestDailyNews.swift; sourceTree = "<group>"; };
 		75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_meta_with_a_theme.json; sourceTree = "<group>"; };
+		75E238141B14260400F6DE3E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		75E238161B14260F00F6DE3E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +127,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				756AAE8E1B12A5740077DFFF /* Runes.framework in Frameworks */,
+				75E238151B14260400F6DE3E /* Alamofire.framework in Frameworks */,
 				756AAE8C1B12A5530077DFFF /* Argo.framework in Frameworks */,
+				75E238171B14260F00F6DE3E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +246,7 @@
 		756AAE8F1B12A5F20077DFFF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				75E238141B14260400F6DE3E /* Alamofire.framework */,
 				756AAE8D1B12A5740077DFFF /* Runes.framework */,
 				756AAE8B1B12A5530077DFFF /* Argo.framework */,
 			);
@@ -269,6 +276,7 @@
 		75D2569D1B12AFAD005F6645 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				75E238161B14260F00F6DE3E /* Alamofire.framework */,
 				75D2569B1B12AF90005F6645 /* Runes.framework */,
 				75D256991B12AF87005F6645 /* Argo.framework */,
 			);
@@ -616,6 +624,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -637,6 +646,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

@@ -7,3 +7,6 @@
 [submodule "Carthage/Checkouts/Runes"]
 	path = Carthage/Checkouts/Runes
 	url = ssh://git@github.com/thoughtbot/Runes.git
+[submodule "Carthage/Checkouts/Alamofire"]
+	path = Carthage/Checkouts/Alamofire
+	url = ssh://git@github.com/Alamofire/Alamofire.git

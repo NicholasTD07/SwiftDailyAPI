@@ -5,6 +5,9 @@
       location = "group:SwiftDailyAPI.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Carthage/Checkouts/Alamofire/Alamofire.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Carthage/Checkouts/Argo/Argo.xcodeproj">
    </FileRef>
    <FileRef
