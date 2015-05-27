@@ -1,7 +1,7 @@
 {
-    "id": 12345,
-    "title": "Title of the News",
-    "image": "http://httpbin.org/image/jpeg",
-    "type": 0,
-    "ga_prefix": "67890"
+  "id": 12345,
+  "title": "Title of the News",
+  "image": "http://httpbin.org/image/jpeg",
+  "type": 0,
+  "ga_prefix": "67890"
 }

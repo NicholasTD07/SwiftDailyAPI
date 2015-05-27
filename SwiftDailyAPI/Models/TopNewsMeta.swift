@@ -11,26 +11,26 @@ import Argo
 import Runes
 
 public struct TopNewsMeta {
-    public let newsId: Int
-    public let title: String
-    public let imageUrlString: String
+  public let newsId: Int
+  public let title: String
+  public let imageUrlString: String
 
-    public init(newsId: Int, title: String, imageUrlString: String) {
-        self.newsId = newsId
-        self.title = title
-        self.imageUrlString = imageUrlString
-    }
+  public init(newsId: Int, title: String, imageUrlString: String) {
+    self.newsId = newsId
+    self.title = title
+    self.imageUrlString = imageUrlString
+  }
 }
 
 extension TopNewsMeta: Decodable {
-    static func create(newsId: Int)(title: String)(imageUrlString: String) -> TopNewsMeta {
-        return TopNewsMeta(newsId: newsId, title: title, imageUrlString: imageUrlString)
-    }
+  static func create(newsId: Int)(title: String)(imageUrlString: String) -> TopNewsMeta {
+    return TopNewsMeta(newsId: newsId, title: title, imageUrlString: imageUrlString)
+  }
 
-    public static func decode(j: JSON) -> Decoded<TopNewsMeta> {
-        return TopNewsMeta.create
-            <^> j <| "id"
-            <*> j <| "title"
-            <*> j <| "image"
-    }
+  public static func decode(j: JSON) -> Decoded<TopNewsMeta> {
+    return TopNewsMeta.create
+      <^> j <| "id"
+      <*> j <| "title"
+      <*> j <| "image"
+  }
 }

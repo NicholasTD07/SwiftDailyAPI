@@ -1,10 +1,10 @@
 {
-    "id": 12345,
-    "title": "Title of the News",
-    "multipic": true,
-    "images": [
-               "http://httpbin.org/image/jpeg"
-               ],
-    "type": 0,
-    "ga_prefix": "67890"
+  "id": 12345,
+  "title": "Title of the News",
+  "multipic": true,
+  "images": [
+             "http://httpbin.org/image/jpeg"
+             ],
+  "type": 0,
+  "ga_prefix": "67890"
 }
