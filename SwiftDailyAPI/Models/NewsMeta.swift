@@ -18,6 +18,13 @@ public struct NewsMeta {
 
      /// This can be used as the key to order news.
     public var gaPrefix: Int { return _gaPrefix.toInt()! }
+
+    public init(newsId: Int, title: String, imageUrlStrings: [String], _gaPrefix: String) {
+        self.newsId = newsId
+        self.title = title
+        self.imageUrlStrings = imageUrlStrings
+        self._gaPrefix = _gaPrefix
+    }
 }
 
 extension NewsMeta: Decodable {
@@ -26,11 +33,29 @@ extension NewsMeta: Decodable {
     }
 
     public static func decode(j: JSON) -> Decoded<NewsMeta> {
-        println(j)
         return NewsMeta.create
             <^> j <| "id"
             <*> j <| "title"
             <*> j <|| "images"
             <*> j <| "ga_prefix"
     }
+}
+
+extension NewsMeta: Equatable { }
+
+public func ==(rhs: NewsMeta, lhs: NewsMeta) -> Bool {
+    return rhs.newsId == lhs.newsId
+        && rhs.title == lhs.title
+        && rhs.imageUrlStrings == lhs.imageUrlStrings
+        && rhs.gaPrefix == lhs.gaPrefix
+}
+
+extension NewsMeta: Printable {
+    public var description: String {
+        return "\n".join([
+            "id: \(newsId)",
+            "title: \(title)",
+            "imageUrlStrings: \(imageUrlStrings)",
+            "gaPrefix: \(gaPrefix)"
+        ]) }
 }

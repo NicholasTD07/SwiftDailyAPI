@@ -131,6 +131,7 @@
 		75E2382D1B143D6300F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		75E238301B143D7600F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		75E238311B143D7600F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		75F919531B15B16C0053FF42 /* WhyModelsHavePublicInitializers.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = WhyModelsHavePublicInitializers.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				7598B03E1B13436E00E55D79 /* SwiftDailyAPI.playground */,
+				75F919521B15B1000053FF42 /* Documentation */,
 				756AAE661B12A3A40077DFFF /* SwiftDailyAPI */,
 				756AAE731B12A3A40077DFFF /* SwiftDailyAPITests */,
 				756AAE651B12A3A40077DFFF /* Products */,
@@ -305,6 +307,14 @@
 				75D256991B12AF87005F6645 /* Argo.framework */,
 			);
 			name = Mac;
+			sourceTree = "<group>";
+		};
+		75F919521B15B1000053FF42 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				75F919531B15B16C0053FF42 /* WhyModelsHavePublicInitializers.md */,
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

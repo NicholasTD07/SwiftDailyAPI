@@ -13,6 +13,11 @@ import Runes
 public struct DailyNews {
     public let dateString: String
     public let news: [NewsMeta]
+
+    public init(dateString: String, news: [NewsMeta]) {
+        self.dateString = dateString
+        self.news = news
+    }
 }
 
 extension DailyNews: Decodable {
@@ -25,4 +30,10 @@ extension DailyNews: Decodable {
             <^> j <| "date"
             <*> j <|| "stories"
     }
+}
+
+extension DailyNews: Equatable { }
+
+public func ==(rhs: DailyNews, lhs: DailyNews) -> Bool {
+    return rhs.dateString == lhs.dateString && rhs.news == lhs.news
 }

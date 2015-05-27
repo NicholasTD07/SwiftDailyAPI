@@ -14,6 +14,12 @@ public struct LatestDailyNews {
     public let dateString: String
     public let news: [NewsMeta]
     public let topNews: [TopNewsMeta]
+
+    public init(dateString: String, news: [NewsMeta], topNews: [TopNewsMeta]) {
+        self.dateString = dateString
+        self.news = news
+        self.topNews = topNews
+    }
 }
 
 extension LatestDailyNews: Decodable {
@@ -27,4 +33,12 @@ extension LatestDailyNews: Decodable {
             <*> j <|| "stories"
             <*> j <|| "top_stories"
     }
+}
+
+extension LatestDailyNews: Equatable { }
+
+public func ==(rhs: LatestDailyNews, lhs: LatestDailyNews) -> Bool {
+    return rhs.dateString == lhs.dateString
+        && rhs.news == lhs.news
+        && rhs.topNews == lhs.topNews
 }

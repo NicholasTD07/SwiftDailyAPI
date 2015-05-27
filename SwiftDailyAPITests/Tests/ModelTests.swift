@@ -6,66 +6,49 @@
 //  Copyright (c) 2015 nickTD. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 import SwiftDailyAPI
 import Argo
 import Runes
 
-class ModelTests: XCTestCase {
+class ModelDecodeSpecs: QuickSpec {
+    override func spec() {
+        it("decodes NewsMeta") {
+            let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
 
-    let newsId = 12345
-    let title = "Title of the News"
-    let imageUrlString = "http://httpbin.org/image/jpeg"
-    let gaPrefix = 67890
+            expect(newsMeta).to(equal(ExpectedModels.newsMeta))
+        }
 
-    func testDecodingNewsMeta() {
-        let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
+        it("decodes TopNewsMeta") {
+            let topNewsMeta: TopNewsMeta? = JSONFileReader.JSON(fromFile: "top_news_meta") >>- decode
 
-        XCTAssert(newsMeta != nil)
-        assertNewsMeta(newsMeta!, hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
-    }
+            expect(topNewsMeta).to(equal(ExpectedModels.topNewsMeta))
+        }
 
-    func testDecodingTopNewsMeta() {
-        let topNewsMeta: TopNewsMeta? = JSONFileReader.JSON(fromFile: "top_news_meta") >>- decode
+        it("decodes DailyNews") {
+            let dailyNews: DailyNews? = JSONFileReader.JSON(fromFile: "news_20150525") >>- decode
 
-        XCTAssert(topNewsMeta != nil)
-        assertTopNewsMeta(topNewsMeta!, hasNewsId: newsId, title: title, immageUrlString: imageUrlString)
-    }
+            expect(dailyNews).to(equal(ExpectedModels.dailyNews))
+        }
 
-    func testDecodingDailyNews() {
-        let dailyNews: DailyNews? = JSONFileReader.JSON(fromFile: "news_20150525") >>- decode
+        it("decodes LatestDailyNews") {
+            let latestDailyNews: LatestDailyNews? = JSONFileReader.JSON(fromFile: "news_latest") >>- decode
 
-        XCTAssert(dailyNews != nil)
-        XCTAssert(dailyNews?.dateString == "20150525")
-        XCTAssert(dailyNews?.news.count == 1)
-        if let news = dailyNews?.news {
-            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
+            expect(latestDailyNews).to(equal(ExpectedModels.latestDailyNews))
         }
     }
+}
 
-    func testDecodingLatestDailyNews() {
-        let latestDailyNews: LatestDailyNews? = JSONFileReader.JSON(fromFile: "news_latest") >>- decode
+struct ExpectedModels {
+    static let newsId = 12345
+    static let title = "Title of the News"
+    static let imageUrlString = "http://httpbin.org/image/jpeg"
+    static let gaPrefix = "67890"
+    static let dateString = "20150525"
 
-        XCTAssert(latestDailyNews != nil)
-        XCTAssert(latestDailyNews?.dateString == "20150525")
-        XCTAssert(latestDailyNews?.news.count == 1)
-        XCTAssert(latestDailyNews?.topNews.count == 1)
-        if let news = latestDailyNews?.news, let topNews = latestDailyNews?.topNews {
-            assertNewsMeta(news[0], hasNewsId: newsId, title: title, imageUrlStrings: [imageUrlString], gaPrefix: gaPrefix)
-            assertTopNewsMeta(topNews[0], hasNewsId: newsId, title: title, immageUrlString: imageUrlString)
-        }
-    }
-
-    func assertNewsMeta(newsMeta: NewsMeta, hasNewsId newsId: Int, title: String, imageUrlStrings: [String], gaPrefix: Int) {
-        XCTAssert(newsMeta.newsId == newsId)
-        XCTAssert(newsMeta.title == title)
-        XCTAssert(newsMeta.imageUrlStrings == imageUrlStrings)
-        XCTAssert(newsMeta.gaPrefix == gaPrefix)
-    }
-
-    func assertTopNewsMeta(topNewsMeta: TopNewsMeta, hasNewsId newsId: Int, title: String, immageUrlString: String) {
-        XCTAssert(topNewsMeta.newsId == newsId)
-        XCTAssert(topNewsMeta.title == title)
-        XCTAssert(topNewsMeta.imageUrlString == imageUrlString)
-    }
+    static var newsMeta = { return NewsMeta(newsId: newsId, title: title, imageUrlStrings: [imageUrlString], _gaPrefix: gaPrefix) }()
+    static var topNewsMeta = { return TopNewsMeta(newsId: newsId, title: title, imageUrlString: imageUrlString) }()
+    static var dailyNews = { return DailyNews(dateString: dateString, news: [newsMeta]) }()
+    static var latestDailyNews = { return LatestDailyNews(dateString: dateString, news: [newsMeta], topNews: [topNewsMeta]) }()
 }

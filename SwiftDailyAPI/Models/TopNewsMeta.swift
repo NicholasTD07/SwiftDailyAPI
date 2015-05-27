@@ -14,6 +14,12 @@ public struct TopNewsMeta {
     public let newsId: Int
     public let title: String
     public let imageUrlString: String
+
+    public init(newsId: Int, title: String, imageUrlString: String) {
+        self.newsId = newsId
+        self.title = title
+        self.imageUrlString = imageUrlString
+    }
 }
 
 extension TopNewsMeta: Decodable {
@@ -27,4 +33,12 @@ extension TopNewsMeta: Decodable {
             <*> j <| "title"
             <*> j <| "image"
     }
+}
+
+extension TopNewsMeta: Equatable { }
+
+public func ==(rhs: TopNewsMeta, lhs: TopNewsMeta) -> Bool {
+    return rhs.newsId == lhs.newsId
+        && rhs.title == lhs.title
+        && rhs.imageUrlString == lhs.imageUrlString
 }
