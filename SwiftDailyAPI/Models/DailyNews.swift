@@ -11,18 +11,18 @@ import Argo
 import Runes
 
 public struct DailyNews {
-    public let dateString: String
+    private let _dateString: String
     public let news: [NewsMeta]
 
-    public init(dateString: String, news: [NewsMeta]) {
-        self.dateString = dateString
-        self.news = news
+    private static let _dateFormat = "yyyyMMdd"
+    public var date: NSDate {
+        return NSDate.dateFromString(_dateString, format: DailyNews._dateFormat)!
     }
 }
 
 extension DailyNews: Decodable {
     static func create(dateString: String)(news: [NewsMeta]) -> DailyNews {
-        return DailyNews(dateString: dateString, news: news)
+        return DailyNews(_dateString: dateString, news: news)
     }
 
     public static func decode(j: JSON) -> Decoded<DailyNews> {
@@ -30,10 +30,4 @@ extension DailyNews: Decodable {
             <^> j <| "date"
             <*> j <|| "stories"
     }
-}
-
-extension DailyNews: Equatable { }
-
-public func ==(rhs: DailyNews, lhs: DailyNews) -> Bool {
-    return rhs.dateString == lhs.dateString && rhs.news == lhs.news
 }

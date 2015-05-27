@@ -40,22 +40,3 @@ extension NewsMeta: Decodable {
             <*> j <| "ga_prefix"
     }
 }
-
-extension NewsMeta: Equatable { }
-
-public func ==(rhs: NewsMeta, lhs: NewsMeta) -> Bool {
-    return rhs.newsId == lhs.newsId
-        && rhs.title == lhs.title
-        && rhs.imageUrlStrings == lhs.imageUrlStrings
-        && rhs.gaPrefix == lhs.gaPrefix
-}
-
-extension NewsMeta: Printable {
-    public var description: String {
-        return "\n".join([
-            "id: \(newsId)",
-            "title: \(title)",
-            "imageUrlStrings: \(imageUrlStrings)",
-            "gaPrefix: \(gaPrefix)"
-        ]) }
-}

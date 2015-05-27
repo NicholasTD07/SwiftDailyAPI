@@ -34,11 +34,3 @@ extension TopNewsMeta: Decodable {
             <*> j <| "image"
     }
 }
-
-extension TopNewsMeta: Equatable { }
-
-public func ==(rhs: TopNewsMeta, lhs: TopNewsMeta) -> Bool {
-    return rhs.newsId == lhs.newsId
-        && rhs.title == lhs.title
-        && rhs.imageUrlString == lhs.imageUrlString
-}
