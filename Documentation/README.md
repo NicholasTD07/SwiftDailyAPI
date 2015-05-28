@@ -1,8 +1,27 @@
-# SwiftDailyAPI
+# SwiftDailyAPI [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 An API framework for ZhiHu's Daily News, built in Swift.
 
-# Usage
+## Installation
+
+### [Carthage]
+
+[Carthage]: https://github.com/Carthage/Carthage
+
+Add the following to your Cartfile:
+
+```
+github "NicholasTD07/SwiftDailyAPI"
+```
+
+Then run `carthage update`.
+
+Follow the current instructions in [Carthage's README][carthage-installation]
+for up to date installation instructions.
+
+[carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
+
+## Usage
 
 ```swift
 import SwiftDailyAPI
@@ -20,7 +39,12 @@ api.latestDaily() { (latestDaily: LatestDailyNews?) in
 
 ## Frameworks
 
-* Alamofire - Network
-* Argo      - JSON decoding
-* Quick     - Testing
-* Nimble    - Matcher
+* [Alamofire] - Elegant HTTP networking
+* [Argo]      - Functional JSON parsing
+* [Quick]     - Testing
+* [Nimble]    - Matcher
+
+[Alamofire]: https://github.com/Alamofire/Alamofire
+[Argo]: https://github.com/thoughtbot/Argo
+[Quick]: https://github.com/Quick/Quick
+[Nimble]: https://github.com/Quick/Nimble
