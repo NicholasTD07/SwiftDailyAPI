@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238141B14260400F6DE3E /* Alamofire.framework */; };
+		75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238161B14260F00F6DE3E /* Alamofire.framework */; };
 		75507B171B168946006F41F9 /* daily_news_20150525.json in Resources */ = {isa = PBXBuildFile; fileRef = 75507B161B168946006F41F9 /* daily_news_20150525.json */; };
 		75507B181B168946006F41F9 /* daily_news_20150525.json in Resources */ = {isa = PBXBuildFile; fileRef = 75507B161B168946006F41F9 /* daily_news_20150525.json */; };
 		756AAE6A1B12A3A40077DFFF /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,7 +119,7 @@
 		7598B0161B1322C700E55D79 /* ModelDecodingSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDecodingSpecs.swift; sourceTree = "<group>"; };
 		7598B02D1B132D6A00E55D79 /* NewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMeta.swift; sourceTree = "<group>"; };
 		7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsMeta.swift; sourceTree = "<group>"; };
-		7598B03E1B13436E00E55D79 /* SwiftDailyAPI.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftDailyAPI.playground; sourceTree = "<group>"; };
+		7598D26B1B169F280096217F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75D256991B12AF87005F6645 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
 		75D2569B1B12AF90005F6645 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		75D2724C1B1315D5006991D8 /* news_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_meta.json; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */,
 				75F919621B15F7280053FF42 /* Argo.framework in Frameworks */,
 				75F919631B15F7280053FF42 /* Runes.framework in Frameworks */,
 			);
@@ -169,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */,
 				75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */,
 				75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */,
 			);
@@ -213,7 +217,6 @@
 		756AAE5A1B12A3A40077DFFF = {
 			isa = PBXGroup;
 			children = (
-				7598B03E1B13436E00E55D79 /* SwiftDailyAPI.playground */,
 				75F919521B15B1000053FF42 /* Documentation */,
 				756AAE661B12A3A40077DFFF /* SwiftDailyAPI */,
 				756AAE731B12A3A40077DFFF /* SwiftDailyAPITests */,
@@ -343,6 +346,7 @@
 		75F919521B15B1000053FF42 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				7598D26B1B169F280096217F /* README.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
