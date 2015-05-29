@@ -10,6 +10,7 @@ import Alamofire
 import Argo
 import Runes
 
+/// Note: Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.
 public class DailyAPI {
   private let manager: Manager
 
