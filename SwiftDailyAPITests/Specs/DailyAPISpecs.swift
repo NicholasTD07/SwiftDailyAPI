@@ -15,7 +15,7 @@ class DailyAPISpecs: QuickSpec {
     let dailyAPI = DailyAPI(userAgent: "SwiftDailySpec")
     it("loads latest daily") {
       var latestDaily: LatestDailyNews? = nil
-      dailyAPI.latestDaily() { (latestDailyFromAPI: LatestDailyNews?) in
+      dailyAPI.latestDaily { (latestDailyFromAPI: LatestDailyNews?) in
         latestDaily = latestDailyFromAPI
       }
 
