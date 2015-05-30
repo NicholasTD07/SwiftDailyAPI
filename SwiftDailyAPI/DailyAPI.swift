@@ -11,7 +11,7 @@ import Argo
 import Runes
 
 /// Note: Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.
-public class DailyAPI {
+public final class DailyAPI {
   private let manager: Manager
 
   private enum DailyRouter: URLRequestConvertible {
@@ -61,15 +61,15 @@ public class DailyAPI {
 
       :returns: The request.
   */
-  public func latestDaily(completionHandler: (LatestDailyNews?) -> Void) -> Request {
+  public final func latestDaily(completionHandler: (LatestDailyNews?) -> Void) -> Request {
     return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
   }
 
-  public func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
+  public final func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
     return request(DailyRouter.DailyNews(forDate: date), completionHandler: completionHandler)
   }
 
-  public func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
+  public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
     return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
   }
 
