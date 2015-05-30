@@ -81,4 +81,11 @@ public class DailyAPI {
                     completionHandler(JSON >>- decode)
                   }
   }
+
+  private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T? -> Void) -> Request {
+    return manager.request(URLRequest)
+                  .responseJSON { (request, response, JSON, error) in
+                    completionHandler(JSON >>- decode)
+                  }
+  }
 }
