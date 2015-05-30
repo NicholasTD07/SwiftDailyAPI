@@ -19,6 +19,7 @@ public class DailyAPI {
 
     case LastestDaily
     case DailyNews(forDate: NSDate)
+    case News(newsId: Int)
 
     var path: String {
       switch self {
@@ -27,6 +28,8 @@ public class DailyAPI {
       case .DailyNews(let date):
         let dateString = date.dayBefore().toString(format: "yyyyMMdd")
         return "/news/before/\(dateString)"
+      case .News(let newsId):
+        return "/news/\(newsId)"
       }
     }
 
@@ -67,6 +70,13 @@ public class DailyAPI {
 
   public func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
     return manager.request(DailyRouter.DailyNews(forDate: date))
+                  .responseJSON { (request, response, JSON, error) in
+                    completionHandler(JSON >>- decode)
+                  }
+  }
+
+  public func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
+    return manager.request(DailyRouter.News(newsId: newsId))
                   .responseJSON { (request, response, JSON, error) in
                     completionHandler(JSON >>- decode)
                   }

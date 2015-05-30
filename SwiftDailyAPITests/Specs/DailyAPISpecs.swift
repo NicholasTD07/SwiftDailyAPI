@@ -39,5 +39,18 @@ class DailyAPISpecs: QuickSpec {
       expect(dailyNews?.date).toEventually(equal(date), timeout: 10)
       expect(dailyNews?.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
+
+    it("loads news for a newsId") {
+      var news: News? = nil
+      let newsId = 4770416
+      api.news(newsId) { newsFromAPI in
+        news = newsFromAPI
+      }
+
+      expect(news).toEventuallyNot(beNil(), timeout: 10)
+      expect(news!.newsId).toEventually(equal(newsId), timeout: 10)
+      expect(news!.title).toEventuallyNot(beNil(), timeout: 10)
+      expect(news!.body).toEventuallyNot(beNil(), timeout: 10)
+    }
   }
 }
