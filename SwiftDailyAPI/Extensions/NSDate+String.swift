@@ -9,9 +9,25 @@
 import Foundation
 
 extension NSDate {
+
+  public func daysBefore(days: Int = 1) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: days, toDate: self, options: nil)!
+  }
+
+  public func dayBefore() -> NSDate {
+    return daysBefore(days: 1)
+  }
+
+  // MARK: String
   public class func dateFromString(string: String, format: String) -> NSDate? {
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = format
     return dateFormatter.dateFromString(string)
+  }
+
+  public func toString(#format: String) -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.stringFromDate(self)
   }
 }

@@ -12,10 +12,11 @@ import SwiftDailyAPI
 
 class DailyAPISpecs: QuickSpec {
   override func spec() {
-    let dailyAPI = DailyAPI(userAgent: "SwiftDailySpec")
+    let api = DailyAPI(userAgent: "SwiftDailySpec")
+
     it("loads latest daily") {
       var latestDaily: LatestDailyNews? = nil
-      dailyAPI.latestDaily { (latestDailyFromAPI: LatestDailyNews?) in
+      api.latestDaily { (latestDailyFromAPI: LatestDailyNews?) in
         latestDaily = latestDailyFromAPI
       }
 
@@ -23,6 +24,19 @@ class DailyAPISpecs: QuickSpec {
       expect(latestDaily?.date).toEventuallyNot(beNil(), timeout: 10)
       expect(latestDaily?.news).toEventuallyNot(beEmpty(), timeout: 10)
       expect(latestDaily?.topNews).toEventuallyNot(beEmpty(), timeout: 10)
+    }
+
+    it("loads daily news for a date") {
+      var dailyNews: DailyNews? = nil
+      let date = NSDate.dateFromString("20150525", format: "yyyyMMdd")!
+      api.dailyNews(forDate: date) {
+        (dailyNewsFromAPI: DailyNews?) in
+        dailyNews = dailyNewsFromAPI
+      }
+
+      expect(dailyNews).toEventuallyNot(beNil(), timeout: 10)
+      expect(dailyNews?.date).toEventually(equal(date), timeout: 10)
+      expect(dailyNews?.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
   }
 }

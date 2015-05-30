@@ -14,15 +14,19 @@ import Runes
 public class DailyAPI {
   private let manager: Manager
 
-  enum DailyRouter: URLRequestConvertible {
+  private enum DailyRouter: URLRequestConvertible {
     static let baseURLString = "http://news.at.zhihu.com/api/4"
 
     case LastestDaily
+    case DailyNews(forDate: NSDate)
 
     var path: String {
       switch self {
       case .LastestDaily:
         return "/news/latest"
+      case .DailyNews(let date):
+        let dateString = date.dayBefore().toString(format: "yyyyMMdd")
+        return "/news/before/\(dateString)"
       }
     }
 
@@ -56,6 +60,13 @@ public class DailyAPI {
   */
   public func latestDaily(completionHandler: (LatestDailyNews?) -> Void) -> Request {
     return manager.request(DailyRouter.LastestDaily)
+                  .responseJSON { (request, response, JSON, error) in
+                    completionHandler(JSON >>- decode)
+                  }
+  }
+
+  public func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
+    return manager.request(DailyRouter.DailyNews(forDate: date))
                   .responseJSON { (request, response, JSON, error) in
                     completionHandler(JSON >>- decode)
                   }
