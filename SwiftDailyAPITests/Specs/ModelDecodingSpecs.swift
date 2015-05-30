@@ -20,21 +20,17 @@ class ModelDecodeSpecs: QuickSpec {
         let dailyNews: DailyNews? = JSONFileReader.JSON(fromFile: "daily_news_20150525") >>- decode
 
         expect(dailyNews).toNot(beNil())
-        if let dailyNews = dailyNews {
-          expect(dailyNews.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
-          expect(dailyNews.news).toNot(beEmpty())
-        }
+        expect(dailyNews!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
+        expect(dailyNews!.news).toNot(beEmpty())
       }
 
       it("decodes LatestDailyNews") {
         let latestDailyNews: LatestDailyNews? = JSONFileReader.JSON(fromFile: "latest_daily_news_20150527") >>- decode
 
         expect(latestDailyNews).toNot(beNil())
-        if let latestDailyNews = latestDailyNews {
-          expect(latestDailyNews.date).to(equal(NSDate.dateFromString("20150527", format: "yyyyMMdd")))
-          expect(latestDailyNews.news).toNot(beEmpty())
-          expect(latestDailyNews.topNews).toNot(beEmpty())
-        }
+        expect(latestDailyNews!.date).to(equal(NSDate.dateFromString("20150527", format: "yyyyMMdd")))
+        expect(latestDailyNews!.news).toNot(beEmpty())
+        expect(latestDailyNews!.topNews).toNot(beEmpty())
       }
 
       it("decodes News") {
@@ -64,46 +60,38 @@ class ModelDecodeSpecs: QuickSpec {
         let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
 
         expect(newsMeta).toNot(beNil())
-        if let newsMeta = newsMeta {
-          expect(newsMeta.newsId).to(equal(newsId))
-          expect(newsMeta.title).to(equal(title))
+        expect(newsMeta!.newsId).to(equal(newsId))
+        expect(newsMeta!.title).to(equal(title))
 
-          expect(newsMeta.imageUrlStrings).to(equal([imageUrlString]))
-          expect(newsMeta.gaPrefix).to(equal(gaPrefix))
-        }
+        expect(newsMeta!.imageUrlStrings).to(equal([imageUrlString]))
+        expect(newsMeta!.gaPrefix).to(equal(gaPrefix))
       }
 
       it("decodes TopNewsMeta") {
         let topNewsMeta: TopNewsMeta? = JSONFileReader.JSON(fromFile: "top_news_meta") >>- decode
 
         expect(topNewsMeta).toNot(beNil())
-        if let topNewsMeta = topNewsMeta {
-          expect(topNewsMeta.newsId).to(equal(newsId))
-          expect(topNewsMeta.title).to(equal(title))
+        expect(topNewsMeta!.newsId).to(equal(newsId))
+        expect(topNewsMeta!.title).to(equal(title))
 
-          expect(topNewsMeta.imageUrlString).to(equal(imageUrlString))
-        }
+        expect(topNewsMeta!.imageUrlString).to(equal(imageUrlString))
       }
 
       it("decodes DailyNews") {
         let dailyNews: DailyNews? = JSONFileReader.JSON(fromFile: "daily_news") >>- decode
 
         expect(dailyNews).toNot(beNil())
-        if let dailyNews = dailyNews {
-          expect(dailyNews.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
-          expect(dailyNews.news).toNot(beEmpty())
-        }
+        expect(dailyNews!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
+        expect(dailyNews!.news).toNot(beEmpty())
       }
 
       it("decodes LatestDailyNews") {
         let latestDailyNews: LatestDailyNews? = JSONFileReader.JSON(fromFile: "latest_daily_news") >>- decode
 
         expect(latestDailyNews).toNot(beNil())
-        if let latestDailyNews = latestDailyNews {
-          expect(latestDailyNews.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
-          expect(latestDailyNews.news).toNot(beEmpty())
-          expect(latestDailyNews.topNews).toNot(beEmpty())
-        }
+        expect(latestDailyNews!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
+        expect(latestDailyNews!.news).toNot(beEmpty())
+        expect(latestDailyNews!.topNews).toNot(beEmpty())
       }
 
       it("decodes News") {

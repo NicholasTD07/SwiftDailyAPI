@@ -22,9 +22,9 @@ class DailyAPISpecs: QuickSpec {
       }
 
       expect(latestDaily).toEventuallyNot(beNil(), timeout: 10)
-      expect(latestDaily?.date).toEventuallyNot(beNil(), timeout: 10)
-      expect(latestDaily?.news).toEventuallyNot(beEmpty(), timeout: 10)
-      expect(latestDaily?.topNews).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(latestDaily!.date).toEventuallyNot(beNil(), timeout: 10)
+      expect(latestDaily!.news).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(latestDaily!.topNews).toEventuallyNot(beEmpty(), timeout: 10)
     }
 
     it("loads daily news for a date") {
@@ -36,8 +36,8 @@ class DailyAPISpecs: QuickSpec {
       }
 
       expect(dailyNews).toEventuallyNot(beNil(), timeout: 10)
-      expect(dailyNews?.date).toEventually(equal(date), timeout: 10)
-      expect(dailyNews?.news).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(dailyNews!.date).toEventually(equal(date), timeout: 10)
+      expect(dailyNews!.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
 
     it("loads news for a newsId") {
