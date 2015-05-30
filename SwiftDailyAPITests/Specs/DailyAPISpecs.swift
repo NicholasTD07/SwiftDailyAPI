@@ -16,7 +16,8 @@ class DailyAPISpecs: QuickSpec {
 
     it("loads latest daily") {
       var latestDaily: LatestDailyNews? = nil
-      api.latestDaily { (latestDailyFromAPI: LatestDailyNews?) in
+
+      api.latestDaily { latestDailyFromAPI in
         latestDaily = latestDailyFromAPI
       }
 
@@ -29,8 +30,8 @@ class DailyAPISpecs: QuickSpec {
     it("loads daily news for a date") {
       var dailyNews: DailyNews? = nil
       let date = NSDate.dateFromString("20150525", format: "yyyyMMdd")!
-      api.dailyNews(forDate: date) {
-        (dailyNewsFromAPI: DailyNews?) in
+
+      api.dailyNews(forDate: date) { dailyNewsFromAPI in
         dailyNews = dailyNewsFromAPI
       }
 
