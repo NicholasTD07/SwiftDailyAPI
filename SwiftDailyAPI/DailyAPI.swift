@@ -62,24 +62,15 @@ public class DailyAPI {
       :returns: The request.
   */
   public func latestDaily(completionHandler: (LatestDailyNews?) -> Void) -> Request {
-    return manager.request(DailyRouter.LastestDaily)
-                  .responseJSON { (request, response, JSON, error) in
-                    completionHandler(JSON >>- decode)
-                  }
+    return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
   }
 
   public func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
-    return manager.request(DailyRouter.DailyNews(forDate: date))
-                  .responseJSON { (request, response, JSON, error) in
-                    completionHandler(JSON >>- decode)
-                  }
+    return request(DailyRouter.DailyNews(forDate: date), completionHandler: completionHandler)
   }
 
   public func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
-    return manager.request(DailyRouter.News(newsId: newsId))
-                  .responseJSON { (request, response, JSON, error) in
-                    completionHandler(JSON >>- decode)
-                  }
+    return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
   }
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T? -> Void) -> Request {
