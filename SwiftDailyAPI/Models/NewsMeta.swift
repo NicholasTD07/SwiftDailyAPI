@@ -28,7 +28,7 @@ public struct NewsMeta {
 }
 
 extension NewsMeta: Decodable {
-  static func create(newsId: Int)(title: String)(imageUrlStrings: [String])(gaPrefix: String) -> NewsMeta {
+  private static func create(newsId: Int)(title: String)(imageUrlStrings: [String])(gaPrefix: String) -> NewsMeta {
     return NewsMeta(newsId: newsId, title: title, imageUrlStrings: imageUrlStrings, _gaPrefix: gaPrefix)
   }
 

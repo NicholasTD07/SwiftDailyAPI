@@ -21,7 +21,7 @@ public struct LatestDailyNews {
 }
 
 extension LatestDailyNews: Decodable {
-  static func create(dateString: String)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDailyNews {
+  private static func create(dateString: String)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDailyNews {
     return LatestDailyNews(_dateString: dateString, news: news, topNews: topNews)
   }
 

@@ -20,7 +20,7 @@ public struct DailyNews {
 }
 
 extension DailyNews: Decodable {
-  static func create(dateString: String)(news: [NewsMeta]) -> DailyNews {
+  private static func create(dateString: String)(news: [NewsMeta]) -> DailyNews {
     return DailyNews(_dateString: dateString, news: news)
   }
 

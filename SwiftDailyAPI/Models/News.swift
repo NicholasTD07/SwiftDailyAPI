@@ -32,7 +32,7 @@ public struct News {
 }
 
 extension News: Decodable {
-  static func create(newsId: Int)(title: String)(body: String)(cssURLStrings: [String])(imageURLString: String)(imageSourceText: String)(shareURLString: String) -> News {
+  private static func create(newsId: Int)(title: String)(body: String)(cssURLStrings: [String])(imageURLString: String)(imageSourceText: String)(shareURLString: String) -> News {
     return News(newsId: newsId, title: title, body: body, cssURLStrings: cssURLStrings, imageURLString: imageURLString, imageSourceText: imageSourceText, shareURLString: shareURLString)
   }
 
