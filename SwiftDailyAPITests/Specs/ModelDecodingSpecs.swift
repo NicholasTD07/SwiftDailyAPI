@@ -90,6 +90,19 @@ class ModelDecodeSpecs: QuickSpec {
           expect(latestDailyNews.topNews).toNot(beEmpty())
         }
       }
+
+      it("decodes News") {
+        let news: News? = JSONFileReader.JSON(fromFile: "news") >>- decode
+
+        expect(news).toNot(beNil())
+        expect(news!.newsId).to(equal(newsId))
+        expect(news!.title).to(equal(title))
+        expect(news!.body).to(equal("HTML body"))
+        expect(news!.cssURLs).toNot(beEmpty())
+        expect(news!.imageURL).to(equal(NSURL(string: imageUrlString)!))
+        expect(news!.imageSourceText).to(equal("Image Source"))
+        expect(news!.shareURL).to(equal(NSURL(string: "http://daily.zhihu.com/story/12345")))
+      }
     }
   }
 }
