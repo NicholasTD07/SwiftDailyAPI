@@ -22,10 +22,6 @@
 		756AAEA11B12A6700077DFFF /* SwiftDailyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE961B12A6700077DFFF /* SwiftDailyAPI.framework */; };
 		7598B01D1B1328C800E55D79 /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7598B01F1B1329F000E55D79 /* ModelDecodingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B0161B1322C700E55D79 /* ModelDecodingSpecs.swift */; };
-		7598B0231B132B4900E55D79 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 756AAE8B1B12A5530077DFFF /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7598B0241B132B5D00E55D79 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 75D2569B1B12AF90005F6645 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7598B0261B132B6E00E55D79 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 75D256991B12AF87005F6645 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7598B0271B132B7300E55D79 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 75D2569B1B12AF90005F6645 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7598B02E1B132D6A00E55D79 /* NewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B02D1B132D6A00E55D79 /* NewsMeta.swift */; };
 		7598B02F1B132D6A00E55D79 /* NewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B02D1B132D6A00E55D79 /* NewsMeta.swift */; };
 		7598B0331B13399600E55D79 /* news_meta.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D2724C1B1315D5006991D8 /* news_meta.json */; };
@@ -91,8 +87,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7598B0241B132B5D00E55D79 /* Runes.framework in CopyFiles */,
-				7598B0231B132B4900E55D79 /* Argo.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +96,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7598B0271B132B7300E55D79 /* Runes.framework in CopyFiles */,
-				7598B0261B132B6E00E55D79 /* Argo.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
