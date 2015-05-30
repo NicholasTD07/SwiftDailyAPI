@@ -15,9 +15,8 @@ public struct LatestDailyNews {
   public let news: [NewsMeta]
   public let topNews: [TopNewsMeta]
 
-  private static let _dateFormat = "yyyyMMdd"
   public var date: NSDate {
-    return NSDate.dateFromString(_dateString, format: LatestDailyNews._dateFormat)!
+    return NSDate.dateFromString(_dateString, format: DailyConstants.dateFormat)!
   }
 }
 
