@@ -52,7 +52,7 @@ class ModelDecodeSpecs: QuickSpec {
     describe("test data") {
       let newsId = 12345
       let title = "Title of the News"
-      let imageUrlString = "http://httpbin.org/image/jpeg"
+      let imageURLString = "http://httpbin.org/image/jpeg"
       let gaPrefix = 67890
       let dateString = "20150525"
 
@@ -63,7 +63,7 @@ class ModelDecodeSpecs: QuickSpec {
         expect(newsMeta!.newsId).to(equal(newsId))
         expect(newsMeta!.title).to(equal(title))
 
-        expect(newsMeta!.imageUrlStrings).to(equal([imageUrlString]))
+        expect(newsMeta!.imageURLs).to(equal([NSURL(string: imageURLString)!]))
         expect(newsMeta!.gaPrefix).to(equal(gaPrefix))
       }
 
@@ -74,7 +74,7 @@ class ModelDecodeSpecs: QuickSpec {
         expect(topNewsMeta!.newsId).to(equal(newsId))
         expect(topNewsMeta!.title).to(equal(title))
 
-        expect(topNewsMeta!.imageUrlString).to(equal(imageUrlString))
+        expect(topNewsMeta!.imageURL).to(equal(NSURL(string: imageURLString)!))
       }
 
       it("decodes DailyNews") {
@@ -102,7 +102,7 @@ class ModelDecodeSpecs: QuickSpec {
         expect(news!.title).to(equal(title))
         expect(news!.body).to(equal("HTML body"))
         expect(news!.cssURLs).toNot(beEmpty())
-        expect(news!.imageURL).to(equal(NSURL(string: imageUrlString)!))
+        expect(news!.imageURL).to(equal(NSURL(string: imageURLString)!))
         expect(news!.imageSourceText).to(equal("Image Source"))
         expect(news!.shareURL).to(equal(NSURL(string: "http://daily.zhihu.com/story/12345")))
       }

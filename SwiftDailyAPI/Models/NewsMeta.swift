@@ -13,23 +13,20 @@ import Runes
 public struct NewsMeta {
   public let newsId: Int
   public let title: String
-  public let imageUrlStrings: [String]
-  private let _gaPrefix: String
+  public let imageURLs: [NSURL]
+  public let gaPrefix: Int /// This can be used as the key to order news.
 
-  /// This can be used as the key to order news.
-  public var gaPrefix: Int { return _gaPrefix.toInt()! }
-
-  public init(newsId: Int, title: String, imageUrlStrings: [String], _gaPrefix: String) {
+  public init(newsId: Int, title: String, imageUrlStrings: [String], gaPrefix: String) {
     self.newsId = newsId
     self.title = title
-    self.imageUrlStrings = imageUrlStrings
-    self._gaPrefix = _gaPrefix
+    self.imageURLs = imageUrlStrings.map { NSURL(string: $0)! }
+    self.gaPrefix = gaPrefix.toInt()!
   }
 }
 
 extension NewsMeta: Decodable {
   private static func create(newsId: Int)(title: String)(imageUrlStrings: [String])(gaPrefix: String) -> NewsMeta {
-    return NewsMeta(newsId: newsId, title: title, imageUrlStrings: imageUrlStrings, _gaPrefix: gaPrefix)
+    return NewsMeta(newsId: newsId, title: title, imageUrlStrings: imageUrlStrings, gaPrefix: gaPrefix)
   }
 
   public static func decode(j: JSON) -> Decoded<NewsMeta> {

@@ -13,12 +13,12 @@ import Runes
 public struct TopNewsMeta {
   public let newsId: Int
   public let title: String
-  public let imageUrlString: String
+  public let imageURL: NSURL
 
   public init(newsId: Int, title: String, imageUrlString: String) {
     self.newsId = newsId
     self.title = title
-    self.imageUrlString = imageUrlString
+    self.imageURL = NSURL(string: imageUrlString)!
   }
 }
 
