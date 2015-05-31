@@ -13,21 +13,16 @@ import Runes
 public struct Daily {
   public let date: NSDate
   public let news: [NewsMeta]
-
-  public init(dateString: String, news: [NewsMeta]) {
-    self.date = NSDate.dateFromString(dateString, format: DailyConstants.dateFormat)!
-    self.news = news
-  }
 }
 
 extension Daily: Decodable {
-  private static func create(dateString: String)(news: [NewsMeta]) -> Daily {
-    return Daily(dateString: dateString, news: news)
+  private static func create(date: NSDate)(news: [NewsMeta]) -> Daily {
+    return Daily(date: date, news: news)
   }
 
   public static func decode(j: JSON) -> Decoded<Daily> {
     return Daily.create
-      <^> j <| "date"
+      <^> ((j <| "date") >>- toNSDate(DailyConstants.dateFormat))
       <*> j <|| "stories"
   }
 }

@@ -14,22 +14,16 @@ public struct LatestDaily {
   public let date: NSDate
   public let news: [NewsMeta]
   public let topNews: [TopNewsMeta]
-
-  public init(dateString: String, news: [NewsMeta], topNews: [TopNewsMeta]) {
-    self.date = NSDate.dateFromString(dateString, format: DailyConstants.dateFormat)!
-    self.news = news
-    self.topNews = topNews
-  }
 }
 
 extension LatestDaily: Decodable {
-  private static func create(dateString: String)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDaily {
-    return LatestDaily(dateString: dateString, news: news, topNews: topNews)
+  private static func create(date: NSDate)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDaily {
+    return LatestDaily(date: date, news: news, topNews: topNews)
   }
 
   public static func decode(j: JSON) -> Decoded<LatestDaily> {
     return LatestDaily.create
-      <^> j <| "date"
+      <^> ((j <| "date") >>- toNSDate(DailyConstants.dateFormat))
       <*> j <|| "stories"
       <*> j <|| "top_stories"
   }
