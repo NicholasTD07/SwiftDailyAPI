@@ -55,9 +55,9 @@ public final class DailyAPI {
   }
 
   /**
-      Creates a `Alamofire.Request` to fetch latest news. Once the request has finished then the JSON will be decoded and it will call the completionHandler with deceded object.
+      Creates a `Alamofire.Request` to fetch the `LatestDaily`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the decoded object or nil.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
 
       :returns: The request.
   */
@@ -65,10 +65,26 @@ public final class DailyAPI {
     return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
   }
 
+  /**
+      Creates a `Alamofire.Request` to fetch the `Daily` at given date. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+      :param: date              The date when the `Daily` is published.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+
+      :returns: The request.
+  */
   public final func daily(forDate date: NSDate, completionHandler: (Daily?) -> Void) -> Request {
     return request(DailyRouter.Daily(forDate: date), completionHandler: completionHandler)
   }
 
+  /**
+      Creates a `Alamofire.Request` to fetch the `News` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+      :param: newsId            The indentifier key for the `News`.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the decoded object or nil.
+
+      :returns: The request.
+  */
   public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
     return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
   }
