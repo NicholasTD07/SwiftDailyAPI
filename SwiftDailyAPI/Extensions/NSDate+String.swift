@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Argo
 
 extension NSDate {
 
@@ -31,8 +30,4 @@ extension NSDate {
     dateFormatter.dateFormat = format
     return dateFormatter.stringFromDate(self)
   }
-}
-
-public func toNSDate(format: String)(dateString: String) -> Decoded<NSDate> {
-  return .fromOptional(NSDate.dateFromString(dateString, format: format))
 }

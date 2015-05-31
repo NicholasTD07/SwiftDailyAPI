@@ -14,17 +14,11 @@ public struct TopNewsMeta {
   public let newsId: Int
   public let title: String
   public let imageURL: NSURL
-
-  public init(newsId: Int, title: String, imageUrlString: String) {
-    self.newsId = newsId
-    self.title = title
-    self.imageURL = NSURL(string: imageUrlString)!
-  }
 }
 
 extension TopNewsMeta: Decodable {
-  private static func create(newsId: Int)(title: String)(imageUrlString: String) -> TopNewsMeta {
-    return TopNewsMeta(newsId: newsId, title: title, imageUrlString: imageUrlString)
+  private static func create(newsId: Int)(title: String)(imageURL: NSURL) -> TopNewsMeta {
+    return TopNewsMeta(newsId: newsId, title: title, imageURL: imageURL)
   }
 
   public static func decode(j: JSON) -> Decoded<TopNewsMeta> {
