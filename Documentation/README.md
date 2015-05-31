@@ -28,7 +28,7 @@ import SwiftDailyAPI
 
 let api = DailyAPI()
 
-api.latestDaily { (latestDaily: LatestDailyNews?) in
+api.latestDaily { (latestDaily: LatestDaily?) in
     if let latestDaily = latestDaily {
         println(latestDaily.date)
         println(latestDaily.news)

@@ -15,7 +15,7 @@ class DailyAPISpecs: QuickSpec {
     let api = DailyAPI(userAgent: "SwiftDailySpec")
 
     it("loads latest daily") {
-      var latestDaily: LatestDailyNews? = nil
+      var latestDaily: LatestDaily? = nil
 
       api.latestDaily { latestDailyFromAPI in
         latestDaily = latestDailyFromAPI
@@ -28,16 +28,16 @@ class DailyAPISpecs: QuickSpec {
     }
 
     it("loads daily news for a date") {
-      var dailyNews: DailyNews? = nil
+      var daily: Daily? = nil
       let date = NSDate.dateFromString("20150525", format: "yyyyMMdd")!
 
-      api.dailyNews(forDate: date) { dailyNewsFromAPI in
-        dailyNews = dailyNewsFromAPI
+      api.daily(forDate: date) { dailyFromAPI in
+        daily = dailyFromAPI
       }
 
-      expect(dailyNews).toEventuallyNot(beNil(), timeout: 10)
-      expect(dailyNews!.date).toEventually(equal(date), timeout: 10)
-      expect(dailyNews!.news).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(daily).toEventuallyNot(beNil(), timeout: 10)
+      expect(daily!.date).toEventually(equal(date), timeout: 10)
+      expect(daily!.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
 
     it("loads news for a newsId") {

@@ -18,14 +18,14 @@ public final class DailyAPI {
     static let baseURLString = "http://news.at.zhihu.com/api/4"
 
     case LastestDaily
-    case DailyNews(forDate: NSDate)
+    case Daily(forDate: NSDate)
     case News(newsId: Int)
 
     var path: String {
       switch self {
       case .LastestDaily:
         return "/news/latest"
-      case .DailyNews(let date):
+      case .Daily(let date):
         let dateString = date.dayBefore().toString(format: "yyyyMMdd")
         return "/news/before/\(dateString)"
       case .News(let newsId):
@@ -61,12 +61,12 @@ public final class DailyAPI {
 
       :returns: The request.
   */
-  public final func latestDaily(completionHandler: (LatestDailyNews?) -> Void) -> Request {
+  public final func latestDaily(completionHandler: (LatestDaily?) -> Void) -> Request {
     return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
   }
 
-  public final func dailyNews(forDate date: NSDate, completionHandler: (DailyNews?) -> Void) -> Request {
-    return request(DailyRouter.DailyNews(forDate: date), completionHandler: completionHandler)
+  public final func daily(forDate date: NSDate, completionHandler: (Daily?) -> Void) -> Request {
+    return request(DailyRouter.Daily(forDate: date), completionHandler: completionHandler)
   }
 
   public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {

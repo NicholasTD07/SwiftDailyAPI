@@ -1,5 +1,5 @@
 //
-//  LatestDailyNews.swift
+//  LatestDaily.swift
 //  SwiftDailyAPI
 //
 //  Created by Nicholas Tian on 25/05/2015.
@@ -10,7 +10,7 @@ import Foundation
 import Argo
 import Runes
 
-public struct LatestDailyNews {
+public struct LatestDaily {
   public let date: NSDate
   public let news: [NewsMeta]
   public let topNews: [TopNewsMeta]
@@ -22,13 +22,13 @@ public struct LatestDailyNews {
   }
 }
 
-extension LatestDailyNews: Decodable {
-  private static func create(dateString: String)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDailyNews {
-    return LatestDailyNews(dateString: dateString, news: news, topNews: topNews)
+extension LatestDaily: Decodable {
+  private static func create(dateString: String)(news: [NewsMeta])(topNews: [TopNewsMeta]) -> LatestDaily {
+    return LatestDaily(dateString: dateString, news: news, topNews: topNews)
   }
 
-  public static func decode(j: JSON) -> Decoded<LatestDailyNews> {
-    return LatestDailyNews.create
+  public static func decode(j: JSON) -> Decoded<LatestDaily> {
+    return LatestDaily.create
       <^> j <| "date"
       <*> j <|| "stories"
       <*> j <|| "top_stories"

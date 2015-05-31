@@ -1,5 +1,5 @@
 //
-//  DailyNews.swift
+//  Daily.swift
 //  SwiftDailyAPI
 //
 //  Created by Nicholas Tian on 25/05/2015.
@@ -10,7 +10,7 @@ import Foundation
 import Argo
 import Runes
 
-public struct DailyNews {
+public struct Daily {
   public let date: NSDate
   public let news: [NewsMeta]
 
@@ -20,13 +20,13 @@ public struct DailyNews {
   }
 }
 
-extension DailyNews: Decodable {
-  private static func create(dateString: String)(news: [NewsMeta]) -> DailyNews {
-    return DailyNews(dateString: dateString, news: news)
+extension Daily: Decodable {
+  private static func create(dateString: String)(news: [NewsMeta]) -> Daily {
+    return Daily(dateString: dateString, news: news)
   }
 
-  public static func decode(j: JSON) -> Decoded<DailyNews> {
-    return DailyNews.create
+  public static func decode(j: JSON) -> Decoded<Daily> {
+    return Daily.create
       <^> j <| "date"
       <*> j <|| "stories"
   }
