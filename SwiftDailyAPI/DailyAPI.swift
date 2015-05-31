@@ -20,6 +20,7 @@ public final class DailyAPI {
     case LastestDaily
     case Daily(forDate: NSDate)
     case News(newsId: Int)
+    case NewsExtra(newsId: Int)
 
     var path: String {
       switch self {
@@ -30,6 +31,8 @@ public final class DailyAPI {
         return "/news/before/\(dateString)"
       case .News(let newsId):
         return "/news/\(newsId)"
+      case .NewsExtra(let newsId):
+        return "/news-extra/\(newsId)"
       }
     }
 
@@ -81,12 +84,24 @@ public final class DailyAPI {
       Creates a `Alamofire.Request` to fetch the `News` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
       :param: newsId            The indentifier key for the `News`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the decoded object or nil.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
 
       :returns: The request.
   */
   public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
     return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
+  }
+
+  /**
+      Creates a `Alamofire.Request` to fetch the `NewsExtra` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+      :param: newsId            The indentifier key for the `NewsExtra`.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+
+      :returns: The request.
+  */
+  public final func newsExtra(newsId: Int, completionHandler: (NewsExtra?) -> Void) -> Request {
+    return request(DailyRouter.NewsExtra(newsId: newsId), completionHandler: completionHandler)
   }
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T? -> Void) -> Request {

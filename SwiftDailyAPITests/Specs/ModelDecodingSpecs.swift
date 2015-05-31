@@ -47,6 +47,16 @@ class ModelDecodeSpecs: QuickSpec {
         expect(news!.imageSourceText).toNot(beNil())
         expect(news!.shareURL).toNot(beNil())
       }
+
+      it("decodes NewsExtra") {
+        let newsExtra: NewsExtra? = JSONFileReader.JSON(fromFile: "news_extra_4770416") >>- decode
+
+        expect(newsExtra).toNot(beNil())
+        expect(newsExtra!.popularity).to(equal(697))
+        expect(newsExtra!.shortComments).to(equal(10))
+        expect(newsExtra!.longComments).to(equal(0))
+        expect(newsExtra!.comments).to(equal(10))
+      }
     }
 
     describe("test data") {
@@ -105,6 +115,16 @@ class ModelDecodeSpecs: QuickSpec {
         expect(news!.imageURL).to(equal(NSURL(string: imageURLString)!))
         expect(news!.imageSourceText).to(equal("Image Source"))
         expect(news!.shareURL).to(equal(NSURL(string: "http://daily.zhihu.com/story/12345")))
+      }
+
+      it("decodes NewsExtra") {
+        let newsExtra: NewsExtra? = JSONFileReader.JSON(fromFile: "news_extra") >>- decode
+
+        expect(newsExtra).toNot(beNil())
+        expect(newsExtra!.popularity).to(equal(100))
+        expect(newsExtra!.shortComments).to(equal(200))
+        expect(newsExtra!.longComments).to(equal(300))
+        expect(newsExtra!.comments).to(equal(500))
       }
     }
   }

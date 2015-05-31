@@ -40,9 +40,9 @@ class DailyAPISpecs: QuickSpec {
       expect(daily!.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
 
+    let newsId = 4770416
     it("loads news for a newsId") {
       var news: News? = nil
-      let newsId = 4770416
       api.news(newsId) { newsFromAPI in
         news = newsFromAPI
       }
@@ -51,6 +51,19 @@ class DailyAPISpecs: QuickSpec {
       expect(news!.newsId).toEventually(equal(newsId), timeout: 10)
       expect(news!.title).toEventuallyNot(beNil(), timeout: 10)
       expect(news!.body).toEventuallyNot(beNil(), timeout: 10)
+    }
+
+    it("loads news extra for a newsId") {
+      var newsExtra: NewsExtra? = nil
+      api.newsExtra(newsId) { newsExtraFromAPI in
+        newsExtra = newsExtraFromAPI
+      }
+
+      expect(newsExtra).toEventuallyNot(beNil(), timeout: 10)
+      expect(newsExtra!.popularity).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
+      expect(newsExtra!.shortComments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
+      expect(newsExtra!.longComments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
+      expect(newsExtra!.comments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
     }
   }
 }
