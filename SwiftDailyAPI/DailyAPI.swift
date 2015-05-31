@@ -60,7 +60,7 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the `LatestDaily`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
       :returns: The request.
   */
@@ -72,7 +72,7 @@ public final class DailyAPI {
       Creates a `Alamofire.Request` to fetch the `Daily` at given date. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
       :param: date              The date when the `Daily` is published.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
       :returns: The request.
   */
@@ -84,7 +84,7 @@ public final class DailyAPI {
       Creates a `Alamofire.Request` to fetch the `News` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
       :param: newsId            The indentifier key for the `News`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
       :returns: The request.
   */
@@ -96,7 +96,7 @@ public final class DailyAPI {
       Creates a `Alamofire.Request` to fetch the `NewsExtra` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
       :param: newsId            The indentifier key for the `NewsExtra`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one arguments: the optional decoded object.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
       :returns: The request.
   */
