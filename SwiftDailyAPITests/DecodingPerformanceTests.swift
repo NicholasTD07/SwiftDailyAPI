@@ -13,50 +13,35 @@ import Runes
 
 class DecodingPerformanceTests: XCTestCase {
   func testDecodingDaily() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "daily_news_20150525")!
-
-    measureBlock {
-      let daily: Daily? = json >>- decode
-    }
+    measureDecodingModel(Daily.self, fromFile: "daily_news_20150525")
   }
 
   func testDecodingLatestDaily() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "latest_daily_news_20150527")!
-
-    measureBlock {
-      let latestDaily: LatestDaily? = json >>- decode
-    }
+    measureDecodingModel(LatestDaily.self, fromFile: "latest_daily_news_20150527")
   }
 
   func testDecodingNews() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "news_4770416")!
-
-    measureBlock {
-      let news: News? = json >>- decode
-    }
+    measureDecodingModel(News.self, fromFile: "news_4770416")
   }
 
   func testDecodingNewsExtra() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "news_extra_4770416")!
-
-    measureBlock {
-      let newsExtra: NewsExtra? = json >>- decode
-    }
+    measureDecodingModel(NewsExtra.self, fromFile: "news_extra_4770416")
   }
 
   func testDecodingShortComments() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "short_comments_4772308")!
-
-    measureBlock {
-      let comments: Comments? = json >>- decode
-    }
+    measureDecodingModel(Comments.self, fromFile: "short_comments_4772308")
   }
 
   func testDecodingLongComments() {
-    let json: AnyObject = JSONFileReader.JSON(fromFile: "long_comments_4772308")!
+    measureDecodingModel(Comments.self, fromFile: "long_comments_4772308")
+  }
+
+  func measureDecodingModel<T: Decodable where T == T.DecodedType>(type: T.Type, fromFile file: String) {
+    let json: AnyObject = JSONFileReader.JSON(fromFile: file)!
 
     measureBlock {
-      let comments: Comments? = json >>- decode
+      let model: T? = json >>- decode
+      assert(model != nil)
     }
   }
 }
