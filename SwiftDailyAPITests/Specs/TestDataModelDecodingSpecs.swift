@@ -13,7 +13,6 @@ import Argo
 import Runes
 
 class TestDataModelDecodeSpecs: QuickSpec {
-
   override func spec() {
     let newsId = 12345
     let title = "Title of the News"

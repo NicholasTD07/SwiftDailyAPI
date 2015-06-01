@@ -13,7 +13,6 @@ import Argo
 import Runes
 
 class RealDataModelDecodeSpecs: QuickSpec {
-
   override func spec() {
     it("decodes Daily") {
       let daily: Daily? = JSONFileReader.JSON(fromFile: "daily_news_20150525") >>- decode
