@@ -40,9 +40,10 @@ class DailyAPISpecs: QuickSpec {
       expect(daily!.news).toEventuallyNot(beEmpty(), timeout: 10)
     }
 
-    let newsId = 4770416
     it("loads news for a newsId") {
       var news: News? = nil
+      let newsId = 4770416
+
       api.news(newsId) { newsFromAPI in
         news = newsFromAPI
       }
@@ -55,6 +56,8 @@ class DailyAPISpecs: QuickSpec {
 
     it("loads news extra for a newsId") {
       var newsExtra: NewsExtra? = nil
+      let newsId = 4770416
+
       api.newsExtra(newsId) { newsExtraFromAPI in
         newsExtra = newsExtraFromAPI
       }
@@ -67,8 +70,9 @@ class DailyAPISpecs: QuickSpec {
     }
 
     it("loads short comments") {
-      let newsId = 4772308 // `Comments.comments` won't be empty
       var comments: Comments? = nil
+      let newsId = 4772308 // `Comments.comments` won't be empty
+
       let request = api.shortComments(newsId) { commentsFromAPI in
         comments = commentsFromAPI
       }
@@ -79,8 +83,9 @@ class DailyAPISpecs: QuickSpec {
     }
 
     it("loads long comments") {
-      let newsId = 4772308 // `Comments.comments` won't be empty
       var comments: Comments? = nil
+      let newsId = 4772308 // `Comments.comments` won't be empty
+
       let request = api.longComments(newsId) { commentsFromAPI in
         comments = commentsFromAPI
       }
@@ -91,9 +96,10 @@ class DailyAPISpecs: QuickSpec {
     }
 
     it("loads all comments") {
-      let newsId = 4772308 // `Comments.comments` won't be empty
       var shortComments: Comments? = nil
       var longComments: Comments? = nil
+      let newsId = 4772308 // `Comments.comments` won't be empty
+
       let (shortCommentsRequest, longCommentsRequest) = api.comments(newsId, shortCommentsHandler: { shortCommentsFromAPI in
           shortComments = shortCommentsFromAPI
         }, longCommentsHandler: { longCommentsFromAPI in
