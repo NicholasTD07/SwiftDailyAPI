@@ -42,6 +42,8 @@
 		75522BA11B1C1E3C003DA78E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522B9F1B1C1E3C003DA78E /* Comment.swift */; };
 		75522BA41B1C7EA4003DA78E /* RealDataModelDecodingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */; };
 		75522BA51B1C7EA6003DA78E /* RealDataModelDecodingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */; };
+		75522BA71B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */; };
+		75522BA81B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */; };
 		756AAE6A1B12A3A40077DFFF /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756AAE701B12A3A40077DFFF /* SwiftDailyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */; };
 		756AAE811B12A3C60077DFFF /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
@@ -145,6 +147,7 @@
 		75522B9C1B1C1DDF003DA78E /* long_comments_4772308.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = long_comments_4772308.json; sourceTree = "<group>"; };
 		75522B9F1B1C1E3C003DA78E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealDataModelDecodingSpecs.swift; sourceTree = "<group>"; };
+		75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingPerformanceTests.swift; sourceTree = "<group>"; };
 		756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDailyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AAE681B12A3A40077DFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDailyAPI.h; sourceTree = "<group>"; };
@@ -310,6 +313,7 @@
 		756AAE731B12A3A40077DFFF /* SwiftDailyAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */,
 				756AAE871B12A4800077DFFF /* Specs */,
 				756AAE821B12A3D40077DFFF /* JSON */,
 				756AAE741B12A3A40077DFFF /* Supporting Files */,
@@ -645,6 +649,7 @@
 				756AAE811B12A3C60077DFFF /* JSONFileReader.swift in Sources */,
 				753B430E1B198BAA00EC8FEA /* TestDataModelDecodingSpecs.swift in Sources */,
 				75522BA41B1C7EA4003DA78E /* RealDataModelDecodingSpecs.swift in Sources */,
+				75522BA71B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */,
 				75F919611B15F3DB0053FF42 /* DailyAPISpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +680,7 @@
 				75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */,
 				75F919601B15F3DA0053FF42 /* DailyAPISpecs.swift in Sources */,
 				75522BA51B1C7EA6003DA78E /* RealDataModelDecodingSpecs.swift in Sources */,
+				75522BA81B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */,
 				7598B01F1B1329F000E55D79 /* TestDataModelDecodingSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
