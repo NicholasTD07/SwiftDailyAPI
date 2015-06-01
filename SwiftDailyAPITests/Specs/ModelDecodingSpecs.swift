@@ -57,6 +57,18 @@ class ModelDecodeSpecs: QuickSpec {
         expect(newsExtra!.longComments).to(equal(0))
         expect(newsExtra!.comments).to(equal(10))
       }
+
+      it("decodes Comment - short") {
+        let comments: Comments? = JSONFileReader.JSON(fromFile: "short_comments_4772308") >>- decode
+
+        expect(comments!.comments).toNot(beEmpty())
+      }
+
+      it("decodes Comment - long") {
+        let comments: Comments? = JSONFileReader.JSON(fromFile: "long_comments_4772308") >>- decode
+
+        expect(comments!.comments).toNot(beEmpty())
+      }
     }
 
     describe("test data") {
@@ -125,6 +137,26 @@ class ModelDecodeSpecs: QuickSpec {
         expect(newsExtra!.shortComments).to(equal(200))
         expect(newsExtra!.longComments).to(equal(300))
         expect(newsExtra!.comments).to(equal(500))
+      }
+
+      it("decodes Comment") {
+        let comment: Comment? = JSONFileReader.JSON(fromFile: "comment") >>- decode
+
+        expect(comment).toNot(beNil())
+        expect(comment!.authorName).to(equal("The Master"))
+        expect(comment!.content).to(equal("How about that? I win."))
+        expect(comment!.likes).to(equal(1200))
+        expect(comment!.repliedAt).to(equal(NSDate(timeIntervalSince1970: 1234567890)))
+        expect(comment!.avatarURL).to(equal(NSURL(string: imageURLString)!))
+      }
+
+      it("decodes Comment with ReplyToComment") {
+        let comment: Comment? = JSONFileReader.JSON(fromFile: "comment_with_reply_to") >>- decode
+
+        expect(comment).toNot(beNil())
+        expect(comment!.replyToComment).toNot(beNil())
+        expect(comment!.replyToComment!.authorName).to(equal("Doctor Who"))
+        expect(comment!.replyToComment!.content).to(equal("Just regenerate! Regenerate!"))
       }
     }
   }
