@@ -65,5 +65,45 @@ class DailyAPISpecs: QuickSpec {
       expect(newsExtra!.longComments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
       expect(newsExtra!.comments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
     }
+
+    it("loads short comments") {
+      let newsId = 4772308 // `Comments.comments` won't be empty
+      var comments: Comments? = nil
+      let request = api.shortComments(newsId) { commentsFromAPI in
+        comments = commentsFromAPI
+      }
+
+      expect(request.request.URLString).to(contain("short"))
+      expect(comments).toEventuallyNot(beNil(), timeout: 10)
+      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: 10)
+    }
+
+    it("loads long comments") {
+      let newsId = 4772308 // `Comments.comments` won't be empty
+      var comments: Comments? = nil
+      let request = api.longComments(newsId) { commentsFromAPI in
+        comments = commentsFromAPI
+      }
+
+      expect(request.request.URLString).to(contain("long"))
+      expect(comments).toEventuallyNot(beNil(), timeout: 10)
+      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: 10)
+    }
+
+    it("loads all comments") {
+      let newsId = 4772308 // `Comments.comments` won't be empty
+      var shortComments: Comments? = nil
+      var longComments: Comments? = nil
+      let (shortCommentsRequest, longCommentsRequest) = api.comments(newsId, shortCommentsHandler: { shortCommentsFromAPI in
+          shortComments = shortCommentsFromAPI
+        }, longCommentsHandler: { longCommentsFromAPI in
+          longComments = longCommentsFromAPI
+      })
+
+      expect(shortCommentsRequest.request.URLString).to(contain("short"))
+      expect(longCommentsRequest.request.URLString).to(contain("long"))
+      expect(shortComments).toEventuallyNot(beNil(), timeout: 10)
+      expect(longComments).toEventuallyNot(beNil(), timeout: 10)
+    }
   }
 }

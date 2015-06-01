@@ -21,6 +21,8 @@ public final class DailyAPI {
     case Daily(forDate: NSDate)
     case News(newsId: Int)
     case NewsExtra(newsId: Int)
+    case ShortComments(newsId: Int)
+    case LongComments(newsId: Int)
 
     var path: String {
       switch self {
@@ -33,6 +35,10 @@ public final class DailyAPI {
         return "/news/\(newsId)"
       case .NewsExtra(let newsId):
         return "/news-extra/\(newsId)"
+      case .ShortComments(let newsId):
+        return "/news/\(newsId)/short-comments"
+      case .LongComments(let newsId):
+        return "/news/\(newsId)/long-comments"
       }
     }
 
@@ -102,6 +108,44 @@ public final class DailyAPI {
   */
   public final func newsExtra(newsId: Int, completionHandler: (NewsExtra?) -> Void) -> Request {
     return request(DailyRouter.NewsExtra(newsId: newsId), completionHandler: completionHandler)
+  }
+
+  /**
+      Creates a `Alamofire.Request` to fetch the short `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+      :param: newsId            The indentifier key for the short `Comments`.
+      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+
+      :returns: The request.
+  */
+  public final func shortComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
+    return request(DailyRouter.ShortComments(newsId: newsId), completionHandler: commentsHandler)
+  }
+
+  /**
+  Creates a `Alamofire.Request` to fetch the long `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+  :param: newsId            The indentifier key for the long `Comments`.
+  :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+
+  :returns: The request.
+  */
+  public final func longComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
+    return request(DailyRouter.LongComments(newsId: newsId), completionHandler: commentsHandler)
+  }
+
+  /**
+  Creates a `Alamofire.Request` to fetch all the `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
+
+  :param: newsId            The indentifier key for the `Comments`.
+  :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+
+  :returns: The request.
+  */
+  public final func comments(newsId: Int, shortCommentsHandler: (Comments?) -> Void, longCommentsHandler: (Comments?) -> Void) -> (shortCommentsRequest: Request, longCommentsRequest: Request) {
+    let shortCommentsRequest = request(DailyRouter.ShortComments(newsId: newsId), completionHandler: shortCommentsHandler)
+    let longCommentsRequest = request(DailyRouter.LongComments(newsId: newsId), completionHandler: longCommentsHandler)
+    return (shortCommentsRequest: shortCommentsRequest, longCommentsRequest: longCommentsRequest)
   }
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T? -> Void) -> Request {
