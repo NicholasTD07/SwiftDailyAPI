@@ -18,7 +18,7 @@ public struct NewsExtra {
 }
 
 extension NewsExtra: Decodable {
-  public static func create(popularity: Int)(shortComments: Int)(longComments: Int)(comments: Int) -> NewsExtra {
+  private static func create(popularity: Int)(shortComments: Int)(longComments: Int)(comments: Int) -> NewsExtra {
     return NewsExtra(popularity: popularity, shortComments: shortComments, longComments: longComments, comments: comments)
   }
 
