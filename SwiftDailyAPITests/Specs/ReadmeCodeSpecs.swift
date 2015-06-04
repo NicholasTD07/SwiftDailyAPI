@@ -13,7 +13,7 @@ import SwiftDailyAPI
 class ReadmeCodeSpecs: QuickSpec {
   override func spec() {
     describe("Code in README.md") {
-      fit("runs") { // TODO: remove f
+      it("runs") {
         // Setup
         var latestDaily: LatestDaily?
         var daily: Daily?
