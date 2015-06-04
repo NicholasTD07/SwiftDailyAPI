@@ -69,9 +69,13 @@ api.comments(newsId, shortCommentsHandler: { comments in
     longComments = comments
     println(longComments?.comments)
 })
+
+// Then
+// expect all vars in `Setup` section to not be nil
+// code in `ReadmeCodeSpecs.swift`
 ```
 
-This code is tested in [ReadmeCodeSpecs.swift](./SwiftDailyAPITests/Specs/ReadmeCodeSpecs.swift). There's also a `Then` part in the spec which expects all the vars in the `Setup` to be not nil.
+This code is tested in [ReadmeCodeSpecs.swift](./SwiftDailyAPITests/Specs/ReadmeCodeSpecs.swift). There's also a `Then` part in the spec which expects all the vars in the `Setup` to not be nil.
 
 ## Frameworks
 
