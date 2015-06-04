@@ -70,7 +70,7 @@ api.comments(newsId, shortCommentsHandler: { comments in
 })
 ```
 
-This code is tested in `./SwiftDailyAPITests/Specs/ReadmeCodeSpecs.swift`. There's also a 'When' part in the spec which expects all the vars in the 'Setup' to be not nil.
+This code is tested in [ReadmeCodeSpecs.swift](./SwiftDailyAPITests/Specs/ReadmeCodeSpecs.swift). There's also a 'When' part in the spec which expects all the vars in the 'Setup' to be not nil.
 
 ## Frameworks
 
