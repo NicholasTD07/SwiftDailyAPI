@@ -10,7 +10,9 @@ import Alamofire
 import Argo
 import Runes
 
-/// Note: Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.
+/// Notes:
+///  * Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.
+///  * All `completionHandlers` will be called on `NSThread.mainThread()`. This is guaranteed by the execution of Alamofire's `Request` callback .
 public final class DailyAPI {
   private let manager: Manager
 
