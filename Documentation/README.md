@@ -26,16 +26,51 @@ for up to date installation instructions.
 ```swift
 import SwiftDailyAPI
 
-let api = DailyAPI()
+var latestDaily: LatestDaily?
+var daily: Daily?
+var news: News?
+var newsExtra: NewsExtra?
+var shortComments, longComments: Comments?
 
-api.latestDaily { (latestDaily: LatestDaily?) in
-    if let latestDaily = latestDaily {
-        println(latestDaily.date)
-        println(latestDaily.news)
-        println(latestDaily.topNews)
-    }
+// Given
+let newsId = 4772308
+let date = NSDate.dateFromString("20150525", format: DailyConstants.dateFormat)!
+let api = DailyAPI(userAgent: "SwiftDailyAPI_ReadMe")
+
+// When
+api.latestDaily { latestDailyFromAPI in
+  latestDaily = latestDailyFromAPI
+  println(latestDaily?.news)
+  println(latestDaily?.topNews)
 }
+
+api.daily(forDate: date) { dailyFromAPI in
+  daily = dailyFromAPI
+  println(daily?.news)
+}
+
+api.news(newsId) { newsFromAPI in
+  news = newsFromAPI
+  println(news?.newsId)
+  println(news?.title)
+}
+
+api.newsExtra(newsId) { newsExtraFromAPI in
+  newsExtra = newsExtraFromAPI
+  println(newsExtra?.popularity)
+  println(newsExtra?.comments)
+}
+
+api.comments(newsId, shortCommentsHandler: { comments in
+  shortComments = comments
+  println(shortComments?.comments)
+  }, longCommentsHandler: { comments in
+    longComments = comments
+    println(longComments?.comments)
+})
 ```
+
+This code is tested in `./SwiftDailyAPITests/Specs/ReadmeCodeSpecs.swift`. There's also a 'When' part in the spec which expects all the vars in the 'Setup' to be not nil.
 
 ## Frameworks
 
