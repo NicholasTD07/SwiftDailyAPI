@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+carthage update  --platform all --use-ssh --use-submodules --no-use-binaries
+xcodebuild -workspace 'SwiftDailyAPI.xcworkspace' -scheme 'SwiftDailyAPI-iOS' -sdk iphonesimulator clean build test | xcpretty --color
