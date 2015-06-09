@@ -68,6 +68,7 @@
 		7598B03A1B13399E00E55D79 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272501B131CC8006991D8 /* news.json */; };
 		7598B03C1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
 		7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
+		75CE7AE31B271DB30001F534 /* Xcode7PlusSwift2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */; };
 		75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D256991B12AF87005F6645 /* Argo.framework */; };
 		75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D2569B1B12AF90005F6645 /* Runes.framework */; };
 		75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
@@ -172,6 +173,7 @@
 		7598B02D1B132D6A00E55D79 /* NewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMeta.swift; sourceTree = "<group>"; };
 		7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsMeta.swift; sourceTree = "<group>"; };
 		7598D26B1B169F280096217F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xcode7PlusSwift2.swift; sourceTree = "<group>"; };
 		75D256991B12AF87005F6645 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
 		75D2569B1B12AF90005F6645 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		75D2724C1B1315D5006991D8 /* news_meta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_meta.json; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				7598B0161B1322C700E55D79 /* TestDataModelDecodingSpecs.swift */,
 				75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */,
 				755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */,
+				75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				75522BA41B1C7EA4003DA78E /* RealDataModelDecodingSpecs.swift in Sources */,
 				7547BAAC1B1FC7FA00F4B7A5 /* ReadmeCodeSpecs.swift in Sources */,
 				75522BA71B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */,
+				75CE7AE31B271DB30001F534 /* Xcode7PlusSwift2.swift in Sources */,
 				75F919611B15F3DB0053FF42 /* DailyAPISpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -819,6 +823,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -842,6 +847,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -898,6 +904,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -927,6 +934,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
