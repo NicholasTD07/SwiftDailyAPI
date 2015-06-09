@@ -55,10 +55,10 @@ public final class DailyAPI {
   /**
       Initialize DailyAPI with optional parameters: configuration and userAgent.
 
-      :param: configuration The configuration used to construct the underlying NSURLSession.
-      :param: userAgent     The "User-Agent" header. Defaults to "SwiftDailyAPI/:version"
+      - parameter configuration: The configuration used to construct the underlying NSURLSession.
+      - parameter userAgent:     The "User-Agent" header. Defaults to "SwiftDailyAPI/:version"
 
-      :returns: A new DailyAPI.
+      - returns: A new DailyAPI.
   */
   public init(configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(), userAgent: String = "SwiftDailyAPI/\(SwiftDailyAPIVersionNumber)") {
     configuration.HTTPAdditionalHeaders = ["User-Agent": userAgent]
@@ -68,9 +68,9 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the `LatestDaily`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+      - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-      :returns: The request.
+      - returns: The request.
   */
   public final func latestDaily(completionHandler: (LatestDaily?) -> Void) -> Request {
     return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
@@ -79,10 +79,10 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the `Daily` at given date. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: date              The date when the `Daily` is published.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+      - parameter date:              The date when the `Daily` is published.
+      - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-      :returns: The request.
+      - returns: The request.
   */
   public final func daily(forDate date: NSDate, completionHandler: (Daily?) -> Void) -> Request {
     return request(DailyRouter.Daily(forDate: date), completionHandler: completionHandler)
@@ -91,10 +91,10 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the `News` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: newsId            The indentifier key for the `News`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+      - parameter newsId:            The indentifier key for the `News`.
+      - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-      :returns: The request.
+      - returns: The request.
   */
   public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
     return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
@@ -103,10 +103,10 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the `NewsExtra` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: newsId            The indentifier key for the `NewsExtra`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+      - parameter newsId:            The indentifier key for the `NewsExtra`.
+      - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-      :returns: The request.
+      - returns: The request.
   */
   public final func newsExtra(newsId: Int, completionHandler: (NewsExtra?) -> Void) -> Request {
     return request(DailyRouter.NewsExtra(newsId: newsId), completionHandler: completionHandler)
@@ -115,10 +115,10 @@ public final class DailyAPI {
   /**
       Creates a `Alamofire.Request` to fetch the short `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-      :param: newsId            The indentifier key for the short `Comments`.
-      :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+      - parameter newsId:            The indentifier key for the short `Comments`.
+      - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-      :returns: The request.
+      - returns: The request.
   */
   public final func shortComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
     return request(DailyRouter.ShortComments(newsId: newsId), completionHandler: commentsHandler)
@@ -127,10 +127,10 @@ public final class DailyAPI {
   /**
   Creates a `Alamofire.Request` to fetch the long `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-  :param: newsId            The indentifier key for the long `Comments`.
-  :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+  - parameter newsId:            The indentifier key for the long `Comments`.
+  - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-  :returns: The request.
+  - returns: The request.
   */
   public final func longComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
     return request(DailyRouter.LongComments(newsId: newsId), completionHandler: commentsHandler)
@@ -139,10 +139,10 @@ public final class DailyAPI {
   /**
   Creates a `Alamofire.Request` to fetch all the `Comments` with given `newsId`. Once the request has finished then the JSON will be decoded and it will call the completionHandler with the deceded object.
 
-  :param: newsId            The indentifier key for the `Comments`.
-  :param: completionHandler A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
+  - parameter newsId:            The indentifier key for the `Comments`.
+  - parameter completionHandler: A closure to be executed once the request has finished and the response JSON has been decoded. The closure takes one argument: the optional decoded object.
 
-  :returns: The request.
+  - returns: The request.
   */
   public final func comments(newsId: Int, shortCommentsHandler: (Comments?) -> Void, longCommentsHandler: (Comments?) -> Void) -> (shortCommentsRequest: Request, longCommentsRequest: Request) {
     let shortCommentsRequest = request(DailyRouter.ShortComments(newsId: newsId), completionHandler: shortCommentsHandler)

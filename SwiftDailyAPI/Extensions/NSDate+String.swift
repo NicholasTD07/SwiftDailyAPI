@@ -11,11 +11,12 @@ import Foundation
 extension NSDate {
 
   public func daysBefore(days: Int = 1) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: days, toDate: self, options: nil)!
+    // TODO: find out which option to use after having iOS 9.0 document
+    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: self, options: NSCalendarOptions.MatchFirst)!
   }
 
   public func dayBefore() -> NSDate {
-    return daysBefore(days: 1)
+    return daysBefore(1)
   }
 
   // MARK: String
@@ -25,7 +26,7 @@ extension NSDate {
     return dateFormatter.dateFromString(string)
   }
 
-  public func toString(#format: String) -> String {
+  public func toString(format format: String) -> String {
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = format
     return dateFormatter.stringFromDate(self)

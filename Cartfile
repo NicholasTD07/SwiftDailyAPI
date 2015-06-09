@@ -1,2 +1,2 @@
-github "thoughtbot/Argo" ~> 1.0.2
-github "Alamofire/Alamofire" ~> 1.2.2
+github "thoughtbot/Argo" "td-swift-2"
+github "NicholasTD07/Alamofire" "swift-2"

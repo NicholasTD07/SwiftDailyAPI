@@ -8,10 +8,16 @@
 
 import Quick
 import Nimble
+
 import SwiftDailyAPI
 
 class DailyInMemoryStoreSpecs: QuickSpec {
   override func spec() {
+    describe("Xcode7 + Swift 2") {
+      it("is AWESOME!") {
+      }
+    }
+
     describe("when there's nothing in store") {
       it("loads data from API") {
         let store = DailyInMemoryStore()

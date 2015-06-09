@@ -41,33 +41,33 @@ let api = DailyAPI(userAgent: "SwiftDailyAPI_ReadMe")
 // When
 api.latestDaily { latestDailyFromAPI in
   latestDaily = latestDailyFromAPI
-  println(latestDaily?.news)
-  println(latestDaily?.topNews)
+  print(latestDaily?.news)
+  print(latestDaily?.topNews)
 }
 
 api.daily(forDate: date) { dailyFromAPI in
   daily = dailyFromAPI
-  println(daily?.news)
+  print(daily?.news)
 }
 
 api.news(newsId) { newsFromAPI in
   news = newsFromAPI
-  println(news?.newsId)
-  println(news?.title)
+  print(news?.newsId)
+  print(news?.title)
 }
 
 api.newsExtra(newsId) { newsExtraFromAPI in
   newsExtra = newsExtraFromAPI
-  println(newsExtra?.popularity)
-  println(newsExtra?.comments)
+  print(newsExtra?.popularity)
+  print(newsExtra?.comments)
 }
 
 api.comments(newsId, shortCommentsHandler: { comments in
   shortComments = comments
-  println(shortComments?.comments)
+  print(shortComments?.comments)
   }, longCommentsHandler: { comments in
     longComments = comments
-    println(longComments?.comments)
+    print(longComments?.comments)
 })
 
 // Then

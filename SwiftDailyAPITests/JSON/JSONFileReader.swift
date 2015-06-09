@@ -6,7 +6,11 @@ class JSONFileReader {
 
       if path != nil {
         if let data = NSData(contentsOfFile: path!) {
-          return NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)
+          do {
+            return try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
+          } catch _ {
+            return nil
+          }
         }
       }
 

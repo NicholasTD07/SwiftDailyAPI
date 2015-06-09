@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		753053E41B19C27200B28354 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753053E31B19C27200B28354 /* Box.framework */; };
-		753053E61B19C27F00B28354 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753053E51B19C27F00B28354 /* Box.framework */; };
 		753053E81B19CAF500B28354 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753053E71B19CAF500B28354 /* Constants.swift */; };
 		753053E91B19CAF500B28354 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753053E71B19CAF500B28354 /* Constants.swift */; };
 		753053ED1B19CE1100B28354 /* news_4770416.json in Resources */ = {isa = PBXBuildFile; fileRef = 753053EA1B19CCEC00B28354 /* news_4770416.json */; };
@@ -206,7 +204,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753053E41B19C27200B28354 /* Box.framework in Frameworks */,
 				75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */,
 				75F919621B15F7280053FF42 /* Argo.framework in Frameworks */,
 				75F919631B15F7280053FF42 /* Runes.framework in Frameworks */,
@@ -227,7 +224,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753053E61B19C27F00B28354 /* Box.framework in Frameworks */,
 				75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */,
 				75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */,
 				75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */,
@@ -538,6 +534,7 @@
 		756AAE5B1B12A3A40077DFFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = nickTD;
 				TargetAttributes = {

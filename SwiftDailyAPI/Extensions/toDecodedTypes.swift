@@ -13,10 +13,10 @@ public func toNSDate(format: String)(dateString: String) -> Decoded<NSDate> {
   return .fromOptional(NSDate.dateFromString(dateString, format: format))
 }
 
-public func toNSDate(#fromTimeStamp: NSTimeInterval) -> Decoded<NSDate> {
+public func toNSDate(fromTimeStamp fromTimeStamp: NSTimeInterval) -> Decoded<NSDate> {
   return pure(NSDate(timeIntervalSince1970: fromTimeStamp))
 }
 
 public func toInt(string: String) -> Decoded<Int> {
-  return .fromOptional(string.toInt())
+  return .fromOptional(Int(string))
 }
