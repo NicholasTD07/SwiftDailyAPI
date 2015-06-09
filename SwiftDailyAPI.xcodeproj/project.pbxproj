@@ -46,6 +46,12 @@
 		75522BA51B1C7EA6003DA78E /* RealDataModelDecodingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */; };
 		75522BA71B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */; };
 		75522BA81B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */; };
+		755F204C1B26C682001AB066 /* DailyInMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204B1B26C681001AB066 /* DailyInMemoryStore.swift */; };
+		755F204D1B26C682001AB066 /* DailyInMemoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204B1B26C681001AB066 /* DailyInMemoryStore.swift */; };
+		755F204F1B26C772001AB066 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204E1B26C772001AB066 /* Types.swift */; };
+		755F20501B26C772001AB066 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204E1B26C772001AB066 /* Types.swift */; };
+		755F20521B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
+		755F20531B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
 		756AAE6A1B12A3A40077DFFF /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756AAE701B12A3A40077DFFF /* SwiftDailyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */; };
 		756AAE811B12A3C60077DFFF /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
@@ -151,6 +157,9 @@
 		75522B9F1B1C1E3C003DA78E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealDataModelDecodingSpecs.swift; sourceTree = "<group>"; };
 		75522BA61B1C85D1003DA78E /* DecodingPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodingPerformanceTests.swift; sourceTree = "<group>"; };
+		755F204B1B26C681001AB066 /* DailyInMemoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInMemoryStore.swift; sourceTree = "<group>"; };
+		755F204E1B26C772001AB066 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInMemoryStoreSpecs.swift; sourceTree = "<group>"; };
 		756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDailyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AAE681B12A3A40077DFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDailyAPI.h; sourceTree = "<group>"; };
@@ -295,7 +304,9 @@
 		756AAE661B12A3A40077DFFF /* SwiftDailyAPI */ = {
 			isa = PBXGroup;
 			children = (
+				755F204E1B26C772001AB066 /* Types.swift */,
 				75F9195B1B15F1EB0053FF42 /* DailyAPI.swift */,
+				755F204B1B26C681001AB066 /* DailyInMemoryStore.swift */,
 				7598B0181B13238C00E55D79 /* Models */,
 				75F919541B15DD300053FF42 /* Extensions */,
 				756AAE671B12A3A40077DFFF /* Supporting Files */,
@@ -349,6 +360,7 @@
 				75F919581B15F1310053FF42 /* DailyAPISpecs.swift */,
 				7598B0161B1322C700E55D79 /* TestDataModelDecodingSpecs.swift */,
 				75522BA21B1C7E9E003DA78E /* RealDataModelDecodingSpecs.swift */,
+				755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -634,6 +646,8 @@
 				75F9195C1B15F1EB0053FF42 /* DailyAPI.swift in Sources */,
 				75F919561B15DD8B0053FF42 /* NSDate+String.swift in Sources */,
 				75522B881B1B1CBD003DA78E /* toDecodedTypes.swift in Sources */,
+				755F204F1B26C772001AB066 /* Types.swift in Sources */,
+				755F204C1B26C682001AB066 /* DailyInMemoryStore.swift in Sources */,
 				7598B02E1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
 				75522B911B1B2104003DA78E /* NewsExtra.swift in Sources */,
 				75E238001B13520D00F6DE3E /* LatestDaily.swift in Sources */,
@@ -652,6 +666,7 @@
 			files = (
 				756AAE811B12A3C60077DFFF /* JSONFileReader.swift in Sources */,
 				753B430E1B198BAA00EC8FEA /* TestDataModelDecodingSpecs.swift in Sources */,
+				755F20521B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */,
 				75522BA41B1C7EA4003DA78E /* RealDataModelDecodingSpecs.swift in Sources */,
 				7547BAAC1B1FC7FA00F4B7A5 /* ReadmeCodeSpecs.swift in Sources */,
 				75522BA71B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */,
@@ -666,6 +681,8 @@
 				75F9195D1B15F1EB0053FF42 /* DailyAPI.swift in Sources */,
 				75F919571B15DD8B0053FF42 /* NSDate+String.swift in Sources */,
 				75522B891B1B1CC4003DA78E /* toDecodedTypes.swift in Sources */,
+				755F20501B26C772001AB066 /* Types.swift in Sources */,
+				755F204D1B26C682001AB066 /* DailyInMemoryStore.swift in Sources */,
 				7598B02F1B132D6A00E55D79 /* NewsMeta.swift in Sources */,
 				75522B921B1B2104003DA78E /* NewsExtra.swift in Sources */,
 				75E238011B13520D00F6DE3E /* LatestDaily.swift in Sources */,
@@ -684,6 +701,7 @@
 			files = (
 				75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */,
 				75F919601B15F3DA0053FF42 /* DailyAPISpecs.swift in Sources */,
+				755F20531B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */,
 				75522BA51B1C7EA6003DA78E /* RealDataModelDecodingSpecs.swift in Sources */,
 				7547BAAD1B1FC7FA00F4B7A5 /* ReadmeCodeSpecs.swift in Sources */,
 				75522BA81B1C85D1003DA78E /* DecodingPerformanceTests.swift in Sources */,
