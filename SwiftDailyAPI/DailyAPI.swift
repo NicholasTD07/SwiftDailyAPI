@@ -72,7 +72,7 @@ public final class DailyAPI {
 
       - returns: The request.
   */
-  public final func latestDaily(completionHandler: (LatestDaily?) -> Void) -> Request {
+  public final func latestDaily(completionHandler: (LatestDaily) -> Void) -> Request {
     return request(DailyRouter.LastestDaily, completionHandler: completionHandler)
   }
 
@@ -84,7 +84,7 @@ public final class DailyAPI {
 
       - returns: The request.
   */
-  public final func daily(forDate date: NSDate, completionHandler: (Daily?) -> Void) -> Request {
+  public final func daily(forDate date: NSDate, completionHandler: (Daily) -> Void) -> Request {
     return request(DailyRouter.Daily(forDate: date), completionHandler: completionHandler)
   }
 
@@ -96,7 +96,7 @@ public final class DailyAPI {
 
       - returns: The request.
   */
-  public final func news(newsId: Int, completionHandler: (News?) -> Void) -> Request {
+  public final func news(newsId: Int, completionHandler: NewsHandler) -> Request {
     return request(DailyRouter.News(newsId: newsId), completionHandler: completionHandler)
   }
 
@@ -108,7 +108,7 @@ public final class DailyAPI {
 
       - returns: The request.
   */
-  public final func newsExtra(newsId: Int, completionHandler: (NewsExtra?) -> Void) -> Request {
+  public final func newsExtra(newsId: Int, completionHandler: (NewsExtra) -> Void) -> Request {
     return request(DailyRouter.NewsExtra(newsId: newsId), completionHandler: completionHandler)
   }
 
@@ -120,7 +120,7 @@ public final class DailyAPI {
 
       - returns: The request.
   */
-  public final func shortComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
+  public final func shortComments(newsId: Int, commentsHandler: (Comments) -> Void) -> Request {
     return request(DailyRouter.ShortComments(newsId: newsId), completionHandler: commentsHandler)
   }
 
@@ -132,7 +132,7 @@ public final class DailyAPI {
 
   - returns: The request.
   */
-  public final func longComments(newsId: Int, commentsHandler: (Comments?) -> Void) -> Request {
+  public final func longComments(newsId: Int, commentsHandler: (Comments) -> Void) -> Request {
     return request(DailyRouter.LongComments(newsId: newsId), completionHandler: commentsHandler)
   }
 
@@ -144,16 +144,19 @@ public final class DailyAPI {
 
   - returns: The request.
   */
-  public final func comments(newsId: Int, shortCommentsHandler: (Comments?) -> Void, longCommentsHandler: (Comments?) -> Void) -> (shortCommentsRequest: Request, longCommentsRequest: Request) {
+  public final func comments(newsId: Int, shortCommentsHandler: (Comments) -> Void, longCommentsHandler: (Comments) -> Void) -> (shortCommentsRequest: Request, longCommentsRequest: Request) {
     let shortCommentsRequest = request(DailyRouter.ShortComments(newsId: newsId), completionHandler: shortCommentsHandler)
     let longCommentsRequest = request(DailyRouter.LongComments(newsId: newsId), completionHandler: longCommentsHandler)
     return (shortCommentsRequest: shortCommentsRequest, longCommentsRequest: longCommentsRequest)
   }
 
-  private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T? -> Void) -> Request {
+  private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T -> Void) -> Request {
     return manager.request(URLRequest)
                   .responseJSON { (request, response, JSON, error) in
-                    completionHandler(JSON >>- decode)
+                    let decoded: T? = JSON >>- decode
+                    if let decoded = decoded {
+                      completionHandler(decoded)
+                    }
                   }
   }
 }

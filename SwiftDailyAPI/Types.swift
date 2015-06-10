@@ -8,6 +8,10 @@
 
 import Foundation
 
+public typealias LatestDailyHandler = (LatestDailyType) -> Void
+public typealias DailyHandler = (DailyType) -> Void
+public typealias NewsHandler = (News) -> Void
+
 public protocol DailyType {
   var date: NSDate { get }
   var news: [NewsMeta] { get }
@@ -17,6 +21,3 @@ public protocol LatestDailyType: DailyType {
   var topNews: [TopNewsMeta] { get }
 }
 
-public typealias LatestDailyHandler = (LatestDailyType) -> Void
-public typealias DailyHandler = (DailyType) -> Void
-public typealias NewsHandler = (News) -> Void

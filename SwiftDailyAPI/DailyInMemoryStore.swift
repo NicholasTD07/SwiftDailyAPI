@@ -19,13 +19,11 @@ public class DailyInMemoryStore {
 
   public func latestDaily(latestDailyHandler: LatestDailyHandler?) {
     dailyAPI.latestDaily() { latestDaily in
-      if let latestDaily = latestDaily {
-        self.dailies[latestDaily.date] = latestDaily
+      self.dailies[latestDaily.date] = latestDaily
 
-        self.latestDate = latestDaily.date
+      self.latestDate = latestDaily.date
 
-        latestDailyHandler?(latestDaily)
-      }
+      latestDailyHandler?(latestDaily)
     }
   }
 
@@ -47,19 +45,15 @@ public class DailyInMemoryStore {
 
   func dailyFromAPI(forDate date: NSDate, dailyHandler: DailyHandler?) {
     dailyAPI.daily(forDate: date) { daily in
-      if let daily = daily {
-        self.dailies[date] = daily
-        dailyHandler?(daily)
-      }
+      self.dailies[date] = daily
+      dailyHandler?(daily)
     }
   }
 
   func newsFromAPI(newsId: Int, newsHandler: NewsHandler?) {
     dailyAPI.news(newsId) { news in
-      if let news = news {
-        self.news[newsId] = news
-        newsHandler?(news)
-      }
+      self.news[newsId] = news
+      newsHandler?(news)
     }
   }
 }
