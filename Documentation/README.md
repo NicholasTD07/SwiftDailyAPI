@@ -4,6 +4,11 @@ An API framework for ZhiHu's Daily News, built in Swift.
 
 ## Installation
 
+### Minimum Requirement
+
+* Xcode 7.0 beta
+* Swift 2.0
+
 ### [Carthage]
 
 [Carthage]: https://github.com/Carthage/Carthage
