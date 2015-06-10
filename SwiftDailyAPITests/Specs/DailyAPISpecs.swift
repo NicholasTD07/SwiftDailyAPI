@@ -12,6 +12,7 @@ import SwiftDailyAPI
 
 class DailyAPISpecs: QuickSpec {
   override func spec() {
+    let timeout: NSTimeInterval = 10
     let api = DailyAPI(userAgent: "SwiftDailySpec")
 
     it("loads latest daily") {
@@ -21,10 +22,10 @@ class DailyAPISpecs: QuickSpec {
         latestDaily = latestDailyFromAPI
       }
 
-      expect(latestDaily).toEventuallyNot(beNil(), timeout: 10)
-      expect(latestDaily!.date).toEventuallyNot(beNil(), timeout: 10)
-      expect(latestDaily!.news).toEventuallyNot(beEmpty(), timeout: 10)
-      expect(latestDaily!.topNews).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(latestDaily).toEventuallyNot(beNil(), timeout: timeout)
+      expect(latestDaily!.date).toEventuallyNot(beNil(), timeout: timeout)
+      expect(latestDaily!.news).toEventuallyNot(beEmpty(), timeout: timeout)
+      expect(latestDaily!.topNews).toEventuallyNot(beEmpty(), timeout: timeout)
     }
 
     it("loads daily news for a date") {
@@ -35,9 +36,9 @@ class DailyAPISpecs: QuickSpec {
         daily = dailyFromAPI
       }
 
-      expect(daily).toEventuallyNot(beNil(), timeout: 10)
-      expect(daily!.date).toEventually(equal(date), timeout: 10)
-      expect(daily!.news).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(daily).toEventuallyNot(beNil(), timeout: timeout)
+      expect(daily!.date).toEventually(equal(date), timeout: timeout)
+      expect(daily!.news).toEventuallyNot(beEmpty(), timeout: timeout)
     }
 
     it("loads news for a newsId") {
@@ -48,10 +49,10 @@ class DailyAPISpecs: QuickSpec {
         news = newsFromAPI
       }
 
-      expect(news).toEventuallyNot(beNil(), timeout: 10)
-      expect(news!.newsId).toEventually(equal(newsId), timeout: 10)
-      expect(news!.title).toEventuallyNot(beNil(), timeout: 10)
-      expect(news!.body).toEventuallyNot(beNil(), timeout: 10)
+      expect(news).toEventuallyNot(beNil(), timeout: timeout)
+      expect(news!.newsId).toEventually(equal(newsId), timeout: timeout)
+      expect(news!.title).toEventuallyNot(beNil(), timeout: timeout)
+      expect(news!.body).toEventuallyNot(beNil(), timeout: timeout)
     }
 
     it("loads news extra for a newsId") {
@@ -62,11 +63,11 @@ class DailyAPISpecs: QuickSpec {
         newsExtra = newsExtraFromAPI
       }
 
-      expect(newsExtra).toEventuallyNot(beNil(), timeout: 10)
-      expect(newsExtra!.popularity).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
-      expect(newsExtra!.shortComments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
-      expect(newsExtra!.longComments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
-      expect(newsExtra!.comments).toEventually(beGreaterThanOrEqualTo(0), timeout: 10)
+      expect(newsExtra).toEventuallyNot(beNil(), timeout: timeout)
+      expect(newsExtra!.popularity).toEventually(beGreaterThanOrEqualTo(0), timeout: timeout)
+      expect(newsExtra!.shortComments).toEventually(beGreaterThanOrEqualTo(0), timeout: timeout)
+      expect(newsExtra!.longComments).toEventually(beGreaterThanOrEqualTo(0), timeout: timeout)
+      expect(newsExtra!.comments).toEventually(beGreaterThanOrEqualTo(0), timeout: timeout)
     }
 
     it("loads short comments") {
@@ -78,8 +79,8 @@ class DailyAPISpecs: QuickSpec {
       }
 
       expect(request.request.URLString).to(contain("short"))
-      expect(comments).toEventuallyNot(beNil(), timeout: 10)
-      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(comments).toEventuallyNot(beNil(), timeout: timeout)
+      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
     }
 
     it("loads long comments") {
@@ -91,8 +92,8 @@ class DailyAPISpecs: QuickSpec {
       }
 
       expect(request.request.URLString).to(contain("long"))
-      expect(comments).toEventuallyNot(beNil(), timeout: 10)
-      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: 10)
+      expect(comments).toEventuallyNot(beNil(), timeout: timeout)
+      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
     }
 
     it("loads all comments") {
@@ -108,8 +109,8 @@ class DailyAPISpecs: QuickSpec {
 
       expect(shortCommentsRequest.request.URLString).to(contain("short"))
       expect(longCommentsRequest.request.URLString).to(contain("long"))
-      expect(shortComments).toEventuallyNot(beNil(), timeout: 10)
-      expect(longComments).toEventuallyNot(beNil(), timeout: 10)
+      expect(shortComments).toEventuallyNot(beNil(), timeout: timeout)
+      expect(longComments).toEventuallyNot(beNil(), timeout: timeout)
     }
   }
 }
