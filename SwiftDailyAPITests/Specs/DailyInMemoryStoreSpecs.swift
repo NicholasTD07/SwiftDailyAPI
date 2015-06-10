@@ -9,10 +9,36 @@
 import Quick
 import Nimble
 
+@testable
 import SwiftDailyAPI
-
 class DailyInMemoryStoreSpecs: QuickSpec {
   override func spec() {
+    describe("when there's something in store") {
+      it("loads data from its own cache") {
+        let store = DailyInMemoryStore()
+
+        let newsId = 4791630
+        let date = NSDate.dateFromString("20150525", format: DailyConstants.dateFormat)!
+
+        var daily: DailyType?
+        var news: News?
+
+        store.dailies[date] = Daily(date: date, news: [])
+        store.news[newsId] = News(newsId: 0, title: "", body: "", cssURLs: [], imageURL: NSURL(string: "")!, imageSourceText: "", shareURL: NSURL(string: "")!)
+
+        store.daily(forDate: date) { dailyFromAPI in
+          daily = dailyFromAPI
+        }
+
+        store.news(newsId) { newsFromAPI in
+          news = newsFromAPI
+        }
+
+        expect(daily).toNot(beNil())
+        expect(news).toNot(beNil())
+      }
+    }
+
     describe("when there's nothing in store") {
       it("loads data from API") {
         let store = DailyInMemoryStore()

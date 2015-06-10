@@ -11,9 +11,9 @@ import Foundation
 public class DailyInMemoryStore {
   public var latestDate: NSDate?
 
-  private let dailyAPI = DailyAPI()
-  private var dailies = [NSDate: DailyType]()
-  private var news = [Int: News]()
+  let dailyAPI = DailyAPI()
+  var dailies = [NSDate: DailyType]()
+  var news = [Int: News]()
 
   public init() {}
 
@@ -45,7 +45,7 @@ public class DailyInMemoryStore {
     }
   }
 
-  private func dailyFromAPI(forDate date: NSDate, dailyHandler: DailyHandler?) {
+  func dailyFromAPI(forDate date: NSDate, dailyHandler: DailyHandler?) {
     dailyAPI.daily(forDate: date) { daily in
       if let daily = daily {
         self.dailies[date] = daily
@@ -54,7 +54,7 @@ public class DailyInMemoryStore {
     }
   }
 
-  private func newsFromAPI(newsId: Int, newsHandler: NewsHandler?) {
+  func newsFromAPI(newsId: Int, newsHandler: NewsHandler?) {
     dailyAPI.news(newsId) { news in
       if let news = news {
         self.news[newsId] = news
