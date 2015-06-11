@@ -20,7 +20,7 @@ class DailyInMemoryStoreSpecs: QuickSpec {
         let newsId = 4791630
         let date = NSDate.dateFromString("20150525", format: DailyConstants.dateFormat)!
 
-        var daily: DailyType?
+        var daily: Daily?
         var news: News?
 
         store.dailies[date] = Daily(date: date, news: [])
@@ -43,8 +43,8 @@ class DailyInMemoryStoreSpecs: QuickSpec {
       it("loads data from API") {
         let store = DailyInMemoryStore()
 
-        var latestDaily: LatestDailyType?
-        var daily: DailyType?
+        var latestDaily: LatestDaily?
+        var daily: Daily?
         var news: News?
 
         store.latestDaily { latest in

@@ -10,9 +10,16 @@ import Foundation
 import Argo
 import Runes
 
-public struct Daily: DailyType {
+public struct Daily {
   public let date: NSDate
   public let news: [NewsMeta]
+}
+
+extension Daily {
+  public init(_ latestDaily: LatestDaily) {
+    date = latestDaily.date
+    news = latestDaily.news
+  }
 }
 
 extension Daily: Decodable {

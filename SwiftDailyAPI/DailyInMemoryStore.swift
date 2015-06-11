@@ -10,17 +10,19 @@ import Foundation
 
 public class DailyInMemoryStore {
   public var latestDate: NSDate?
+  public var latestDaily: LatestDaily?
 
   let dailyAPI = DailyAPI()
-  var dailies = [NSDate: DailyType]()
+  var dailies = [NSDate: Daily]()
   var news = [Int: News]()
 
   public init() {}
 
   public func latestDaily(latestDailyHandler: LatestDailyHandler?) {
     dailyAPI.latestDaily() { latestDaily in
-      self.dailies[latestDaily.date] = latestDaily
+      self.dailies[latestDaily.date] = Daily(latestDaily)
 
+      self.latestDaily = latestDaily
       self.latestDate = latestDaily.date
 
       latestDailyHandler?(latestDaily)

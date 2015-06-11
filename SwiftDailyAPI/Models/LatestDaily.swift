@@ -10,7 +10,7 @@ import Foundation
 import Argo
 import Runes
 
-public struct LatestDaily: LatestDailyType {
+public struct LatestDaily {
   public let date: NSDate
   public let news: [NewsMeta]
   public let topNews: [TopNewsMeta]
