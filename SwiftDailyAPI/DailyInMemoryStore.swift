@@ -13,8 +13,8 @@ public class DailyInMemoryStore {
   public var latestDaily: LatestDaily?
 
   let dailyAPI = DailyAPI()
-  var dailies = [NSDate: Daily]()
-  var news = [Int: News]()
+  public internal(set) var dailies = [NSDate: Daily]()
+  public internal(set) var news = [Int: News]()
 
   public init() {}
 
