@@ -12,7 +12,7 @@ public struct DateIndex {
   let date: NSDate
   private var calendar = NSCalendar.currentCalendar()
 
-  public init(_ date: NSDate) {
+  public init(_ date: NSDate = NSDate()) {
     self.date = calendar.startOfDayForDate(date)
   }
 }
