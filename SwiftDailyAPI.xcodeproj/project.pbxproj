@@ -400,13 +400,7 @@
 		7598B0181B13238C00E55D79 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7598B02D1B132D6A00E55D79 /* NewsMeta.swift */,
-				7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */,
-				75E237F51B134D1A00F6DE3E /* Daily.swift */,
-				75E237FF1B13520D00F6DE3E /* LatestDaily.swift */,
-				75319DC91B198525002C7AFF /* News.swift */,
-				75522B901B1B2104003DA78E /* NewsExtra.swift */,
-				75522B9F1B1C1E3C003DA78E /* Comment.swift */,
+				75E4D8581B2EE5B200D27464 /* Daily */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,6 +413,20 @@
 				75D256991B12AF87005F6645 /* Argo.framework */,
 			);
 			name = Mac;
+			sourceTree = "<group>";
+		};
+		75E4D8581B2EE5B200D27464 /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				7598B02D1B132D6A00E55D79 /* NewsMeta.swift */,
+				7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */,
+				75E237F51B134D1A00F6DE3E /* Daily.swift */,
+				75E237FF1B13520D00F6DE3E /* LatestDaily.swift */,
+				75319DC91B198525002C7AFF /* News.swift */,
+				75522B901B1B2104003DA78E /* NewsExtra.swift */,
+				75522B9F1B1C1E3C003DA78E /* Comment.swift */,
+			);
+			name = Daily;
 			sourceTree = "<group>";
 		};
 		75F919521B15B1000053FF42 /* Documentation */ = {
