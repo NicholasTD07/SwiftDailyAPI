@@ -11,8 +11,7 @@ import Foundation
 extension NSDate {
 
   public func daysBefore(days: Int = 1) -> NSDate {
-    // TODO: find out which option to use after having iOS 9.0 document
-    return NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Day, value: days, toDate: self, options: NSCalendarOptions.MatchFirst)!
+    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: days, toDate: self, options: [])!
   }
 
   public func dayBefore() -> NSDate {
