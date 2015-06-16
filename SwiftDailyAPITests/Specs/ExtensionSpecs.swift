@@ -22,7 +22,7 @@ class ExtensionSpecs: QuickSpec {
     }
 
     describe("NSDate.dayslater") {
-      fit("returns date after the date") {
+      it("returns date after the date") {
         let today = NSDate()
         let dayAfterToday = today.daysAfter(1)
 
