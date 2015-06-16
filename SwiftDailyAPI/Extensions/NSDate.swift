@@ -18,6 +18,14 @@ extension NSDate {
     return daysBefore(1)
   }
 
+  public func daysAfter(days: Int = 1) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: days, toDate: self, options: [])!
+  }
+
+  public func dayAfter() -> NSDate {
+    return daysAfter(1)
+  }
+
   // MARK: String
   public class func dateFromString(string: String, format: String) -> NSDate? {
     let dateFormatter = NSDateFormatter()
