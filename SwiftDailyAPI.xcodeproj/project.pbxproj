@@ -94,8 +94,8 @@
 		75E238331B143D7600F6DE3E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238311B143D7600F6DE3E /* Quick.framework */; };
 		75E4D85A1B2EE68900D27464 /* TimelineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4D8591B2EE68900D27464 /* TimelineCollection.swift */; };
 		75E4D85B1B2EE68900D27464 /* TimelineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4D8591B2EE68900D27464 /* TimelineCollection.swift */; };
-		75F919561B15DD8B0053FF42 /* NSDate+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919551B15DD8B0053FF42 /* NSDate+String.swift */; };
-		75F919571B15DD8B0053FF42 /* NSDate+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919551B15DD8B0053FF42 /* NSDate+String.swift */; };
+		75F919561B15DD8B0053FF42 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919551B15DD8B0053FF42 /* NSDate.swift */; };
+		75F919571B15DD8B0053FF42 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919551B15DD8B0053FF42 /* NSDate.swift */; };
 		75F9195C1B15F1EB0053FF42 /* DailyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9195B1B15F1EB0053FF42 /* DailyAPI.swift */; };
 		75F9195D1B15F1EB0053FF42 /* DailyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9195B1B15F1EB0053FF42 /* DailyAPI.swift */; };
 		75F919601B15F3DA0053FF42 /* DailyAPISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919581B15F1310053FF42 /* DailyAPISpecs.swift */; };
@@ -207,7 +207,7 @@
 		75E238301B143D7600F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		75E238311B143D7600F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		75E4D8591B2EE68900D27464 /* TimelineCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollection.swift; sourceTree = "<group>"; };
-		75F919551B15DD8B0053FF42 /* NSDate+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+String.swift"; sourceTree = "<group>"; };
+		75F919551B15DD8B0053FF42 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		75F919581B15F1310053FF42 /* DailyAPISpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAPISpecs.swift; sourceTree = "<group>"; };
 		75F9195B1B15F1EB0053FF42 /* DailyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAPI.swift; sourceTree = "<group>"; };
 		75F919641B1685150053FF42 /* latest_daily_news_20150527.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_daily_news_20150527.json; sourceTree = "<group>"; };
@@ -452,7 +452,7 @@
 		75F919541B15DD300053FF42 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				75F919551B15DD8B0053FF42 /* NSDate+String.swift */,
+				75F919551B15DD8B0053FF42 /* NSDate.swift */,
 				753053EF1B1B18CD00B28354 /* NSURL+Decodable.swift */,
 				75522B871B1B1CBD003DA78E /* toDecodedTypes.swift */,
 			);
@@ -669,7 +669,7 @@
 			files = (
 				754196601B2EEBA80072B9B0 /* DateIndex.swift in Sources */,
 				75F9195C1B15F1EB0053FF42 /* DailyAPI.swift in Sources */,
-				75F919561B15DD8B0053FF42 /* NSDate+String.swift in Sources */,
+				75F919561B15DD8B0053FF42 /* NSDate.swift in Sources */,
 				75522B881B1B1CBD003DA78E /* toDecodedTypes.swift in Sources */,
 				755F204F1B26C772001AB066 /* Types.swift in Sources */,
 				75E4D85A1B2EE68900D27464 /* TimelineCollection.swift in Sources */,
@@ -709,7 +709,7 @@
 			files = (
 				754196611B2EEBA80072B9B0 /* DateIndex.swift in Sources */,
 				75F9195D1B15F1EB0053FF42 /* DailyAPI.swift in Sources */,
-				75F919571B15DD8B0053FF42 /* NSDate+String.swift in Sources */,
+				75F919571B15DD8B0053FF42 /* NSDate.swift in Sources */,
 				75522B891B1B1CC4003DA78E /* toDecodedTypes.swift in Sources */,
 				755F20501B26C772001AB066 /* Types.swift in Sources */,
 				75E4D85B1B2EE68900D27464 /* TimelineCollection.swift in Sources */,
