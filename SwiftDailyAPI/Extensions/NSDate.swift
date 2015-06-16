@@ -9,6 +9,13 @@
 import Foundation
 
 extension NSDate {
+  public class func dateAt(year year: Int, month: Int, day: Int) -> NSDate? {
+    let components = NSDateComponents()
+    components.year = year
+    components.month = month
+    components.day = day
+    return NSCalendar.currentCalendar().dateFromComponents(components)
+  }
 
   public func daysBefore(days: Int = 1) -> NSDate {
     return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -days, toDate: self, options: [])!
