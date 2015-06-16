@@ -11,7 +11,7 @@ import Foundation
 extension NSDate {
 
   public func daysBefore(days: Int = 1) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: days, toDate: self, options: [])!
+    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -days, toDate: self, options: [])!
   }
 
   public func dayBefore() -> NSDate {
