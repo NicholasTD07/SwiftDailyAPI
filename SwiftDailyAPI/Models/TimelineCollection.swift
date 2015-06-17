@@ -8,11 +8,11 @@
 
 import Foundation
 
-public struct TimelineCollection<T> {
+public struct TimelineCollection<T>: CollectionType {
   var storage: [DateIndex: T] = [:]
 
-  var startIndex: DateIndex
-  var endIndex: DateIndex
+  public var startIndex: DateIndex
+  public var endIndex: DateIndex
 
   public init(startDate: NSDate, endDate: NSDate) {
     startIndex = DateIndex(startDate)
