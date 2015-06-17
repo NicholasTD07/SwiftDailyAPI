@@ -31,7 +31,7 @@ public final class DailyAPI {
       case .LastestDaily:
         return "/news/latest"
       case .Daily(let date):
-        let dateString = date.dayBefore().toString(format: "yyyyMMdd")
+        let dateString = date.dayAfter().toString(format: "yyyyMMdd")
         return "/news/before/\(dateString)"
       case .News(let newsId):
         return "/news/\(newsId)"
