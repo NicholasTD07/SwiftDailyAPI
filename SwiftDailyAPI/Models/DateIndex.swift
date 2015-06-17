@@ -9,7 +9,7 @@
 import Foundation
 
 public struct DateIndex {
-  let date: NSDate
+  public let date: NSDate
   private var calendar = NSCalendar.currentCalendar()
 
   public init(_ date: NSDate = NSDate()) {
