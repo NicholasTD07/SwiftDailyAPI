@@ -9,11 +9,14 @@
 import Foundation
 
 public class DailyInMemoryStore {
-  public var latestDate: NSDate?
+  public var latestDate: NSDate { get { return dailies.endIndex.date } }
   public var latestDaily: LatestDaily?
 
   let dailyAPI = DailyAPI()
-  public internal(set) var dailies = [NSDate: Daily]()
+
+  // This is the day when the first Daily was published by ZhiHu.
+  private static let dailyStartDate = NSDate.dateAt(year: 2013, month: 05, day: 19)!
+  public internal(set) var dailies = TimelineCollection<Daily>(startDate: dailyStartDate, endDate: NSDate())
   public internal(set) var news = [Int: News]()
 
   public init() {}
@@ -23,7 +26,6 @@ public class DailyInMemoryStore {
       self.dailies[latestDaily.date] = Daily(latestDaily)
 
       self.latestDaily = latestDaily
-      self.latestDate = latestDaily.date
 
       latestDailyHandler?(latestDaily)
     }
