@@ -60,10 +60,10 @@ extension TimelineCollection {
 extension TimelineCollection {
   public subscript (i: Int) -> T? {
     get {
-      return self[startIndex.advancedBy(i)]
+      return self[endIndex.advancedBy(-i + -1)]
     }
     set {
-      self[startIndex.advancedBy(i)] = newValue
+      self[endIndex.advancedBy(-i + -1)] = newValue
     }
   }
 }

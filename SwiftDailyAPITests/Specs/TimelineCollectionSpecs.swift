@@ -35,7 +35,7 @@ class TimelineCollectionSpecs: QuickSpec {
       //      Plus it is not super important and I don't have much time.
     }
 
-    it("stores stuff") {
+    fit("stores stuff") {
       var timeline = TimelineCollection<Int>(startDate: NSDate(), endDate: NSDate())
       let today = DateIndex()
       let threeDaysAgo = today.advancedBy(-3)
@@ -53,9 +53,9 @@ class TimelineCollectionSpecs: QuickSpec {
 
 
       // The confusing nature of automaticly updating the start and end indexes.
-      expect(timeline[0]).to(equal(-3)) // three days ago
-      expect(timeline[3]).to(equal(0))  // today
-      expect(timeline[8]).to(equal(5))  // five days later
+      expect(timeline[0]).to(equal(5))  // five days later
+      expect(timeline[5]).to(equal(0))  // today
+      expect(timeline[8]).to(equal(-3)) // three days ago
     }
   }
 }
