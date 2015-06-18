@@ -35,7 +35,7 @@ class TimelineCollectionSpecs: QuickSpec {
       //      Plus it is not super important and I don't have much time.
     }
 
-    fit("stores stuff") {
+    it("stores stuff") {
       var timeline = TimelineCollection<Int>(startDate: NSDate(), endDate: NSDate())
       let today = DateIndex()
       let threeDaysAgo = today.advancedBy(-3)
