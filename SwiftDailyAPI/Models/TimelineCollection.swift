@@ -58,12 +58,16 @@ extension TimelineCollection {
 
 // MARK: Subscript with `Int`
 extension TimelineCollection {
+  public func dateIndexAtIndex(i: Int) -> DateIndex {
+    return endIndex.advancedBy(-i + -1)
+  }
+
   public subscript (i: Int) -> T? {
     get {
-      return self[endIndex.advancedBy(-i + -1)]
+      return self[dateIndexAtIndex(i)]
     }
     set {
-      self[endIndex.advancedBy(-i + -1)] = newValue
+      self[dateIndexAtIndex(i)] = newValue
     }
   }
 }
