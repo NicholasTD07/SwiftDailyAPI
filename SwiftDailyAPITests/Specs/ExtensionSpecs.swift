@@ -47,5 +47,11 @@ class ExtensionSpecs: QuickSpec {
         expect(dayAfterToday.compare(today)).to(equal(NSComparisonResult.OrderedDescending))
       }
     }
-}
+
+    it("is comparable") {
+      let today = NSDate()
+      expect(today) < today.dayAfter()
+      expect(today) > today.dayBefore()
+    }
+  }
 }

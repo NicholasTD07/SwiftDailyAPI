@@ -8,6 +8,12 @@
 
 import Foundation
 
+extension NSDate: Comparable { }
+
+public func < (lhs: NSDate, rhs: NSDate) -> Bool {
+  return lhs.compare(rhs) == .OrderedAscending
+}
+
 extension NSDate {
   public class func dateAt(year year: Int, month: Int, day: Int) -> NSDate? {
     let components = NSDateComponents()
@@ -16,7 +22,10 @@ extension NSDate {
     components.day = day
     return NSCalendar.currentCalendar().dateFromComponents(components)
   }
+}
 
+// MARK: forward and backward
+extension NSDate {
   public func daysBefore(days: Int = 1) -> NSDate {
     return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -days, toDate: self, options: [])!
   }
@@ -32,8 +41,10 @@ extension NSDate {
   public func dayAfter() -> NSDate {
     return daysAfter(1)
   }
+}
 
-  // MARK: String
+// MARK: String
+extension NSDate {
   public class func dateFromString(string: String, format: String) -> NSDate? {
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = format
