@@ -15,6 +15,7 @@ import Runes
 ///  * All `completionHandlers` will be called on `NSThread.mainThread()`. This is guaranteed by the execution of Alamofire's `Request` callback .
 public final class DailyAPI {
   private let manager: Manager
+  private let queue = dispatch_queue_create("com.nickTD.api-decoding-queue", DISPATCH_QUEUE_CONCURRENT)
 
   private enum DailyRouter: URLRequestConvertible {
     static let baseURLString = "http://news.at.zhihu.com/api/4"
@@ -151,12 +152,16 @@ public final class DailyAPI {
   }
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T -> Void) -> Request {
-    return manager.request(URLRequest)
-                  .responseJSON { (request, response, JSON, error) in
-                    let decoded: T? = JSON >>- decode
-                    if let decoded = decoded {
-                      completionHandler(decoded)
-                    }
-                  }
+    return manager
+      .request(URLRequest)
+      .response(queue: queue, serializer: Request.JSONResponseSerializer())
+        { (request, response, JSON, error) in
+          let decodedOptional: T? = JSON >>- decode
+          guard let decoded = decodedOptional else { return }
+
+          dispatch_async(dispatch_get_main_queue()) {
+            completionHandler(decoded)
+          }
+    }
   }
 }
