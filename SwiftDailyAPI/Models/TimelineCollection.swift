@@ -56,10 +56,24 @@ extension TimelineCollection {
   }
 }
 
-// MARK: Subscript with `Int`
+// MARK: Subscript with `Int` for use with `UITableView`
 extension TimelineCollection {
+  // Could give dateIndex out of range.
+  // NOTE: Why it is going back in time?
+  // Because in `UITableView` sections' indexes start at top.
+  // The toppest section has index as zero.
+  // And we want to show the timeline in a reverse chronological order.
   public func dateIndexAtIndex(i: Int) -> DateIndex {
     return endIndex.advancedBy(-i + -1)
+  }
+
+  public func indexAtDate(date: NSDate) -> Int {
+    let index = dateIndexAtIndex(0)
+    return DateIndex(date).distanceTo(index)
+  }
+
+  public func dateInRange(date: NSDate) -> Bool {
+    return startIndex.date < date && date < endIndex.date
   }
 
   public subscript (i: Int) -> T? {

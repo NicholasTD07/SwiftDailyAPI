@@ -12,6 +12,16 @@ import SwiftDailyAPI
 
 class TimelineCollectionSpecs: QuickSpec {
   override func spec() {
+    it("indexAtDate") {
+      let timeline = TimelineCollection<Int>(startDate: NSDate().daysBefore(100), endDate: NSDate())
+
+      expect(timeline.indexAtDate(timeline.endIndex.advancedBy(-1).date)).to(equal(0))
+      expect(timeline.indexAtDate(timeline.startIndex.date)).to(equal(timeline.count - 1))
+
+      let dateIndex = timeline.dateIndexAtIndex(50)
+      expect(timeline.indexAtDate(dateIndex.date)).to(equal(50))
+    }
+
     describe("count") {
       var timeline = TimelineCollection<Int>(startDate: NSDate(), endDate: NSDate())
       let today = DateIndex()
