@@ -12,14 +12,21 @@ import SwiftDailyAPI
 
 class TimelineCollectionSpecs: QuickSpec {
   override func spec() {
-    it("indexAtDate") {
+    describe("indexAtDate and dateIndexAtIndex") {
       let timeline = TimelineCollection<Int>(startDate: NSDate().daysBefore(100), endDate: NSDate())
 
-      expect(timeline.indexAtDate(timeline.endIndex.advancedBy(-1).date)).to(equal(0))
-      expect(timeline.indexAtDate(timeline.startIndex.date)).to(equal(timeline.count - 1))
+      it("give correct results") {
+        expect(timeline.indexAtDate(timeline.endIndex.advancedBy(-1).date)).to(equal(0))
+        expect(timeline.indexAtDate(timeline.startIndex.date)).to(equal(timeline.count - 1))
 
-      let dateIndex = timeline.dateIndexAtIndex(50)
-      expect(timeline.indexAtDate(dateIndex.date)).to(equal(50))
+        expect(timeline.dateIndexAtIndex(0)) == timeline.endIndex.advancedBy(-1)
+        expect(timeline.dateIndexAtIndex(timeline.count - 1)) == timeline.startIndex
+      }
+
+      it("match each other") {
+        let dateIndex = timeline.dateIndexAtIndex(50)
+        expect(timeline.indexAtDate(dateIndex.date)).to(equal(50))
+      }
     }
 
     describe("count") {
