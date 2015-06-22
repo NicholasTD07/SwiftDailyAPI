@@ -1,2 +1,2 @@
 github "thoughtbot/Argo" "td-swift-2"
-github "Alamofire/Alamofire" "swift-2.0"
+github "Alamofire/Alamofire" "e1045f0e7713938320dbb5fef05166f7d6ef829a"
