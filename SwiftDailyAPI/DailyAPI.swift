@@ -12,10 +12,15 @@ import Runes
 
 /// Notes:
 ///  * Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.
-///  * All `completionHandlers` will be called on `NSThread.mainThread()`. This is guaranteed by the execution of Alamofire's `Request` callback .
 public final class DailyAPI {
+  /**
+  The queue which all `completionHandler` runs on.
+  If it is not set, then `completionHandler` will run on the default decoding queue.
+  */
+  public var completionQueue: dispatch_queue_t?
+
   private let manager: Manager
-  private let queue = dispatch_queue_create("com.nickTD.api-decoding-queue", DISPATCH_QUEUE_CONCURRENT)
+  private let queue = dispatch_queue_create(DailyConstants.decodingQueueIdentifier, DISPATCH_QUEUE_CONCURRENT)
 
   private enum DailyRouter: URLRequestConvertible {
     static let baseURLString = "http://news.at.zhihu.com/api/4"
@@ -56,14 +61,18 @@ public final class DailyAPI {
   /**
       Initialize DailyAPI with optional parameters: configuration and userAgent.
 
-      - parameter configuration: The configuration used to construct the underlying NSURLSession.
-      - parameter userAgent:     The "User-Agent" header. Defaults to "SwiftDailyAPI/:version"
+      - parameter configuration:   The configuration used to construct the underlying NSURLSession.
+      - parameter userAgent:       The "User-Agent" header. Defaults to "SwiftDailyAPI/:version"
+      - parameter completionQueue: The queue which all `completionHandler` runs on.
 
       - returns: A new DailyAPI.
   */
-  public init(configuration: NSURLSessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration(), userAgent: String = "SwiftDailyAPI/\(SwiftDailyAPIVersionNumber)") {
-    configuration.HTTPAdditionalHeaders = ["User-Agent": userAgent]
-    self.manager = Manager(configuration: configuration)
+  public init(completionQueue queue: dispatch_queue_t? = nil,
+    configuration: NSURLSessionConfiguration = .defaultSessionConfiguration(),
+    userAgent: String = DailyConstants.defaultUserAgent) {
+      self.completionQueue = queue
+      configuration.HTTPAdditionalHeaders = ["User-Agent": userAgent]
+      self.manager = Manager(configuration: configuration)
   }
 
   /**
@@ -159,7 +168,12 @@ public final class DailyAPI {
           let decodedOptional: T? = JSON >>- decode
           guard let decoded = decodedOptional else { return }
 
-          dispatch_async(dispatch_get_main_queue()) {
+          guard let completionQueue = self.completionQueue else {
+            completionHandler(decoded) // on decoding queue
+            return
+          }
+
+          dispatch_async(completionQueue) {
             completionHandler(decoded)
           }
     }

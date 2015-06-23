@@ -10,4 +10,6 @@ import Foundation
 
 public struct DailyConstants {
   public static let dateFormat = "yyyyMMdd"
+  public static let defaultUserAgent = "SwiftDailyAPI/\(SwiftDailyAPIVersionNumber)"
+  public static let decodingQueueIdentifier = "com.nickTD.api-decoding-queue"
 }

@@ -12,14 +12,17 @@ public class DailyInMemoryStore {
   public var latestDate: NSDate { get { return dailies.endIndex.date } }
   public var latestDaily: LatestDaily?
 
-  let dailyAPI = DailyAPI()
+  let dailyAPI: DailyAPI
 
   // This is the day when the first Daily was published by ZhiHu.
   private static let dailyStartDate = NSDate.dateAt(year: 2013, month: 05, day: 19)!
   public internal(set) var dailies = TimelineCollection<Daily>(startDate: dailyStartDate, endDate: NSDate())
   public internal(set) var news = [Int: News]()
 
-  public init() {}
+  public init(completionQueue: dispatch_queue_t? = nil)
+  {
+    dailyAPI = DailyAPI(completionQueue: completionQueue)
+  }
 
   public func latestDaily(latestDailyHandler: LatestDailyHandler?) {
     dailyAPI.latestDaily() { latestDaily in
