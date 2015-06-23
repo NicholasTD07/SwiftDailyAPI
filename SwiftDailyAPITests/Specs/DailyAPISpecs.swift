@@ -12,7 +12,7 @@ import SwiftDailyAPI
 
 class DailyAPISpecs: QuickSpec {
   override func spec() {
-    let timeout: NSTimeInterval = 10
+    let timeout: NSTimeInterval = 20
     let api = DailyAPI(userAgent: "SwiftDailySpec")
 
     it("loads latest daily") {
