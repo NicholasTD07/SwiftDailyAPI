@@ -1,2 +1,3 @@
-github "thoughtbot/Argo" "td-swift-2"
 github "Alamofire/Alamofire" "e1045f0e7713938320dbb5fef05166f7d6ef829a"
+github "thoughtbot/Argo" "651568ba61b58fa9112746a887e2887afd39a205"
+github "thoughtbot/Runes" "v2.0.0"
