@@ -10,6 +10,10 @@ import Foundation
 
 extension NSDate: Comparable { }
 
+public func == (lhs: NSDate, rhs: NSDate) -> Bool {
+  return lhs.compare(rhs) == .OrderedSame
+}
+
 public func < (lhs: NSDate, rhs: NSDate) -> Bool {
   return lhs.compare(rhs) == .OrderedAscending
 }
@@ -26,16 +30,16 @@ extension NSDate {
 
 // MARK: forward and backward
 extension NSDate {
-  public func daysBefore(days: Int = 1) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -days, toDate: self, options: [])!
+  public func daysBefore(_ days: Int = 1) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: -days, toDate: self, options: nil)!
   }
 
   public func dayBefore() -> NSDate {
     return daysBefore(1)
   }
 
-  public func daysAfter(days: Int = 1) -> NSDate {
-    return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: days, toDate: self, options: [])!
+  public func daysAfter(_ days: Int = 1) -> NSDate {
+    return NSCalendar.currentCalendar().dateByAddingUnit(.CalendarUnitDay, value: days, toDate: self, options: nil)!
   }
 
   public func dayAfter() -> NSDate {

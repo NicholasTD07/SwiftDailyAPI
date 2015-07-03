@@ -8,16 +8,16 @@
 
 import Quick
 import Nimble
-
-@testable
-import SwiftDailyAPI
-
-class Xcode7PlusSwift2: QuickSpec {
-  override func spec() {
-    describe("Xcode7 + Swift 2") {
-      it("is AWESOME!") {
-        Daily(date: NSDate(), news: [])
-      }
-    }
-  }
-}
+//
+//@testable
+//import SwiftDailyAPI
+//
+//class Xcode7PlusSwift2: QuickSpec {
+//  override func spec() {
+//    describe("Xcode7 + Swift 2") {
+//      it("is AWESOME!") {
+//        Daily(date: NSDate(), news: [])
+//      }
+//    }
+//  }
+//}

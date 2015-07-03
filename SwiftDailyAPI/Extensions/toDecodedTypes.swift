@@ -18,5 +18,5 @@ public func toNSDate(fromTimeStamp fromTimeStamp: NSTimeInterval) -> Decoded<NSD
 }
 
 public func toInt(string: String) -> Decoded<Int> {
-  return .fromOptional(Int(string))
+  return .fromOptional(string.toInt())
 }

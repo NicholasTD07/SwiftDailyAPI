@@ -56,6 +56,12 @@
 		755F20501B26C772001AB066 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204E1B26C772001AB066 /* Types.swift */; };
 		755F20521B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
 		755F20531B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
+		75656CF81B464FA2007D11EA /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CF61B464F86007D11EA /* Box.framework */; };
+		75656CFA1B464FB1007D11EA /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CF91B464FB1007D11EA /* Box.framework */; };
+		75656CFD1B465017007D11EA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFB1B465017007D11EA /* Nimble.framework */; };
+		75656CFE1B465017007D11EA /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFC1B465017007D11EA /* Quick.framework */; };
+		75656CFF1B465029007D11EA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFB1B465017007D11EA /* Nimble.framework */; };
+		75656D001B465029007D11EA /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFC1B465017007D11EA /* Quick.framework */; };
 		756AAE6A1B12A3A40077DFFF /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756AAE701B12A3A40077DFFF /* SwiftDailyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */; };
 		756AAE811B12A3C60077DFFF /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
@@ -90,10 +96,6 @@
 		75E238011B13520D00F6DE3E /* LatestDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E237FF1B13520D00F6DE3E /* LatestDaily.swift */; };
 		75E238031B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
 		75E238041B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */; };
-		75E2382E1B143D6300F6DE3E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E2382C1B143D6300F6DE3E /* Nimble.framework */; };
-		75E2382F1B143D6300F6DE3E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E2382D1B143D6300F6DE3E /* Quick.framework */; };
-		75E238321B143D7600F6DE3E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238301B143D7600F6DE3E /* Nimble.framework */; };
-		75E238331B143D7600F6DE3E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238311B143D7600F6DE3E /* Quick.framework */; };
 		75E4D85A1B2EE68900D27464 /* TimelineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4D8591B2EE68900D27464 /* TimelineCollection.swift */; };
 		75E4D85B1B2EE68900D27464 /* TimelineCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4D8591B2EE68900D27464 /* TimelineCollection.swift */; };
 		75F919561B15DD8B0053FF42 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919551B15DD8B0053FF42 /* NSDate.swift */; };
@@ -147,8 +149,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		753053E31B19C27200B28354 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
-		753053E51B19C27F00B28354 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/Mac/Box.framework; sourceTree = "<group>"; };
 		753053E71B19CAF500B28354 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		753053EA1B19CCEC00B28354 /* news_4770416.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_4770416.json; sourceTree = "<group>"; };
 		753053EF1B1B18CD00B28354 /* NSURL+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Decodable.swift"; sourceTree = "<group>"; };
@@ -172,6 +172,10 @@
 		755F204B1B26C681001AB066 /* DailyInMemoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInMemoryStore.swift; sourceTree = "<group>"; };
 		755F204E1B26C772001AB066 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyInMemoryStoreSpecs.swift; sourceTree = "<group>"; };
+		75656CF61B464F86007D11EA /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../../Build/iOS/Box.framework; sourceTree = "<group>"; };
+		75656CF91B464FB1007D11EA /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../../Build/Mac/Box.framework; sourceTree = "<group>"; };
+		75656CFB1B465017007D11EA /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../../Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		75656CFC1B465017007D11EA /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../../Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		756AAE641B12A3A40077DFFF /* SwiftDailyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDailyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AAE681B12A3A40077DFFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDailyAPI.h; sourceTree = "<group>"; };
@@ -201,14 +205,6 @@
 		75E238021B13569D00F6DE3E /* news_meta_with_a_theme.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_meta_with_a_theme.json; sourceTree = "<group>"; };
 		75E238141B14260400F6DE3E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		75E238161B14260F00F6DE3E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		75E238241B143D1400F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
-		75E238261B143D1A00F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
-		75E238281B143D2200F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Checkouts/Nimble/build/Debug/Nimble.framework; sourceTree = "<group>"; };
-		75E2382A1B143D2C00F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
-		75E2382C1B143D6300F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
-		75E2382D1B143D6300F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		75E238301B143D7600F6DE3E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		75E238311B143D7600F6DE3E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		75E4D8591B2EE68900D27464 /* TimelineCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollection.swift; sourceTree = "<group>"; };
 		75F919551B15DD8B0053FF42 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		75F919581B15F1310053FF42 /* DailyAPISpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyAPISpecs.swift; sourceTree = "<group>"; };
@@ -221,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75656CF81B464FA2007D11EA /* Box.framework in Frameworks */,
 				75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */,
 				75F919621B15F7280053FF42 /* Argo.framework in Frameworks */,
 				75F919631B15F7280053FF42 /* Runes.framework in Frameworks */,
@@ -231,8 +228,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E238321B143D7600F6DE3E /* Nimble.framework in Frameworks */,
-				75E238331B143D7600F6DE3E /* Quick.framework in Frameworks */,
+				75656CFD1B465017007D11EA /* Nimble.framework in Frameworks */,
+				75656CFE1B465017007D11EA /* Quick.framework in Frameworks */,
 				756AAE701B12A3A40077DFFF /* SwiftDailyAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75656CFA1B464FB1007D11EA /* Box.framework in Frameworks */,
 				75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */,
 				75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */,
 				75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */,
@@ -251,8 +249,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E2382E1B143D6300F6DE3E /* Nimble.framework in Frameworks */,
-				75E2382F1B143D6300F6DE3E /* Quick.framework in Frameworks */,
+				75656CFF1B465029007D11EA /* Nimble.framework in Frameworks */,
+				75656D001B465029007D11EA /* Quick.framework in Frameworks */,
 				756AAEA11B12A6700077DFFF /* SwiftDailyAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +383,7 @@
 		756AAE8F1B12A5F20077DFFF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				75656CF61B464F86007D11EA /* Box.framework */,
 				75E238141B14260400F6DE3E /* Alamofire.framework */,
 				756AAE8D1B12A5740077DFFF /* Runes.framework */,
 				756AAE8B1B12A5530077DFFF /* Argo.framework */,
@@ -395,16 +394,8 @@
 		756AAE901B12A5F80077DFFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				753053E51B19C27F00B28354 /* Box.framework */,
-				753053E31B19C27200B28354 /* Box.framework */,
-				75E238301B143D7600F6DE3E /* Nimble.framework */,
-				75E238311B143D7600F6DE3E /* Quick.framework */,
-				75E2382C1B143D6300F6DE3E /* Nimble.framework */,
-				75E2382D1B143D6300F6DE3E /* Quick.framework */,
-				75E2382A1B143D2C00F6DE3E /* Quick.framework */,
-				75E238281B143D2200F6DE3E /* Nimble.framework */,
-				75E238261B143D1A00F6DE3E /* Nimble.framework */,
-				75E238241B143D1400F6DE3E /* Quick.framework */,
+				75656CFB1B465017007D11EA /* Nimble.framework */,
+				75656CFC1B465017007D11EA /* Quick.framework */,
 				756AAE8F1B12A5F20077DFFF /* iOS */,
 				75D2569D1B12AFAD005F6645 /* Mac */,
 			);
@@ -424,6 +415,7 @@
 		75D2569D1B12AFAD005F6645 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				75656CF91B464FB1007D11EA /* Box.framework */,
 				75E238161B14260F00F6DE3E /* Alamofire.framework */,
 				75D2569B1B12AF90005F6645 /* Runes.framework */,
 				75D256991B12AF87005F6645 /* Argo.framework */,
@@ -867,6 +859,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -892,6 +885,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -910,6 +904,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -929,6 +924,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -951,6 +947,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -982,6 +979,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftDailyAPI/Info.plist";
@@ -1004,6 +1002,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1026,6 +1025,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
