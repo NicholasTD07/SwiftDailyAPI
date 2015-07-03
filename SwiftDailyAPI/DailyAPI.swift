@@ -166,15 +166,15 @@ public final class DailyAPI {
       .response(queue: queue, serializer: Request.JSONResponseSerializer())
         { (request, response, JSON, error) in
           let decodedOptional: T? = JSON >>- decode
-          guard let decoded = decodedOptional else { return }
-
-          guard let completionQueue = self.completionQueue else {
-            completionHandler(decoded) // on decoding queue
-            return
-          }
-
-          dispatch_async(completionQueue) {
-            completionHandler(decoded)
+          if let decoded = decodedOptional {
+            if let completionQueue = self.completionQueue {
+              dispatch_async(completionQueue) {
+                completionHandler(decoded)
+              }
+            } else {
+              completionHandler(decoded) // on decoding queue
+              return
+            }
           }
     }
   }
