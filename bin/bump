@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+SHORT_VERSION=`/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" ./SwiftDailyAPI/Info.plist`
+
+git commit -v -e -m "Bump version number $SHORT_VERSION"
