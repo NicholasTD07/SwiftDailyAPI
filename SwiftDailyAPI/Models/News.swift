@@ -15,13 +15,13 @@ public struct News {
   public let title: String
   public let body: String
   public let cssURLs: [NSURL]
-  public let imageURL: NSURL
-  public let imageSourceText: String
+  public let imageURL: NSURL?
+  public let imageSourceText: String?
   public let shareURL: NSURL
 }
 
 extension News: Decodable {
-  private static func create(newsId: Int)(title: String)(body: String)(cssURLs: [NSURL])(imageURL: NSURL)(imageSourceText: String)(shareURL: NSURL) -> News {
+  private static func create(newsId: Int)(title: String)(body: String)(cssURLs: [NSURL])(imageURL: NSURL?)(imageSourceText: String?)(shareURL: NSURL) -> News {
     return News(newsId: newsId, title: title, body: body, cssURLs: cssURLs, imageURL: imageURL, imageSourceText: imageSourceText, shareURL: shareURL)
   }
 
@@ -31,8 +31,8 @@ extension News: Decodable {
       <*> j <| "title"
       <*> j <| "body"
       <*> j <|| "css"
-      <*> j <| "image"
-      <*> j <| "image_source"
+      <*> j <|? "image"
+      <*> j <|? "image_source"
       <*> j <| "share_url"
   }
 }
