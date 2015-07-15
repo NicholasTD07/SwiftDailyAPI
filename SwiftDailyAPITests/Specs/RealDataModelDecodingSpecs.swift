@@ -39,13 +39,25 @@ class RealDataModelDecodeSpecs: QuickSpec {
 
       expect(news!.title).toNot(beNil())
       expect(news!.cssURLs).toNot(beEmpty())
-      expect(news!.imageURL).toNot(beNil())
-      expect(news!.imageSourceText).toNot(beNil())
       expect(news!.shareURL).toNot(beNil())
     }
 
-    it("decodes News") {
+    fit("decodes News") {
       let news: News? = JSONFileReader.JSON(fromFile: "news_4770416") >>- decode
+
+      decodesNews(news)
+      expect(news!.imageURL).toNot(beNil())
+      expect(news!.imageSourceText).toNot(beNil())
+    }
+
+    fit("decodes News without image_source") {
+        let news: News? = JSONFileReader.JSON(fromFile: "news_4859444") >>- decode
+
+        decodesNews(news)
+    }
+
+    fit("decodes News without image and image_source") {
+      let news: News? = JSONFileReader.JSON(fromFile: "news_4820022") >>- decode
 
       decodesNews(news)
     }
