@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Merge but keep files in Carthage/Checkouts/* as is in this branch
+
+git merge --no-commit $*
+git checkout ./Carthage/Checkouts/*
+echo "Remember to commit the changes. :]"

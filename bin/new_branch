@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Create branches whose base if the merge base of develop and release branch.
+# To minimize changes to git's commit graph, when merge new changes into both branch.
+
+git fetch --all
+git checkout -b $* `git merge-base develop remotes/origin/release/Xcode-6.3.2-Swift-1.2`
