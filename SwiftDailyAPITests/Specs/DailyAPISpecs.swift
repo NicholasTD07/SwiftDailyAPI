@@ -73,8 +73,24 @@ class DailyAPISpecs: QuickSpec {
     it("loads short comments") {
       var comments: Comments? = nil
       let newsId = 4772308 // `Comments.comments` won't be empty
+      // http://news.at.zhihu.com/api/4/news/4772308
 
       let request = api.shortComments(newsId) { commentsFromAPI in
+        comments = commentsFromAPI
+      }
+
+      expect(request.request.URLString).to(contain("short"))
+      expect(comments).toEventuallyNot(beNil(), timeout: timeout)
+      expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
+    }
+
+    it("loads more short comments") {
+      var comments: Comments? = nil
+      let newsId = 4772308 // `Comments.comments` won't be empty
+      let commentId = 1137597 // Last comment in `/short-comments`
+      // http://news.at.zhihu.com/api/4/news/4772308/short-comments/before/1137597
+
+      let request = api.shortComments(newsId, beforeCommentId: commentId) { commentsFromAPI in
         comments = commentsFromAPI
       }
 

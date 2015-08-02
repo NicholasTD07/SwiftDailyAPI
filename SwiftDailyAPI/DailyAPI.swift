@@ -30,6 +30,7 @@ public final class DailyAPI {
     case News(newsId: Int)
     case NewsExtra(newsId: Int)
     case ShortComments(newsId: Int)
+    case MoreShortComments(newsId: Int, beforeCommentId: Int)
     case LongComments(newsId: Int)
 
     var path: String {
@@ -45,6 +46,8 @@ public final class DailyAPI {
         return "/news-extra/\(newsId)"
       case .ShortComments(let newsId):
         return "/news/\(newsId)/short-comments"
+      case .MoreShortComments(let newsId, let commentId):
+        return "/news/\(newsId)/short-comments/before/\(commentId)"
       case .LongComments(let newsId):
         return "/news/\(newsId)/long-comments"
       }
@@ -132,6 +135,11 @@ public final class DailyAPI {
   */
   public final func shortComments(newsId: Int, commentsHandler: (Comments) -> Void) -> Request {
     return request(DailyRouter.ShortComments(newsId: newsId), completionHandler: commentsHandler)
+  }
+
+  public final func shortComments(newsId: Int, beforeCommentId commentId: Int,
+    commentsHandler: (Comments) -> Void) -> Request {
+      return request(DailyRouter.MoreShortComments(newsId: newsId, beforeCommentId: commentId), completionHandler: commentsHandler)
   }
 
   /**
