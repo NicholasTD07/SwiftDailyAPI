@@ -26,6 +26,7 @@ extension Comments: Decodable {
 }
 
 public struct Comment {
+  public let commentId: Int
   public let authorName: String
   public let content: String
   public let likes: Int
@@ -35,13 +36,14 @@ public struct Comment {
 }
 
 extension Comment: Decodable {
-  private static func create(authorName: String)(content: String)(likes: Int)(repliedAt: NSDate)(avatarURL: NSURL)(replyToComment: ReplyToComment?) -> Comment {
-    return Comment(authorName: authorName, content: content, likes: likes, repliedAt: repliedAt, avatarURL: avatarURL, replyToComment: replyToComment)
+  private static func create(commentId: Int)(authorName: String)(content: String)(likes: Int)(repliedAt: NSDate)(avatarURL: NSURL)(replyToComment: ReplyToComment?) -> Comment {
+    return Comment(commentId: commentId, authorName: authorName, content: content, likes: likes, repliedAt: repliedAt, avatarURL: avatarURL, replyToComment: replyToComment)
   }
 
   public static func decode(j: JSON) -> Decoded<Comment> {
     return Comment.create
-      <^> j <| "author"
+      <^> j <| "id"
+      <*> j <| "author"
       <*> j <| "content"
       <*> j <| "likes"
       <*> ((j <| "time") >>- toNSDate)

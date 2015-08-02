@@ -85,6 +85,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
       let comment: Comment? = JSONFileReader.JSON(fromFile: "comment") >>- decode
 
       expect(comment).toNot(beNil())
+      expect(comment!.commentId).to(equal(12345))
       expect(comment!.authorName).to(equal("The Master"))
       expect(comment!.content).to(equal("How about that? I win."))
       expect(comment!.likes).to(equal(1200))
