@@ -31,6 +31,15 @@ class RealDataModelDecodeSpecs: QuickSpec {
       expect(latestDaily!.topNews).toNot(beEmpty())
     }
 
+    it("decodes LatestDaily with a themed NewsMeta") {
+      let latestDaily: LatestDaily? = JSONFileReader.JSON(fromFile: "latest_daily_news_20150802") >>- decode
+
+      expect(latestDaily).toNot(beNil())
+      expect(latestDaily!.date).toNot(beNil())
+      expect(latestDaily!.news).toNot(beEmpty())
+      expect(latestDaily!.topNews).toNot(beEmpty())
+    }
+
     let decodesNews: (News?) -> Void = { (news: News?) in
       expect(news).toNot(beNil())
 

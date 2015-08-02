@@ -72,6 +72,8 @@
 		756AAEA11B12A6700077DFFF /* SwiftDailyAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE961B12A6700077DFFF /* SwiftDailyAPI.framework */; };
 		756F6F201B28523D006D4E10 /* ProofOfConceptSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F6F1F1B28523D006D4E10 /* ProofOfConceptSpecs.swift */; };
 		756F6F211B28523D006D4E10 /* ProofOfConceptSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F6F1F1B28523D006D4E10 /* ProofOfConceptSpecs.swift */; };
+		758872F01B6E0109006ECF61 /* latest_daily_news_20150802.json in Resources */ = {isa = PBXBuildFile; fileRef = 758872EF1B6E0109006ECF61 /* latest_daily_news_20150802.json */; };
+		758872F11B6E0109006ECF61 /* latest_daily_news_20150802.json in Resources */ = {isa = PBXBuildFile; fileRef = 758872EF1B6E0109006ECF61 /* latest_daily_news_20150802.json */; };
 		7598B01D1B1328C800E55D79 /* SwiftDailyAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 756AAE691B12A3A40077DFFF /* SwiftDailyAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7598B01F1B1329F000E55D79 /* TestDataModelDecodingSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B0161B1322C700E55D79 /* TestDataModelDecodingSpecs.swift */; };
 		7598B02E1B132D6A00E55D79 /* NewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B02D1B132D6A00E55D79 /* NewsMeta.swift */; };
@@ -193,6 +195,7 @@
 		756AAE961B12A6700077DFFF /* SwiftDailyAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDailyAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		756AAEA01B12A6700077DFFF /* SwiftDailyAPI-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftDailyAPI-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		756F6F1F1B28523D006D4E10 /* ProofOfConceptSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProofOfConceptSpecs.swift; sourceTree = "<group>"; };
+		758872EF1B6E0109006ECF61 /* latest_daily_news_20150802.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latest_daily_news_20150802.json; sourceTree = "<group>"; };
 		7598B0161B1322C700E55D79 /* TestDataModelDecodingSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataModelDecodingSpecs.swift; sourceTree = "<group>"; };
 		7598B02D1B132D6A00E55D79 /* NewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMeta.swift; sourceTree = "<group>"; };
 		7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsMeta.swift; sourceTree = "<group>"; };
@@ -284,9 +287,10 @@
 		754B26DB1B16878D00B72C45 /* Real Data */ = {
 			isa = PBXGroup;
 			children = (
+				758872EF1B6E0109006ECF61 /* latest_daily_news_20150802.json */,
+				75F919641B1685150053FF42 /* latest_daily_news_20150527.json */,
 				75522B931B1C1726003DA78E /* short_comments_4772308.json */,
 				75522B9C1B1C1DDF003DA78E /* long_comments_4772308.json */,
-				75F919641B1685150053FF42 /* latest_daily_news_20150527.json */,
 				75507B161B168946006F41F9 /* daily_news_20150525.json */,
 				753053EA1B19CCEC00B28354 /* news_4770416.json */,
 				75522B8D1B1B1FE8003DA78E /* news_extra_4770416.json */,
@@ -621,6 +625,7 @@
 				753053ED1B19CE1100B28354 /* news_4770416.json in Resources */,
 				75E238031B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */,
 				75507B171B168946006F41F9 /* daily_news_20150525.json in Resources */,
+				758872F01B6E0109006ECF61 /* latest_daily_news_20150802.json in Resources */,
 				75522B9D1B1C1DDF003DA78E /* long_comments_4772308.json in Resources */,
 				7598B0341B13399600E55D79 /* top_news_meta.json in Resources */,
 				75522B9A1B1C1D7B003DA78E /* comment.json in Resources */,
@@ -653,6 +658,7 @@
 				753053EE1B19CE1200B28354 /* news_4770416.json in Resources */,
 				75E238041B13569D00F6DE3E /* news_meta_with_a_theme.json in Resources */,
 				75507B181B168946006F41F9 /* daily_news_20150525.json in Resources */,
+				758872F11B6E0109006ECF61 /* latest_daily_news_20150802.json in Resources */,
 				75522B9E1B1C1DDF003DA78E /* long_comments_4772308.json in Resources */,
 				7598B0381B13399E00E55D79 /* top_news_meta.json in Resources */,
 				75522B9B1B1C1D7B003DA78E /* comment.json in Resources */,
@@ -871,7 +877,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -897,7 +902,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
