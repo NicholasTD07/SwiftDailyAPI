@@ -170,8 +170,7 @@ public final class DailyAPI {
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T -> Void) -> Request {
     return manager
-      .request(URLRequest)
-      .response(queue: queue, serializer: Request.JSONResponseSerializer())
+      .request(URLRequest).response(queue: queue, responseSerializer: Request.JSONResponseSerializer())
         { (request, response, JSON, error) in
           let decodedOptional: T? = JSON >>- decode
           if let decoded = decodedOptional {
