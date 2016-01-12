@@ -79,7 +79,7 @@ class DailyAPISpecs: QuickSpec {
         comments = commentsFromAPI
       }
 
-      expect(request.request.URLString).to(contain("short"))
+      expect(request.request!.URLString).to(contain("short"))
       expect(comments).toEventuallyNot(beNil(), timeout: timeout)
       expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
     }
@@ -94,7 +94,7 @@ class DailyAPISpecs: QuickSpec {
         comments = commentsFromAPI
       }
 
-      expect(request.request.URLString).to(contain("short"))
+      expect(request.request!.URLString).to(contain("short"))
       expect(comments).toEventuallyNot(beNil(), timeout: timeout)
       expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
     }
@@ -107,7 +107,7 @@ class DailyAPISpecs: QuickSpec {
         comments = commentsFromAPI
       }
 
-      expect(request.request.URLString).to(contain("long"))
+      expect(request.request!.URLString).to(contain("long"))
       expect(comments).toEventuallyNot(beNil(), timeout: timeout)
       expect(comments!.comments).toEventuallyNot(beEmpty(), timeout: timeout)
     }
@@ -123,8 +123,8 @@ class DailyAPISpecs: QuickSpec {
           longComments = longCommentsFromAPI
       })
 
-      expect(shortCommentsRequest.request.URLString).to(contain("short"))
-      expect(longCommentsRequest.request.URLString).to(contain("long"))
+      expect(shortCommentsRequest.request!.URLString).to(contain("short"))
+      expect(longCommentsRequest.request!.URLString).to(contain("long"))
       expect(shortComments).toEventuallyNot(beNil(), timeout: timeout)
       expect(longComments).toEventuallyNot(beNil(), timeout: timeout)
     }

@@ -9,7 +9,6 @@
 import XCTest
 import SwiftDailyAPI
 import Argo
-import Runes
 
 class DecodingPerformanceTests: XCTestCase {
   func testDecodingDaily() {
@@ -40,7 +39,7 @@ class DecodingPerformanceTests: XCTestCase {
     let json: AnyObject = JSONFileReader.JSON(fromFile: file)!
 
     measureBlock {
-      let model: T? = json >>- decode
+      let model: T? = T.decode(JSON.parse(json)).value
       assert(model != nil)
     }
   }

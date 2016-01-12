@@ -10,12 +10,13 @@ import Quick
 import Nimble
 import SwiftDailyAPI
 import Argo
-import Runes
 
 class RealDataModelDecodeSpecs: QuickSpec {
+
+
   override func spec() {
     it("decodes Daily") {
-      let daily: Daily? = JSONFileReader.JSON(fromFile: "daily_news_20150525") >>- decode
+      let daily: Daily? = objectFromFile("daily_news_20150525")
 
       expect(daily).toNot(beNil())
       expect(daily!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
@@ -23,7 +24,7 @@ class RealDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes LatestDaily") {
-      let latestDaily: LatestDaily? = JSONFileReader.JSON(fromFile: "latest_daily_news_20150527") >>- decode
+      let latestDaily: LatestDaily? =  objectFromFile("latest_daily_news_20150527")
 
       expect(latestDaily).toNot(beNil())
       expect(latestDaily!.date).to(equal(NSDate.dateFromString("20150527", format: "yyyyMMdd")))
@@ -32,7 +33,7 @@ class RealDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes LatestDaily with a themed NewsMeta") {
-      let latestDaily: LatestDaily? = JSONFileReader.JSON(fromFile: "latest_daily_news_20150802") >>- decode
+      let latestDaily: LatestDaily? = objectFromFile("latest_daily_news_20150802")
 
       expect(latestDaily).toNot(beNil())
       expect(latestDaily!.date).toNot(beNil())
@@ -52,7 +53,7 @@ class RealDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes News") {
-      let news: News? = JSONFileReader.JSON(fromFile: "news_4770416") >>- decode
+      let news: News? = objectFromFile("news_4770416")
 
       decodesNews(news)
       expect(news!.imageURL).toNot(beNil())
@@ -60,19 +61,19 @@ class RealDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes News without image_source") {
-        let news: News? = JSONFileReader.JSON(fromFile: "news_4859444") >>- decode
+        let news: News? = objectFromFile("news_4859444")
 
         decodesNews(news)
     }
 
     it("decodes News without image and image_source") {
-      let news: News? = JSONFileReader.JSON(fromFile: "news_4820022") >>- decode
+      let news: News? = objectFromFile("news_4820022")
 
       decodesNews(news)
     }
 
     it("decodes NewsExtra") {
-      let newsExtra: NewsExtra? = JSONFileReader.JSON(fromFile: "news_extra_4770416") >>- decode
+      let newsExtra: NewsExtra? = objectFromFile("news_extra_4770416")
 
       expect(newsExtra).toNot(beNil())
       expect(newsExtra!.popularity).to(equal(697))
@@ -82,13 +83,13 @@ class RealDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes Comment - short") {
-      let comments: Comments? = JSONFileReader.JSON(fromFile: "short_comments_4772308") >>- decode
+      let comments: Comments? = objectFromFile("short_comments_4772308")
 
       expect(comments!.comments).toNot(beEmpty())
     }
 
     it("decodes Comment - long") {
-      let comments: Comments? = JSONFileReader.JSON(fromFile: "long_comments_4772308") >>- decode
+      let comments: Comments? = objectFromFile("long_comments_4772308")
 
       expect(comments!.comments).toNot(beEmpty())
     }

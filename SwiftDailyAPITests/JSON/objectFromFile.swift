@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import Argo
+
+func objectFromFile<T: Decodable where T == T.DecodedType>(filename: String) -> T? {
+  let value = JSON.parse(JSONFileReader.JSON(fromFile: filename)!)
+
+  return T.decode(value).value
+}

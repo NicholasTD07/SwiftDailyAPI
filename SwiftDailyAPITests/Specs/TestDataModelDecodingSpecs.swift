@@ -10,7 +10,6 @@ import Quick
 import Nimble
 import SwiftDailyAPI
 import Argo
-import Runes
 
 class TestDataModelDecodeSpecs: QuickSpec {
   override func spec() {
@@ -21,7 +20,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     let dateString = "20150525"
 
     it("decodes NewsMeta") {
-      let newsMeta: NewsMeta? = JSONFileReader.JSON(fromFile: "news_meta") >>- decode
+      let newsMeta: NewsMeta? = objectFromFile("news_meta")
 
       expect(newsMeta).toNot(beNil())
       expect(newsMeta!.newsId).to(equal(newsId))
@@ -32,7 +31,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes TopNewsMeta") {
-      let topNewsMeta: TopNewsMeta? = JSONFileReader.JSON(fromFile: "top_news_meta") >>- decode
+      let topNewsMeta: TopNewsMeta? = objectFromFile("top_news_meta")
 
       expect(topNewsMeta).toNot(beNil())
       expect(topNewsMeta!.newsId).to(equal(newsId))
@@ -42,7 +41,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes Daily") {
-      let daily: Daily? = JSONFileReader.JSON(fromFile: "daily_news") >>- decode
+      let daily: Daily? = objectFromFile("daily_news")
 
       expect(daily).toNot(beNil())
       expect(daily!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
@@ -50,7 +49,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes Latestdaily") {
-      let latestDaily: LatestDaily? = JSONFileReader.JSON(fromFile: "latest_daily_news") >>- decode
+      let latestDaily: LatestDaily? = objectFromFile("latest_daily_news")
 
       expect(latestDaily).toNot(beNil())
       expect(latestDaily!.date).to(equal(NSDate.dateFromString("20150525", format: "yyyyMMdd")))
@@ -59,7 +58,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes News") {
-      let news: News? = JSONFileReader.JSON(fromFile: "news") >>- decode
+      let news: News? = objectFromFile("news")
 
       expect(news).toNot(beNil())
       expect(news!.newsId).to(equal(newsId))
@@ -72,7 +71,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes NewsExtra") {
-      let newsExtra: NewsExtra? = JSONFileReader.JSON(fromFile: "news_extra") >>- decode
+      let newsExtra: NewsExtra? = objectFromFile("news_extra")
 
       expect(newsExtra).toNot(beNil())
       expect(newsExtra!.popularity).to(equal(100))
@@ -82,7 +81,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes Comment") {
-      let comment: Comment? = JSONFileReader.JSON(fromFile: "comment") >>- decode
+      let comment: Comment? = objectFromFile("comment")
 
       expect(comment).toNot(beNil())
       expect(comment!.commentId).to(equal(12345))
@@ -94,7 +93,7 @@ class TestDataModelDecodeSpecs: QuickSpec {
     }
 
     it("decodes Comment with ReplyToComment") {
-      let comment: Comment? = JSONFileReader.JSON(fromFile: "comment_with_reply_to") >>- decode
+      let comment: Comment? = objectFromFile("comment_with_reply_to")
 
       expect(comment).toNot(beNil())
       expect(comment!.replyToComment).toNot(beNil())
