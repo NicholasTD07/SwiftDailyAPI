@@ -8,7 +8,6 @@
 
 import Foundation
 import Argo
-import Runes
 
 public struct News {
   public let newsId: Int

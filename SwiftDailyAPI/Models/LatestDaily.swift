@@ -8,7 +8,6 @@
 
 import Foundation
 import Argo
-import Runes
 
 public struct LatestDaily {
   public let date: NSDate

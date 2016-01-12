@@ -8,7 +8,6 @@
 
 import Alamofire
 import Argo
-import Runes
 
 /// Notes:
 ///  * Do keep a reference to any instance of `DailyAPI`, otherwise URLRequest will be canceled.

@@ -16,10 +16,4 @@
    <FileRef
       location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Runes/Runes.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Box/Box.xcodeproj">
-   </FileRef>
 </Workspace>

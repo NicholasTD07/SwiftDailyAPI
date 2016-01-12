@@ -60,8 +60,6 @@
 		755F20501B26C772001AB066 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F204E1B26C772001AB066 /* Types.swift */; };
 		755F20521B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
 		755F20531B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F20511B26CF72001AB066 /* DailyInMemoryStoreSpecs.swift */; };
-		75656CF81B464FA2007D11EA /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CF61B464F86007D11EA /* Box.framework */; };
-		75656CFA1B464FB1007D11EA /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CF91B464FB1007D11EA /* Box.framework */; };
 		75656CFD1B465017007D11EA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFB1B465017007D11EA /* Nimble.framework */; };
 		75656CFE1B465017007D11EA /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFC1B465017007D11EA /* Quick.framework */; };
 		75656CFF1B465029007D11EA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75656CFB1B465017007D11EA /* Nimble.framework */; };
@@ -90,7 +88,6 @@
 		7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
 		75CE7AE31B271DB30001F534 /* Xcode7PlusSwift2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */; };
 		75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D256991B12AF87005F6645 /* Argo.framework */; };
-		75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D2569B1B12AF90005F6645 /* Runes.framework */; };
 		75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
 		75E237F31B1346A100F6DE3E /* latest_daily_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* latest_daily_news.json */; };
 		75E237F41B1346A200F6DE3E /* latest_daily_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* latest_daily_news.json */; };
@@ -111,7 +108,6 @@
 		75F919601B15F3DA0053FF42 /* DailyAPISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919581B15F1310053FF42 /* DailyAPISpecs.swift */; };
 		75F919611B15F3DB0053FF42 /* DailyAPISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919581B15F1310053FF42 /* DailyAPISpecs.swift */; };
 		75F919621B15F7280053FF42 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE8B1B12A5530077DFFF /* Argo.framework */; };
-		75F919631B15F7280053FF42 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE8D1B12A5740077DFFF /* Runes.framework */; };
 		75F919651B1685150053FF42 /* latest_daily_news_20150527.json in Resources */ = {isa = PBXBuildFile; fileRef = 75F919641B1685150053FF42 /* latest_daily_news_20150527.json */; };
 		75F919661B1685150053FF42 /* latest_daily_news_20150527.json in Resources */ = {isa = PBXBuildFile; fileRef = 75F919641B1685150053FF42 /* latest_daily_news_20150527.json */; };
 /* End PBXBuildFile section */
@@ -226,10 +222,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75656CF81B464FA2007D11EA /* Box.framework in Frameworks */,
 				75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */,
 				75F919621B15F7280053FF42 /* Argo.framework in Frameworks */,
-				75F919631B15F7280053FF42 /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,10 +241,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75656CFA1B464FB1007D11EA /* Box.framework in Frameworks */,
 				75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */,
 				75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */,
-				75D2569C1B12AF90005F6645 /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
