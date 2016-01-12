@@ -13,7 +13,7 @@ extension NSURL: Decodable {
   public static func decode(j: JSON) -> Decoded<NSURL> {
     switch(j) {
     case let .String(s): return .fromOptional(NSURL(string: s))
-    default: return .TypeMismatch("\(j) is not a NSURL.")
+    default: return .Failure(.TypeMismatch(expected: "NSURL", actual: "\(j)"))
     }
   }
 }
