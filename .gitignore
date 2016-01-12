@@ -17,3 +17,4 @@ DerivedData
 *.xcuserstate
 
 Carthage/Build
+Carthage/Checkouts
