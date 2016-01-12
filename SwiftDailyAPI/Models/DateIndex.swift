@@ -31,21 +31,21 @@ extension DateIndex: Hashable {
 
 extension DateIndex: RandomAccessIndexType {
   public func successor() -> DateIndex {
-    let nextDay = calendar.dateByAddingUnit(.CalendarUnitDay, value: 1, toDate: date, options: nil)!
+    let nextDay = calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: [])!
     return DateIndex(nextDay)
   }
 
   public func predecessor() -> DateIndex {
-    let previousDay = calendar.dateByAddingUnit(.CalendarUnitDay, value: -1, toDate: date, options: nil)!
+    let previousDay = calendar.dateByAddingUnit(.Day, value: -1, toDate: date, options: [])!
     return DateIndex(previousDay)
   }
 
   public func advancedBy(n: Int) -> DateIndex {
-    let advancedDate = calendar.dateByAddingUnit(.CalendarUnitDay, value: n, toDate: date, options: nil)!
+    let advancedDate = calendar.dateByAddingUnit(.Day, value: n, toDate: date, options: [])!
     return DateIndex(advancedDate)
   }
 
   public func distanceTo(other: DateIndex) -> Int {
-    return calendar.components(.CalendarUnitDay, fromDate: date, toDate: other.date, options: nil).day
+    return calendar.components(.Day, fromDate: date, toDate: other.date, options: []).day
   }
 }
