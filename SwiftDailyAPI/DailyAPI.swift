@@ -169,19 +169,29 @@ public final class DailyAPI {
 
   private final func request<T: Decodable where T == T.DecodedType>(URLRequest: URLRequestConvertible, completionHandler: T -> Void) -> Request {
     return manager
-      .request(URLRequest).response(queue: queue, responseSerializer: Request.JSONResponseSerializer())
-        { (request, response, JSON, error) in
-          let decodedOptional: T? = JSON >>- decode
-          if let decoded = decodedOptional {
-            if let completionQueue = self.completionQueue {
-              dispatch_async(completionQueue) {
-                completionHandler(decoded)
-              }
-            } else {
-              completionHandler(decoded) // on decoding queue
-              return
-            }
+      .request(URLRequest)
+      .response(queue: queue, responseSerializer: Request.JSONResponseSerializer()) { (response) -> Void in
+        guard let value = response.result.value else {
+          // TODO: Decoding Error from Alamofire
+          return
+        }
+
+        let JSON = Argo.JSON.parse(value)
+
+        guard let decoded = T.decode(JSON).value else {
+          // TODO: Decoding Error from Argo
+          // Expected and actual data
+          return
+        }
+
+        if let completionQueue = self.completionQueue {
+          dispatch_async(completionQueue) {
+            completionHandler(decoded)
           }
+        } else {
+          completionHandler(decoded) // on decoding queue
+          return
+        }
     }
   }
 }
