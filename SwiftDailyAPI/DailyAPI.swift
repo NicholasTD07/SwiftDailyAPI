@@ -52,9 +52,9 @@ public final class DailyAPI {
       }
     }
 
-    var URLRequest: NSURLRequest {
+    var URLRequest: NSMutableURLRequest {
       let URL = NSURL(string: DailyRouter.baseURLString)!
-      let URLRequest = NSURLRequest(URL: URL.URLByAppendingPathComponent(path))
+      let URLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
 
       return URLRequest
     }
