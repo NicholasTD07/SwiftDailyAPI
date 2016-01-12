@@ -1,2 +1,2 @@
-github "Alamofire/Alamofire" ~> 1.2.3
-github "thoughtbot/Argo" ~> 1.0.3
+github "thoughtbot/Argo" ~> 2.2.0
+github "Alamofire/Alamofire" ~> 3.0
