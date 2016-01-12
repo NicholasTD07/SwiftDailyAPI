@@ -4,4 +4,4 @@ before_install:
   - brew update
   - brew install carthage
 install:
-  - carthage bootstrap
+  - carthage bootstrap --platform iOS
