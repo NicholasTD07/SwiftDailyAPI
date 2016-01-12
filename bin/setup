@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 bundle install
-carthage bootstrap  --platform all
+carthage bootstrap --no-use-binaries --platform iOS
