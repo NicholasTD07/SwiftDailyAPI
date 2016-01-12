@@ -6,8 +6,8 @@ An API framework for ZhiHu's Daily News, built in Swift.
 
 ### Minimum Requirement
 
-* Xcode 7.0 beta
-* Swift 2.0
+* Xcode 7.2 +
+* Swift 2.1 +
 
 ### [Carthage]
 
@@ -16,7 +16,8 @@ An API framework for ZhiHu's Daily News, built in Swift.
 Add the following to your Cartfile:
 
 ```
-github "NicholasTD07/SwiftDailyAPI"
+github "NicholasTD07/SwiftDailyAPI" ~> 2.0.0 # Swift 2.1
+github "NicholasTD07/SwiftDailyAPI" ~> 1.0.0 # Swift 1.2
 ```
 
 Then run `carthage update`.
