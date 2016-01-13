@@ -14,8 +14,6 @@
 		753053EE1B19CE1200B28354 /* news_4770416.json in Resources */ = {isa = PBXBuildFile; fileRef = 753053EA1B19CCEC00B28354 /* news_4770416.json */; };
 		753053F01B1B18CD00B28354 /* NSURL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753053EF1B1B18CD00B28354 /* NSURL+Decodable.swift */; };
 		753053F11B1B18CD00B28354 /* NSURL+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753053EF1B1B18CD00B28354 /* NSURL+Decodable.swift */; };
-		75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238141B14260400F6DE3E /* Alamofire.framework */; };
-		75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E238161B14260F00F6DE3E /* Alamofire.framework */; };
 		75319DCA1B198525002C7AFF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75319DC91B198525002C7AFF /* News.swift */; };
 		75319DCB1B198525002C7AFF /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75319DC91B198525002C7AFF /* News.swift */; };
 		7532368A1B5629C9002C6BF1 /* news_4859444.json in Resources */ = {isa = PBXBuildFile; fileRef = 753236891B5629C9002C6BF1 /* news_4859444.json */; };
@@ -85,8 +83,8 @@
 		7598B03A1B13399E00E55D79 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75D272501B131CC8006991D8 /* news.json */; };
 		7598B03C1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
 		7598B03D1B1340F000E55D79 /* TopNewsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */; };
+		759B89941C45F2740017F5A4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759B89931C45F2740017F5A4 /* Pods.framework */; };
 		75CE7AE31B271DB30001F534 /* Xcode7PlusSwift2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */; };
-		75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D256991B12AF87005F6645 /* Argo.framework */; };
 		75E237EF1B13451900F6DE3E /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756AAE801B12A3C60077DFFF /* JSONFileReader.swift */; };
 		75E237F31B1346A100F6DE3E /* latest_daily_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* latest_daily_news.json */; };
 		75E237F41B1346A200F6DE3E /* latest_daily_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 75E237F01B13468500F6DE3E /* latest_daily_news.json */; };
@@ -106,7 +104,6 @@
 		75F9195D1B15F1EB0053FF42 /* DailyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9195B1B15F1EB0053FF42 /* DailyAPI.swift */; };
 		75F919601B15F3DA0053FF42 /* DailyAPISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919581B15F1310053FF42 /* DailyAPISpecs.swift */; };
 		75F919611B15F3DB0053FF42 /* DailyAPISpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F919581B15F1310053FF42 /* DailyAPISpecs.swift */; };
-		75F919621B15F7280053FF42 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756AAE8B1B12A5530077DFFF /* Argo.framework */; };
 		75F919651B1685150053FF42 /* latest_daily_news_20150527.json in Resources */ = {isa = PBXBuildFile; fileRef = 75F919641B1685150053FF42 /* latest_daily_news_20150527.json */; };
 		75F919661B1685150053FF42 /* latest_daily_news_20150527.json in Resources */ = {isa = PBXBuildFile; fileRef = 75F919641B1685150053FF42 /* latest_daily_news_20150527.json */; };
 		9DFBF0CE05237EAFC7E9664B /* Pods_SwiftDailyAPI_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A73534CA90ADB0DFA6F0E73 /* Pods_SwiftDailyAPI_iOSTests.framework */; };
@@ -131,15 +128,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7598B0221B132AEB00E55D79 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7598B0251B132B6400E55D79 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +189,7 @@
 		7598B02D1B132D6A00E55D79 /* NewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMeta.swift; sourceTree = "<group>"; };
 		7598B03B1B1340F000E55D79 /* TopNewsMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopNewsMeta.swift; sourceTree = "<group>"; };
 		7598D26B1B169F280096217F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		759B89931C45F2740017F5A4 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftDailyAPI-dhxscwezcszizoagoeohechxlzpe/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		75CE7AE21B271DB30001F534 /* Xcode7PlusSwift2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xcode7PlusSwift2.swift; sourceTree = "<group>"; };
 		75D256991B12AF87005F6645 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
 		75D2569B1B12AF90005F6645 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
@@ -231,8 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75319DB01B16A52E002C7AFF /* Alamofire.framework in Frameworks */,
-				75F919621B15F7280053FF42 /* Argo.framework in Frameworks */,
 				09B788DB0199C4C13AE9CE19 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,8 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75319DB11B16A53B002C7AFF /* Alamofire.framework in Frameworks */,
-				75D2569A1B12AF87005F6645 /* Argo.framework in Frameworks */,
+				759B89941C45F2740017F5A4 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +396,7 @@
 		756AAE901B12A5F80077DFFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				759B89931C45F2740017F5A4 /* Pods.framework */,
 				75656CFB1B465017007D11EA /* Nimble.framework */,
 				75656CFC1B465017007D11EA /* Quick.framework */,
 				756AAE8F1B12A5F20077DFFF /* iOS */,
@@ -517,8 +504,6 @@
 				756AAE5F1B12A3A40077DFFF /* Sources */,
 				756AAE601B12A3A40077DFFF /* Frameworks */,
 				756AAE611B12A3A40077DFFF /* Headers */,
-				756AAE621B12A3A40077DFFF /* Resources */,
-				7598B0221B132AEB00E55D79 /* CopyFiles */,
 				A13DADD929716F4C47F19254 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -636,13 +621,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		756AAE621B12A3A40077DFFF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		756AAE6D1B12A3A40077DFFF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1023,11 +1001,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1049,11 +1023,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SwiftDailyAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1071,8 +1041,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1092,8 +1060,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1113,11 +1079,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1145,11 +1107,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftDailyAPI/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1171,8 +1129,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1195,8 +1151,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"/Users/nicholastian/proj/Swift-ZHI/Swift-ZHI/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SwiftDailyAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
