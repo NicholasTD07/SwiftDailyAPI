@@ -121,6 +121,17 @@ This code is tested in [ReadmeCodeSpecs.swift](./SwiftDailyAPITests/Specs/Readme
 * [Quick]     - Testing
 * [Nimble]    - Matcher
 
+## Appendix
+
+### How does SwiftDailyAPI support both Carthage and CocoaPods while having 3rd
+parity dependencies?
+
+Well, it works like this. Before 2.0.1, I was using Carthage to manage
+dependencies so Carthage works for version 2.0.0. However, I switched to
+CocoaPods since 2.0.1 because it's easier to setup, more stable from my
+experience, also takes less time to install dependencies (Carthage has one extra
+build step) and Travis has caching for CocoaPods.
+
 [Alamofire]: https://github.com/Alamofire/Alamofire
 [Argo]: https://github.com/thoughtbot/Argo
 [Quick]: https://github.com/Quick/Quick
