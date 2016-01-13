@@ -5,3 +5,9 @@ before_install:
   - brew install carthage
 install:
   - carthage bootstrap --platform iOS
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+
+  - xcodebuild -workspace SwiftDailyAPI.xcworkspace -scheme "SwiftDailyAPI-iOS" -destination "OS=9.2,name=iPhone 6s Plus" test | xcpretty -c
