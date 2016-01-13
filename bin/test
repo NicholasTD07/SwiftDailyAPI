@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-xcodebuild -workspace 'SwiftDailyAPI.xcworkspace' -scheme 'SwiftDailyAPI-iOS' test -destination 'name=iPhone 6,OS=8.4' | xcpretty --color
