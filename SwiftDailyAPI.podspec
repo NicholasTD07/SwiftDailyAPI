@@ -3,6 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "2.0.1"
   s.summary      = "A Swift API framework for ZhiHu's Daily News."
   s.description  = <<-DESC
+  SwiftDailyAPI provides a simple API for ZhiHu's Daily News in Swift by using Alamofire and Argo for network request and JSON decoding.
                    DESC
   s.homepage     = "https://github.com/NicholasTD07/SwiftDailyAPI"
   s.license      = { :type => "MIT", :file => "LICENSE" }
