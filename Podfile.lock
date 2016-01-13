@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (3.1.4)
+  - Argo (2.2.0)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - Argo (~> 2.2.0)
+  - Nimble (~> 3.0.0)
+  - Quick (~> 0.8.0)
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  Argo: 4f52a32b4cd913c204e5a45f420b3fccad3e3f24
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+
+COCOAPODS: 0.39.0
