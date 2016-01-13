@@ -3,6 +3,7 @@ osx_image: xcode7.2
 before_install:
   - brew update
   - brew install carthage
+  - pip install codecov
 install:
   - carthage bootstrap --platform iOS
 script:
@@ -11,3 +12,5 @@ script:
   - xcodebuild -showsdks
 
   - xcodebuild -workspace SwiftDailyAPI.xcworkspace -scheme "SwiftDailyAPI-iOS" -destination "OS=9.2,name=iPhone 6s Plus" test | xcpretty -c
+after_success:
+  - codecov
