@@ -1,4 +1,8 @@
-# SwiftDailyAPI [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+# SwiftDailyAPI 
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/NicholasTD07/SwiftDailyAPI.svg?branch=develop)](https://travis-ci.org/NicholasTD07/SwiftDailyAPI)
+[![codecov.io](https://codecov.io/github/NicholasTD07/SwiftDailyAPI/coverage.svg?branch=develop)](https://codecov.io/github/NicholasTD07/SwiftDailyAPI?branch=develop)
 
 An API framework for ZhiHu's Daily News, built in Swift.
 
