@@ -7,13 +7,39 @@
 
 An API framework for ZhiHu's Daily News, built in Swift.
 
+## Requirement
+
+* iOS 8.0+ / Mac OS X 10.9+
+* Xcode 7.2 +
+
 ## Installation
 
-### Minimum Requirement
+> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).**
 
-* Xcode 7.2 +
-* Swift 2.1 +
+### CocoaPods
 
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 0.39.0+ is required to build SwiftDailyAPI 2.0.0+.
+
+To integrate SwiftDailyAPI into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod 'SwiftDailyAPI', '~> 2.0'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 ### [Carthage]
 
 [Carthage]: https://github.com/Carthage/Carthage
