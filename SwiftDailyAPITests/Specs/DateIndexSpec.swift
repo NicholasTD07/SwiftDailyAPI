@@ -22,19 +22,25 @@ class DateIndexSpec: QuickSpec {
     let tomorrow = today.successor()
     let yesterday = today.predecessor()
 
+    describe("DateIndex") {
+      it("has the correct date") {
+        expect(dateFormatter.stringFromDate(todaysDate))
+          .to(equal(dateFormatter.stringFromDate(today.date)))
+      }
 
-    it("has the correct date") {
-      expect(dateFormatter.stringFromDate(todaysDate))
-        .to(equal(dateFormatter.stringFromDate(today.date)))
-    }
+      it("yesterday is not today") {
+        expect(today == yesterday).toNot(beTrue())
+        expect(today.hashValue == yesterday.hashValue).toNot(beTrue())
+      }
 
-    it("yesterday is not today") {
-      expect(today == yesterday).toNot(beTrue())
-      expect(today.hashValue == yesterday.hashValue).toNot(beTrue())
-    }
+      it("yesterday is in the past, tomorrow is in the future") {
+        expect(yesterday.date) < todaysDate
+        expect(tomorrow.date) > todaysDate
+      }
 
-    fit("tomorrow is one day later") {
-      expect(today.distanceTo(tomorrow)).to(equal(1))
+      it("tomorrow is one day later") {
+        expect(today.distanceTo(tomorrow)).to(equal(1))
+      }
     }
   }
 }

@@ -31,13 +31,11 @@ extension DateIndex: Hashable {
 
 extension DateIndex: RandomAccessIndexType {
   public func successor() -> DateIndex {
-    let nextDay = calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: [])!
-    return DateIndex(nextDay)
+    return advancedBy(1)
   }
 
   public func predecessor() -> DateIndex {
-    let previousDay = calendar.dateByAddingUnit(.Day, value: -1, toDate: date, options: [])!
-    return DateIndex(previousDay)
+    return advancedBy(-1)
   }
 
   public func advancedBy(n: Int) -> DateIndex {
