@@ -14,8 +14,6 @@ script:
     -scheme "SwiftDailyAPI-iOS"
     -destination "OS=9.2,name=iPhone 6s Plus"
     -sdk iphonesimulator
-    GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES
-    GCC_GENERATE_TEST_COVERAGE_FILES=YES
     test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
