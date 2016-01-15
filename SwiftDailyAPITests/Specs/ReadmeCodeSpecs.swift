@@ -10,6 +10,11 @@ import Quick
 import Nimble
 import SwiftDailyAPI
 
+private func print() {
+  // nop
+  // prevent CI from crashing
+}
+
 class ReadmeCodeSpecs: QuickSpec {
   override func spec() {
     describe("Code in README.md") {
