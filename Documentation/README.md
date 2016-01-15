@@ -123,8 +123,7 @@ This code is tested in [ReadmeCodeSpecs.swift](./SwiftDailyAPITests/Specs/Readme
 
 ## Appendix
 
-### How does SwiftDailyAPI support both Carthage and CocoaPods while having 3rd
-parity dependencies?
+### How does SwiftDailyAPI support both Carthage and CocoaPods while having 3rd parity dependencies?
 
 Well, it works like this. Before 2.0.1, I was using Carthage to manage
 dependencies so Carthage works for version 2.0.0. However, I switched to
