@@ -5,7 +5,9 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftDailyAPI.svg)](https://img.shields.io/cocoapods/v/SwiftDailyAPI.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-An API framework for ZhiHu's Daily News, built in Swift.
+An API framework for ZhiHu's Daily News, built in Swift. It is powering my open
+source App [Swift-ZHI](https://github.com/NicholasTD07/Swift-ZHI) which is a
+newsreader App built for ZhiHu's Daily News.
 
 ## Requirement
 
