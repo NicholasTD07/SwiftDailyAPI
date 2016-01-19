@@ -2,6 +2,11 @@
 
 The API Specs are [![Build Status](https://travis-ci.org/NicholasTD07/SwiftDailyAPI.svg?branch=api-specs)](https://travis-ci.org/NicholasTD07/SwiftDailyAPI).
 
+This branch exists for the sole purpose to test ZhiHu Daily's API. It only
+shares parts of its README file with main branches(`develop`, `master`) while
+all other files from the main branches are not present in this branch, e.g.
+you will not find anything related to SwiftDailyAPI project.
+
 ## Purposes
 
 This API spec serves following purposes:
