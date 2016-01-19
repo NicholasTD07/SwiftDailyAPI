@@ -9,12 +9,15 @@ end
 
 describe 'In latest news' do
   let(:date) { '20150101' }
+  before(:all) do
+    get '/news/latest'
+  end
 
   it 'date is date' do
-    get '/news/latest'
-    expect_json_types(
-      date: :date,
-      stories: :array_of_objects
-    )
+    expect_json_types(date: :date)
+  end
+
+  it 'stories are objects' do
+    expect_json_types(stories: :array_of_objects)
   end
 end
