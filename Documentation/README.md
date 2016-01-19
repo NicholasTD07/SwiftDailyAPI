@@ -1,3 +1,24 @@
+# API Spec
+
+The API Specs are [![Build Status](https://travis-ci.org/NicholasTD07/SwiftDailyAPI.svg?branch=api-specs)](https://travis-ci.org/NicholasTD07/SwiftDailyAPI).
+
+## Purposes
+
+This API spec serves following purposes:
+* To test whether ZhiHu Daily's API matches the expectation in SwiftDailyAPI project
+* To help me learn the Airborne framework, `RSpec driven API testing framework`
+* To help me gain a deeper understanding of how to use RSpec
+
+## Frameworks
+
+* [Airborne](https://github.com/brooklynDev/airborne)
+
+**NB**
+
+* The build status badge at top is for this `api-specs` branch, for the specs.
+* The build status badge below is for the `develop` branch, for SwiftDailyAPI
+  itself.
+
 # SwiftDailyAPI 
 
 [![Build Status](https://travis-ci.org/NicholasTD07/SwiftDailyAPI.svg?branch=develop)](https://travis-ci.org/NicholasTD07/SwiftDailyAPI)
