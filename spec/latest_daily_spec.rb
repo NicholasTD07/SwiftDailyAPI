@@ -1,12 +1,3 @@
-require 'airborne'
-
-Airborne.configure do |config|
-  config.base_url = 'http://news.at.zhihu.com/api/4'
-  config.headers = {
-    'User-Agent': 'SwiftDailyAPI-api-specs'
-  }
-end
-
 describe 'In latest news' do
   let(:date) { '20150101' }
   before(:all) do
