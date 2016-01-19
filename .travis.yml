@@ -3,4 +3,4 @@ rvm: 2.2.3
 cache: bundler
 script:
   - set -o pipefail
-  - rspec -f d
+  - bundle exec rspec -f d
