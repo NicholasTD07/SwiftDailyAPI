@@ -30,4 +30,13 @@ describe 'In latest news' do
       ga_prefix: :string # converted into Int in SDAPI
     )
   end
+
+  it 'top stories are of type TopNewsMeta' do
+    expect_json_types(
+      'top_stories.*',
+      id: :int,
+      title: :string,
+      image: :string, # image url
+    )
+  end
 end
