@@ -1,7 +1,7 @@
 require 'airborne'
 
 Airborne.configure do |config|
-  config.base_url = 'http://news.at.zhihu.com/api/4'
+  config.base_url = 'http://news-at.zhihu.com/api/4'
   config.headers = {
     'User-Agent': 'SwiftDailyAPI-api-specs'
   }
